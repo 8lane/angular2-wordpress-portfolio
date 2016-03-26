@@ -1,3 +1,7 @@
-<sd-toolbar></sd-toolbar>
+<header *ngIf="appInfo">
+	<h1><a [routerLink]="['Home']" [innerHTML]="appInfo.name"></a></h1>
+	<p [innerHTML]="appInfo.description"></p>
+</header>
+
 <sd-navbar></sd-navbar>
 <router-outlet></router-outlet>

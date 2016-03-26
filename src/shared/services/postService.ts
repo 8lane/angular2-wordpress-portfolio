@@ -21,7 +21,7 @@ export class PostService {
   fetchSinglePost(slug: string): Observable<void> {
     var requestOptions = new MyRequestOptions();
     var options = requestOptions.merge({
-      url: Settings.apiEndPoint + '/posts/?slug=' + slug + '',
+      url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/?slug=' + slug + '',
     });
 
     return this._http.request(new Request(options))
@@ -45,7 +45,7 @@ export class PostService {
   fetchAllPosts(): Observable<void> {
     var requestOptions = new MyRequestOptions();
     var options = requestOptions.merge({
-      url: Settings.apiEndPoint + '/posts/',
+      url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/',
     });
 
     return this._http.request(new Request(options))
