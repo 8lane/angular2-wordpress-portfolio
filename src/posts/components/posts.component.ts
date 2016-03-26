@@ -15,8 +15,6 @@ export class PostsComponent {
   constructor(private _router: Router) {}
 
   loadPost(slug: string) {
-    console.log('navigating to: ', slug);
     this._router.navigate(['Post', { slug: slug }]);
   }
-
 }

@@ -42,10 +42,13 @@ export class PostService {
       });
   }
 
-  fetchAllPosts(): Observable<void> {
+  fetchAllPosts(filter: any = null): Observable<void> {
     var requestOptions = new MyRequestOptions();
+
+    let filterQuery = filter ? `?filter[${filter[0]}]=${filter[1]}` : '';
+
     var options = requestOptions.merge({
-      url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/',
+      url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/' + filterQuery,
     });
 
     return this._http.request(new Request(options))
