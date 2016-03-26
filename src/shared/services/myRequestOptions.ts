@@ -5,7 +5,6 @@ import {BaseRequestOptions, Headers} from 'angular2/http';
 export class MyRequestOptions extends BaseRequestOptions {
   headers: Headers = new Headers({
       'Accept': 'application/json',
-      'Authorization': 'Basic '+btoa('tctc91,wtf')+'',
       // 'Content-Type': 'application/json'
   });
 }
