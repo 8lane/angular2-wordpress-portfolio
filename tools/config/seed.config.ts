@@ -26,7 +26,7 @@ export class SeedConfig {
   APP_TITLE            = 'Portfolio v5';
 
   APP_SRC              = 'src';
-  ASSETS_SRC           = `${this.APP_SRC}/assets`;
+  ASSETS_SRC           = `${this.APP_SRC}/_assets`;
 
   TOOLS_DIR            = 'tools';
   SEED_TASKS_DIR       = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'seed');
