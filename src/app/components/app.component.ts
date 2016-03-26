@@ -6,17 +6,19 @@ import {EventStore} from '../../shared/services/eventStore';
 import {NavbarComponent} from './navbar.component';
 import {HomeComponent} from '../../home/components/home.component';
 import {PostComponent} from '../../posts/components/post.component';
+import {TagComponent} from '../../app/components/tags.component';
 import {AboutComponent} from '../../about/components/about.component';
 import {NameListService} from '../../shared/services/name-list.service';
 import {AppService} from '../../shared/services/appService';
 import {PostService} from '../../shared/services/postService';
+import {TagService} from '../../shared/services/tagService';
 
 @Component({
   selector: 'sd-app',
-  viewProviders: [NameListService, AppService, PostService, EventStore, HTTP_PROVIDERS],
+  viewProviders: [NameListService, AppService, PostService, TagService, EventStore, HTTP_PROVIDERS],
   moduleId: module.id,
   templateUrl: './app.component.html',
-  directives: [ROUTER_DIRECTIVES, NavbarComponent]
+  directives: [ROUTER_DIRECTIVES, NavbarComponent, TagComponent]
 })
 @RouteConfig([
   { path: '/',      name: 'Home',  component: HomeComponent  },

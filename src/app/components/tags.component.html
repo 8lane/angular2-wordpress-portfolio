@@ -1,0 +1,7 @@
+<br><br><br><br><br><br><br>
+
+<div *ngIf="tagList">
+	<li id="tag-{{tag.id}}" *ngFor="#tag of tagList">
+		<button (click)="loadTag(tag.slug)">{{tag.name}}</button>
+	</li>
+</div>
