@@ -10,11 +10,10 @@ import {PostComponent} from '../../posts/components/post.component';
 import {AboutComponent} from '../../about/components/about.component';
 import {NameListService} from '../../shared/services/name-list.service';
 import {PostService} from '../../shared/services/postService';
-import {PostsService} from '../../shared/services/postsService';
 
 @Component({
   selector: 'sd-app',
-  viewProviders: [NameListService, PostService, PostsService, EventStore, HTTP_PROVIDERS],
+  viewProviders: [NameListService, PostService, EventStore, HTTP_PROVIDERS],
   moduleId: module.id,
   templateUrl: './app.component.html',
   directives: [ROUTER_DIRECTIVES, NavbarComponent, ToolbarComponent]

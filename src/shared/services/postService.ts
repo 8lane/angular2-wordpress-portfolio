@@ -8,31 +8,32 @@ import {MyRequestOptions} from './myRequestOptions';
 
 @Injectable()
 export class PostService {
-  postData: any[];
-  // pagedResults: PagedResult;
+  postSingle: any[];
+  postCollection: any[];
+  pagedResults: PagedResult;
 
   constructor(private _http: Http) {
-    this.postData = [];
-    // this.pagedResults = new PagedResult();
+    this.postSingle = [];
+    this.postCollection = [];
+    this.pagedResults = new PagedResult();
   }
 
-  get(slug: string): Observable<void> {
+  fetchSinglePost(slug: string): Observable<void> {
     var requestOptions = new MyRequestOptions();
     var options = requestOptions.merge({
-      url: Settings.apiEndPoint + '/posts/?slug='+slug+'',
+      url: Settings.apiEndPoint + '/posts/?slug=' + slug + '',
     });
 
     return this._http.request(new Request(options))
       .map((responseData) => {
         let data = responseData.json();
         let post: any[] = [];
-        this.postData = [];
+        this.postSingle = [];
 
         if (data) {
-          data.forEach((d:any) => post.push(Object.assign(d)));
-          this.postData = post;
-
-          console.log('POST DATA: ', this.postData);
+          data.forEach((d: any) => post.push(Object.assign(d)));
+          this.postSingle = post[0];
+          console.log('POST SINGLE: ', this.postSingle);
         }
 
         // this.setPagedResult(1);
@@ -41,15 +42,40 @@ export class PostService {
       });
   }
 
-  // setPagedResult(pageNumber: number) {
-  //   this.pagedResults.pageNumber = pageNumber;
-  //   this.pagedResults.posts = this.postResults.slice((pageNumber - 1) * 25, pageNumber * 25);
-  //   this.pagedResults.postsTotal = this.postResults.length;
-  // }
+  fetchAllPosts(): Observable<void> {
+    var requestOptions = new MyRequestOptions();
+    var options = requestOptions.merge({
+      url: Settings.apiEndPoint + '/posts/',
+    });
+
+    return this._http.request(new Request(options))
+      .map((responseData) => {
+        let data = responseData.json();
+        let posts: any[] = [];
+        this.postCollection = [];
+
+        if (data) {
+          data.forEach((d: any) => posts.push(Object.assign(d)));
+          this.postCollection = posts;
+
+          console.log('POST COLLECTION: ', this.postCollection);
+        }
+
+        this.setPagedResult(1);
+      }, (error: any) => {
+        console.log(error);
+      });
+  }
+
+  setPagedResult(pageNumber: number) {
+    this.pagedResults.pageNumber = pageNumber;
+    this.pagedResults.posts = this.postCollection.slice((pageNumber - 1) * 25, pageNumber * 25);
+    this.pagedResults.postsTotal = this.postCollection.length;
+  }
 }
 
-// export class PagedResult {
-//   posts: any[];
-//   pageNumber: number;
-//   postsTotal: number;
-// }
+export class PagedResult {
+  posts: any[];
+  pageNumber: number;
+  postsTotal: number;
+}

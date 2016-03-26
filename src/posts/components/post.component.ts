@@ -21,8 +21,8 @@ export class PostComponent {
 		private _postService: PostService) {
 		this.slug = _routeParams.get('slug');
 
-		this._postService.get(this.slug).subscribe((e) => {
-			this.post = this._postService.postData[0];
+		this._postService.fetchSinglePost(this.slug).subscribe((e) => {
+			this.post = this._postService.postSingle;
 			this.gotPost = true;
 		});
 	}
