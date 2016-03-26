@@ -44,3 +44,4 @@ tmp
 # All css is created at sass compile time
 *.css
 *.map
+wordpress

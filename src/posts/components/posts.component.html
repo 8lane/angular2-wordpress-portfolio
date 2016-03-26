@@ -1,0 +1,5 @@
+<div class="post row" *ngIf="post">
+
+	<button class="btn" type="button" (click)="loadPost(post.slug)">{{post.title.rendered}}</button>
+
+</div>

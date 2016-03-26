@@ -1,14 +1,9 @@
-<p>
-  Howdy! Here's a list of awesome computer scientists.
-  Do you know any others? Add to the list yourself.
-</p>
 
-<form (submit)="addName()">
-  <input [(ngModel)]="newName" placeholder="Awesome Computer Scientist">
-  <button type="submit">Add</button>
-</form>
-
-
-<ul>
-  <li *ngFor="#name of nameListService.get()">{{name}}</li>
-</ul>
+<div class="app__tracks" *ngIf="_postsService.pagedResults.postsTotal > 0">
+  <header class="page__header">
+    <h1 class="header__title h2">{{_postsService.pagedResults.postsTotal}} posts found</h1>
+  </header>
+  <div class="track__container col-md-12" *ngFor="#result of _postsService.pagedResults.posts">
+    <app-posts [post]="result"></app-posts>
+  </div>
+</div>
