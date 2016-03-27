@@ -16,6 +16,8 @@ export class PostComponent {
 	slug: string;
 	post: any;
 	gotPost: boolean = false;
+	goPrev: any;
+	goNext: any;
 
 	constructor(private _routeParams: RouteParams,
 		private _router: Router,
@@ -30,7 +32,33 @@ export class PostComponent {
 			this._tagService.fetchTagsCollection(this.post.tags).subscribe((tags) => {
 				this.post.tags = tags;
 			});
+
+			if(this._postService.postCollection.length) {
+				this.setupPagination(this._postService.postCollection);
+			} else {
+				this._postService.fetchAllPosts().subscribe(() => {
+					this.setupPagination(this._postService.postCollection);
+				});
+			}
 		});
+	}
+
+	setupPagination(posts: any[]) {
+		let self = this;
+
+		posts.forEach(function(item, key) {
+			if (item.id === self.post.id) {
+				let prev = posts[key - 1];
+				let next = posts[key + 1];
+				self.goPrev = typeof (prev) !== 'undefined' ? prev : posts[posts.length - 1]; // Go to previous item, if first item, skip to end
+				self.goNext = typeof (next) !== 'undefined' ? next : posts[0]; // Go to next item, if last item, skip to start
+			}
+		});
+
+	}
+
+	loadPost(slug: string) {
+		this._router.navigate(['Post', { slug: slug }]);
 	}
 
 	loadTag(slug: string) {
