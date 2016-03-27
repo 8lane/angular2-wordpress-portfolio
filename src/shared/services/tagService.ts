@@ -14,10 +14,13 @@ export class TagService {
     this.tags = [];
   }
 
-  fetchTagsCollection(): Observable<void> {
+  fetchTagsCollection(include:any[] = []): Observable<void> {
     var requestOptions = new MyRequestOptions();
+
+    let filter = include.length ? `?include=${include.join(', ')}` : ``;
+
     var options = requestOptions.merge({
-      url: Settings.apiEndPoint + Settings.apiNamespace + '/tags/',
+      url: Settings.apiEndPoint + Settings.apiNamespace + '/tags/' + filter,
     });
 
     return this._http.request(new Request(options))
@@ -25,11 +28,13 @@ export class TagService {
         let data = responseData.json();
         this.tags = [];
 
-        if (data) {
+        if (data && !include.length) {
           this.tags = data;
           console.log('TAGS: ', data);
+          return;
         }
 
+        return data;
       }, (error: any) => {
         console.log(error);
       });

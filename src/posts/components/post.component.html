@@ -4,9 +4,8 @@
 		By Tom on {{ post.date }} 
 	</div>
 	<div class="post__tags" *ngIf="post.tags.length">
-		<li *ngFor="#tag of post.tags">
-			tag
-			<span>{{tag}}</span>
+		<li id="tag-{{tag.id}}" *ngFor="#tag of post.tags">
+			<button *ngIf="tag.id" (click)="loadTag(tag.slug)">{{tag.name}}</button>
 		</li>
 	</div>
 	<p [innerHTML]="post.content.rendered"></p>

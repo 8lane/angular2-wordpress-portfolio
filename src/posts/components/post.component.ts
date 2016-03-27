@@ -27,7 +27,14 @@ export class PostComponent {
 			this.post = this._postService.postSingle;
 			this.gotPost = true;
 
+			this._tagService.fetchTagsCollection(this.post.tags).subscribe((tags) => {
+				this.post.tags = tags;
+			});
 		});
+	}
+
+	loadTag(slug: string) {
+		this._router.navigate(['Tag', { slug: slug }]);
 	}
 
 }
