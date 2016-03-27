@@ -1,7 +1,6 @@
 import {Component} from 'angular2/core';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 
-import {NameListService} from '../../shared/services/name-list.service';
 import {PostService} from '../../shared/services/postService';
 import {PostsComponent} from '../../posts/components/posts.component';
 
@@ -15,8 +14,7 @@ import {PostsComponent} from '../../posts/components/posts.component';
 export class HomeComponent {
   gotPosts: boolean = false;
 
-  constructor(private nameListService: NameListService,
-    private _postService: PostService) {
+  constructor(private _postService: PostService) {
 
     this._postService.fetchAllPosts().subscribe(() => {
       this.gotPosts = true;

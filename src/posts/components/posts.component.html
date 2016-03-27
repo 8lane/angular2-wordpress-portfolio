@@ -1,5 +1,3 @@
 <div class="post row" *ngIf="post">
-
-	<button class="btn" type="button" (click)="loadPost(post.slug)">{{post.title.rendered}}</button>
-
+	<app-media (click)="loadPost(post.slug)" title="{{post.title.rendered}}" [id]="post.featured_media"></app-media>
 </div>

@@ -1,4 +1,13 @@
 <div *ngIf="post">
-<h1 [innerHTML]="post.title.rendered"></h1>
-<p [innerHTML]="post.content.rendered"></p>
+	<h1 [innerHTML]="post.title.rendered"></h1>
+	<div class="post__meta">
+		By Tom on {{ post.date }} 
+	</div>
+	<div class="post__tags" *ngIf="post.tags.length">
+		<li *ngFor="#tag of post.tags">
+			tag
+			<span>{{tag}}</span>
+		</li>
+	</div>
+	<p [innerHTML]="post.content.rendered"></p>
 </div>
