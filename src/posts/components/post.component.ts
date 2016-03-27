@@ -33,13 +33,9 @@ export class PostComponent {
 				this.post.tags = tags;
 			});
 
-			if(this._postService.postCollection.length) {
+			this._postService.fetchAllPosts().subscribe(() => {
 				this.setupPagination(this._postService.postCollection);
-			} else {
-				this._postService.fetchAllPosts().subscribe(() => {
-					this.setupPagination(this._postService.postCollection);
-				});
-			}
+			});
 		});
 	}
 

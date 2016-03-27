@@ -15,12 +15,11 @@ export class TagService {
   }
 
   fetchTagsCollection(include:any[] = []): Observable<void> {
+    let filter = include.length ? `&include=${include.join(', ')}` : ``;
+
     var requestOptions = new MyRequestOptions();
-
-    let filter = include.length ? `?include=${include.join(', ')}` : ``;
-
     var options = requestOptions.merge({
-      url: Settings.apiEndPoint + Settings.apiNamespace + '/tags/' + filter,
+      url: Settings.apiEndPoint + Settings.apiNamespace + '/tags/?orderby=count&order=desc&hide_empty=true&per_page=10' + filter,
     });
 
     return this._http.request(new Request(options))
@@ -30,7 +29,6 @@ export class TagService {
 
         if (data && !include.length) {
           this.tags = data;
-          console.log('TAGS: ', data);
           return;
         }
 
