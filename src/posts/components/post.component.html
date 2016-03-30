@@ -1,18 +1,26 @@
-<div *ngIf="post">
-	<h1 [innerHTML]="post.title.rendered"></h1>
-	<div class="post__meta">
-		By Tom on {{ post.date }} 
-	</div>
-	<div class="post__tags" *ngIf="post.tags">
-		<li id="tag-{{tag.id}}" *ngFor="#tag of post.tags">
-			<button *ngIf="tag.id" (click)="loadTag(tag.slug)">{{tag.name}}</button>
-		</li>
+<div class="post">
+	<div *ngIf="post">
+		<h1 [innerHTML]="post.title.rendered"></h1>
+
+		<div class="post__meta">
+			By Tom on {{ post.date }} 
+		</div>
+
+		<div class="post__tags" *ngIf="post.tags">
+			<li id="tag-{{tag.id}}" *ngFor="#tag of post.tags">
+				<button *ngIf="tag.id" (click)="loadTag(tag.slug)">{{tag.name}}</button>
+			</li>
+		</div>
+
+		<div *ngIf="goPrev && goNext">
+			<span (click)="loadPost(goPrev.slug)"><< {{goPrev.slug}}</span>  ---
+			<span (click)="loadPost(goNext.slug)">{{goNext.slug}} >></span>
+		</div>
 	</div>
 
-	<div *ngIf="goPrev && goNext">
-		<span (click)="loadPost(goPrev.slug)"><< {{goPrev.slug}}</span>  ---
-		<span (click)="loadPost(goNext.slug)">{{goNext.slug}} >></span>
-	</div>
-
-	<p [innerHTML]="post.content.rendered"></p>
+	<div #postContent></div>
 </div>
+
+	
+
+
