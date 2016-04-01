@@ -1,0 +1,49 @@
+//
+// Additional mixins
+// --------------------------------------------------
+
+
+// ANW Media Queries
+// --------------------------------------------------
+
+@mixin respond-to($media) {
+  @if $media == xs {
+    @media only screen and (min-width: $screen-xs-min) { @content; }
+  }
+  @else if $media == sm {
+    @media only screen and (min-width: $screen-sm-min) { @content; }
+  }
+  @else if $media == md {
+    @media only screen and (min-width: $screen-md-min) { @content; }
+  }
+  @else if $media == lg {
+    @media only screen and (min-width: $screen-lg-min) { @content; }
+  }
+}
+
+
+// ANW Truncate
+// --------------------------------------------------
+
+@mixin truncate($width) {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: $width;
+}
+
+
+// ANW Brand Colour Tint Function
+// --------------------------------------------------
+
+@function tint($color, $percent:null) {
+    @if ($percent != null) {
+        @return map-get(map-get($anw-brand-tints, $color), $percent);
+    } @else {
+        @return map-get(map-get($anw-brand-tints, $color), 100);
+    }
+}
+
+// Example  
+// color: tint(brand6,50);

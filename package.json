@@ -33,6 +33,7 @@
   "license": "MIT",
   "devDependencies": {
     "async": "^1.4.2",
+    "bootstrap": "^4.0.0-alpha.2",
     "bootstrap-sass": "^3.3.6",
     "browser-sync": "^2.11.2",
     "chalk": "^1.1.1",
