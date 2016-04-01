@@ -18,6 +18,7 @@ import {TagService} from '../../shared/services/tagService';
   viewProviders: [AppService, PostService, TagService, EventStore, HTTP_PROVIDERS],
   moduleId: module.id,
   templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
   directives: [ROUTER_DIRECTIVES, NavbarComponent, TagListComponent]
 })
 @RouteConfig([

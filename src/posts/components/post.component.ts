@@ -45,7 +45,7 @@ export class PostComponent {
 				this.setupPagination(this._postService.postCollection);
 			});
 
-			let template = `<hello></hello><h2>${this.post.content.rendered}</h2>`;
+			let template = `${this.post.content.rendered}`;
 			let directives = [FORM_DIRECTIVES, CORE_DIRECTIVES];
 			this.dcl.loadIntoLocation(this.buildComponent(template, directives), this.elementRef, 'postContent');
 		});

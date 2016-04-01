@@ -1,7 +1,7 @@
 <br><br><br><br><br><br><br>
 
-<div *ngIf="tagList">
-	<li id="tag-{{tag.id}}" *ngFor="#tag of tagList">
-		<button (click)="loadTag(tag.slug)">{{tag.name}}</button>
+<ul class="app-tags list-unstyled" *ngIf="tagList">
+	<li class="tags__item" id="tag-{{tag.id}}" *ngFor="#tag of tagList">
+		<button class="tags__item__btn btn btn-primary btn-sm" (click)="loadTag(tag.slug)">{{tag.name}}</button>
 	</li>
-</div>
+</ul>

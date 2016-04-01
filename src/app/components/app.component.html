@@ -1,9 +1,18 @@
-<header *ngIf="appInfo">
-	<h1><a [routerLink]="['Home']" [innerHTML]="appInfo.name"></a></h1>
-	<p [innerHTML]="appInfo.description"></p>
-</header>
-
-<sd-navbar></sd-navbar>
-<router-outlet></router-outlet>
-
-<app-tags></app-tags>
+<div class="app container">
+	<aside class="app__sidebar">
+		<header class="header text-xs-center" *ngIf="appInfo">
+			<a [routerLink]="['Home']">
+				<div class="header__logo center-block">
+					<img class="img-fluid img-circle" src="/_assets/images/logo.jpg">
+				</div>
+				<h1 [innerHTML]="appInfo.name"></h1>
+				<p [innerHTML]="appInfo.description"></p>
+			</a>
+		</header>
+		<sd-navbar></sd-navbar>
+		<app-tags></app-tags>
+	</aside>
+	<main class="app__content">
+		<router-outlet></router-outlet>
+	</main>
+</div>

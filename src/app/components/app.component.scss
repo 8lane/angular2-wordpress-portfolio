@@ -1,0 +1,21 @@
+@import "../../_assets/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+@include media-breakpoint-up(lg) {
+	.app__sidebar {
+		position: fixed;
+		height: 100%;
+		width: 300px;
+	}
+
+	.app__content {
+		padding-left: 300px;
+	}
+
+	.header__logo {
+		display: block;
+		width: 115px;
+		height: 115px;
+		min-height: 115px;
+	}
+}
