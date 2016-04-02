@@ -36,7 +36,7 @@ $brand-primary:             #0275d8 !default;
 $brand-success:             #5cb85c !default;
 $brand-info:                #5bc0de !default;
 $brand-warning:             #f0ad4e !default;
-$brand-danger:              #d9534f !default;
+$brand-danger:              #de4d6c !default;
 
 
 // Options
@@ -57,7 +57,7 @@ $enable-grid-classes:       true !default;
 // Control the default styling of most Bootstrap elements by modifying these
 // variables. Mostly focused on spacing.
 
-$spacer:                     1rem !default;
+$spacer:                     .55rem !default;
 $spacer-x:                   $spacer !default;
 $spacer-y:                   $spacer !default;
 $spacers: (
@@ -135,15 +135,15 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:               12 !default;
-$grid-gutter-width:          1.875rem !default; // 30px
+$grid-gutter-width:          1rem !default; // 30px
 
 
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$font-family-sans-serif:     "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:          "PT Serif", Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
 
@@ -155,11 +155,11 @@ $font-size-lg:               1.25rem !default;
 $font-size-sm:               .875rem !default;
 $font-size-xs:               .75rem !default;
 
-$font-size-h1:               2.5rem !default;
-$font-size-h2:               2rem !default;
-$font-size-h3:               1.75rem !default;
-$font-size-h4:               1.5rem !default;
-$font-size-h5:               1.25rem !default;
+$font-size-h1:               2rem !default;
+$font-size-h2:               1.75rem !default;
+$font-size-h3:               1.5rem !default;
+$font-size-h4:               1.25rem !default;
+$font-size-h5:               1rem !default;
 $font-size-h6:               1rem !default;
 
 $display1-size:               6rem !default;
@@ -175,8 +175,8 @@ $display4-weight:             300 !default;
 $line-height:                1.5 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
-$headings-font-family:       inherit !default;
-$headings-font-weight:       500 !default;
+$headings-font-family:       $font-family-serif !default;
+$headings-font-weight:       400 !default;
 $headings-line-height:       1.1 !default;
 $headings-color:             inherit !default;
 
@@ -208,9 +208,9 @@ $list-inline-padding:         5px !default;
 $line-height-lg:         (4 / 3) !default;
 $line-height-sm:         1.5 !default;
 
-$border-radius:          .25rem !default;
-$border-radius-lg:       .3rem !default;
-$border-radius-sm:       .2rem !default;
+$border-radius:          .15rem !default;
+$border-radius-lg:       .2rem !default;
+$border-radius-sm:       .1rem !default;
 
 $component-active-color: #fff !default;
 $component-active-bg:    $brand-primary !default;

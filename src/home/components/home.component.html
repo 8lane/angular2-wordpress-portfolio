@@ -1,7 +1,9 @@
-<div class="app__posts container-fluid" *ngIf="_postService.pagedResults.postsTotal > 0">
-	<div class="row">
-	  <div class="col-sm-6 col-md-4" *ngFor="#result of _postService.pagedResults.posts">
-	    <app-posts [post]="result"></app-posts>
-	  </div>
+<div class="app__posts p-a-2" *ngIf="_postService.pagedResults.postsTotal > 0">
+	<div class="container-fluid">
+		<div class="row">
+		  <div class="col-sm-6 col-md-4" *ngFor="#result of _postService.pagedResults.posts">
+		    <app-posts [post]="result"></app-posts>
+		  </div>
+		</div>
 	</div>
 </div>

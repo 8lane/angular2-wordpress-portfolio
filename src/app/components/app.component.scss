@@ -1,6 +1,22 @@
 @import "../../_assets/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
+.header__title {
+	color: $gray-dark;
+}
+
+.header__subtitle {
+	font-size: $font-size-sm;
+}
+
+.header__wip {
+	background: $brand-danger;
+	display: block;
+	font-size: $font-size-sm;
+	color: white;
+	border-radius: $border-radius;
+}
+
 @include media-breakpoint-up(lg) {
 	.app__sidebar {
 		position: fixed;

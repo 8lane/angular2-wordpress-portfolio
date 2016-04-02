@@ -10,6 +10,7 @@ import {TagService} from '../../shared/services/tagService';
   viewProviders: [EventStore, HTTP_PROVIDERS],
   moduleId: module.id,
   templateUrl: './taglist.component.html',
+  styleUrls: ['./taglist.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
 

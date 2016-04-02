@@ -35,6 +35,7 @@ export class AppComponent {
 
 		this._appService.fetchAppData().subscribe(() => {
 			this.appInfo = this._appService.appInfo;
+      this.appInfo.description = this.appInfo.description + ` Creator of <a target="_blank" href="http://ipsthemes.com">IPS Themes</a>`;
 		});
 	}
 }

@@ -1,7 +1,11 @@
-<br><br><br><br><br><br><br>
-
-<ul class="app-tags list-unstyled" *ngIf="tagList">
-	<li class="tags__item" id="tag-{{tag.id}}" *ngFor="#tag of tagList">
-		<button class="tags__item__btn btn btn-primary btn-sm" (click)="loadTag(tag.slug)">{{tag.name}}</button>
-	</li>
-</ul>
+<section class="app-tags p-x-3 p-b-3">
+	<h3 class="app-tags__title m-b-3 p-b-1">Filter</h3>
+	<ul class="list-unstyled list-inline" *ngIf="tagList">
+		<li class="tag__item list-inline-item">
+			<button class="tag__btn btn btn-primary btn-sm">All</button>
+		</li>
+		<li class="tag__item list-inline-item" id="tag-{{tag.id}}" *ngFor="#tag of tagList">
+			<button class="tag__btn btn btn-primary btn-sm" (click)="loadTag(tag.slug)">{{tag.name}}</button>
+		</li>
+	</ul>
+</section>
