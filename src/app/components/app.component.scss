@@ -1,6 +1,10 @@
 @import "../../_assets/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
+.header > a {
+	text-decoration: none;
+}
+
 .header__title {
 	color: $gray-dark;
 }
@@ -15,6 +19,12 @@
 	font-size: $font-size-sm;
 	color: white;
 	border-radius: $border-radius;
+}
+
+@include media-breakpoint-up(xs) {
+	.header__logo {
+		max-width: 115px;
+	}
 }
 
 @include media-breakpoint-up(lg) {
@@ -33,5 +43,11 @@
 		width: 115px;
 		height: 115px;
 		min-height: 115px;
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.header {
+		padding-bottom: 0 !important;
 	}
 }

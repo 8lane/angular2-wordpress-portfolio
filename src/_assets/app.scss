@@ -9,11 +9,11 @@
 
 @import "utilities/_mixins";
 @import "variables";
-@import "bootstrap"
+@import "bootstrap";
 
 /*  Imports
 /*--------------------------------------------------------------*/
 
-// @import "shared/shared";
+@import "shared/shared";
 // @import "utilities/utilities";
 // @import "typography/typography";

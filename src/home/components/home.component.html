@@ -1,4 +1,4 @@
-<div class="app__posts p-a-2" *ngIf="_postService.pagedResults.postsTotal > 0">
+<div class="app__posts p-a-2" *ngIf="numberOfResults > 0">
 	<div class="container-fluid">
 		<div class="row">
 		  <div class="col-sm-6 col-md-4" *ngFor="#result of _postService.pagedResults.posts">

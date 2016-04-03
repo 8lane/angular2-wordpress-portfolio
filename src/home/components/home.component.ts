@@ -16,9 +16,19 @@ export class HomeComponent {
 
   constructor(private _postService: PostService) {
 
-    this._postService.fetchAllPosts().subscribe(() => {
-      this.gotPosts = true;
-    });
+    if(!this.posts) {
+      this._postService.fetchAllPosts().subscribe(() => {
+        this.gotPosts = true;
+      });
+    }
+
   }
 
+  get posts() {
+    return this._postService.pagedResults.posts;
+  }
+
+  get numberOfResults() {
+    return this._postService.pagedResults.postsTotal;
+  }
 }

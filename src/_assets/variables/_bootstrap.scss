@@ -32,11 +32,11 @@ $gray-light:                #818a91 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
-$brand-primary:             #0275d8 !default;
+$brand-primary:             #BA2A54 !default;
 $brand-success:             #5cb85c !default;
 $brand-info:                #5bc0de !default;
 $brand-warning:             #f0ad4e !default;
-$brand-danger:              #de4d6c !default;
+$brand-danger:              $brand-primary !default;
 
 
 // Options
@@ -93,7 +93,7 @@ $body-color:                 $gray-dark !default;
 //
 // Style anchor elements.
 
-$link-color:                 $brand-primary !default;
+$link-color:                 $brand-danger !default;
 $link-decoration:            none !default;
 $link-hover-color:           darken($link-color, 15%) !default;
 $link-hover-decoration:      underline !default;
@@ -145,14 +145,14 @@ $grid-gutter-width:          1rem !default; // 30px
 $font-family-sans-serif:     "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:          "PT Serif", Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
-$font-family-base:           $font-family-sans-serif !default;
+$font-family-base:           $font-family-serif !default;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
-$font-size-root:             16px !default;
+$font-size-root:             14px !default;
 
-$font-size-base:             1rem !default;
-$font-size-lg:               1.25rem !default;
-$font-size-sm:               .875rem !default;
+$font-size-base:             1.25rem !default;
+$font-size-lg:               1.5rem !default;
+$font-size-sm:               1rem !default;
 $font-size-xs:               .75rem !default;
 
 $font-size-h1:               2rem !default;
