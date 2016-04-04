@@ -1,9 +1,11 @@
 import {Component, DynamicComponentLoader, ElementRef} from 'angular2/core';
-import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
+import {CORE_DIRECTIVES} from 'angular2/common';
 import {Router, RouteParams} from 'angular2/router';
 
 import {PostService} from '../../shared/services/postService';
 import {TagService} from '../../shared/services/tagService';
+import {MediaComponent} from '../../app/components/media.component';
+import {LazyLoadDirective} from '../../shared/directives/lazyload';
 
 declare var moment: any;
 
@@ -12,7 +14,7 @@ declare var moment: any;
   moduleId: module.id,
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
-  directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
+  directives: [CORE_DIRECTIVES]
 })
 export class PostComponent {
 	slug: string;
@@ -46,7 +48,7 @@ export class PostComponent {
 			});
 
 			let template = `${this.post.content.rendered}`;
-			let directives = [FORM_DIRECTIVES, CORE_DIRECTIVES];
+			let directives = [CORE_DIRECTIVES, MediaComponent, LazyLoadDirective];
 			this.dcl.loadIntoLocation(this.buildComponent(template, directives), this.elementRef, 'postContent');
 		});
 	}

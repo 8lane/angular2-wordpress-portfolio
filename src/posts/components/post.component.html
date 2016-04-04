@@ -3,7 +3,7 @@
 		<h2 class="post__title m-b-0 p-b-1" [innerHTML]="post.title.rendered"></h2>
 
 		<div class="post__meta text-muted p-b-2">
-			By Tom on {{ post.date }} 
+			By Tom on {{ post.date }} <span *ngIf="post.tags">under</span>
 		</div>
 
 		<ul class="app-tags post__tags list-inline list-unstyled" *ngIf="post.tags">

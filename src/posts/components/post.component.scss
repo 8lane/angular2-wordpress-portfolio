@@ -1,5 +1,10 @@
 @import "../../_assets/variables";
 
 .post__meta {
+	display: inline-block;
 	font-size: $font-size-sm;
+}
+
+.post__tags {
+	display: inline-block;
 }

@@ -1,3 +1,5 @@
 <div *ngIf="media">
-	<img src="{{media.source_url}}" class="img-fluid" />
+	<div class="defer-image image-ratio:4x3 image-fill">
+		<div [attr.data-src]="media.source_url" [attr.data-alt]="media.title.rendered"></div>
+	</div>
 </div>

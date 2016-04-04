@@ -9,6 +9,7 @@ import {MediaService} from '../../shared/services/mediaService';
   viewProviders: [MediaService, HTTP_PROVIDERS],
   moduleId: module.id,
   templateUrl: './media.component.html',
+  styleUrls: ['./media.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
 export class MediaComponent {
