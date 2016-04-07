@@ -1,18 +1,21 @@
 import {Component} from 'angular2/core';
+import {SpinnerDirective} from 'angular2-spinners/angular2-spinners';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 
 import {PostService} from '../../shared/services/postService';
 import {PostsComponent} from '../../posts/components/posts.component';
+
 
 @Component({
   selector: 'sd-home',
   moduleId: module.id,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, PostsComponent]
+  directives: [SpinnerDirective, FORM_DIRECTIVES, CORE_DIRECTIVES, PostsComponent]
 })
 export class HomeComponent {
   gotPosts: boolean = false;
+  isLoading: boolean = false;
 
   constructor(private _postService: PostService) {
 
@@ -22,6 +25,11 @@ export class HomeComponent {
       });
     }
 
+  }
+
+  click() {
+    this.isLoading = true;
+    console.log('CLICK');
   }
 
   get posts() {

@@ -59,7 +59,8 @@ export class SeedConfig {
     { src: 'rxjs/bundles/Rx.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
     { src: 'angular2/bundles/angular2.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
     { src: 'angular2/bundles/router.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
-    { src: 'angular2/bundles/http.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT }
+    { src: 'angular2/bundles/http.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT },
+    { src: 'imagesloaded/imagesloaded.pkgd.js', inject: 'libs', env: ENVIRONMENTS.DEVELOPMENT }
   ];
 
   // Declare local files that needs to be injected
