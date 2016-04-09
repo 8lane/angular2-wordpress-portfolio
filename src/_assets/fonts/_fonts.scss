@@ -1,0 +1,38 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+$font-primary-path: './typography/OpenSans';
+
+$icomoon-font-path: "fonts/icomoon/fonts" !default;
+@import "../fonts/icomoon/style.scss"
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+// @font-face {
+//   font-family: 'Open Sans';
+//   font-style: normal;
+//   font-weight: 300;
+//   src: url('#{$font-primary-path}/OpenSans-Light.ttf') format('truetype');
+// }
+
+// @font-face {
+//   font-family: 'Open Sans';
+//   font-style: normal;
+//   font-weight: 600;
+//   src: url('#{$font-primary-path}/OpenSans-Semibold.ttf') format('truetype');
+// }
+
+// @font-face {
+//   font-family: 'Open Sans';
+//   font-style: italic;
+//   font-weight: 300;
+//   src: url('#{$font-primary-path}/OpenSans-LightItalic.ttf') format('truetype');
+// }
+
+// @font-face {
+//   font-family: 'Open Sans';
+//   font-style: italic;
+//   font-weight: 600;
+//   src: url('#{$font-primary-path}/OpenSans-SemiboldItalic.ttf') format('woff2');
+// }
