@@ -1,26 +1,25 @@
 <div class="post p-a-3 text-xs-center text-lg-left">
-	<div *ngIf="post">
+	<header class="post__header" *ngIf="post">
+		<nav class="post__pagination m-b-2" *ngIf="goPrev && goNext">
+			<span class="pagination__direction" title="{{goPrev.title.rendered}}" (click)="loadPost(goPrev.slug)">
+				<i class="icon-chevron-with-circle-left"></i>
+			</span>
+			<span class="pagination__direction" title="{{goNext.title.rendered}}" (click)="loadPost(goNext.slug)">
+				<i class="icon-chevron-with-circle-right"></i>
+			</span>
+			<span class="pagination__direction" title="Return to posts" [routerLink]="['Home']">
+				<i class="icon-close">×</i>
+			</span>
+		</nav>
 		<h2 class="post__title m-b-0 p-b-1" [innerHTML]="post.title.rendered"></h2>
-
 		<div class="post__meta text-muted p-b-2">
 			By Tom on {{ post.date }} <span *ngIf="post.tags">under</span>
 		</div>
-
 		<ul class="app-tags post__tags list-inline list-unstyled" *ngIf="post.tags">
 			<li class="tag__item list-inline-item" id="tag-{{tag.id}}" *ngFor="#tag of post.tags">
 				<button class="tag__btn btn btn-primary btn-sm" *ngIf="tag.id" (click)="loadTag(tag.slug)">{{tag.name}}</button>
 			</li>
 		</ul>
-
-		<div class="post__pagination" *ngIf="goPrev && goNext">
-			<span title="{{goPrev.title.rendered}}" (click)="loadPost(goPrev.slug)"><< <span class="visible-xs">Prev</span></span>
-			<span title="{{goNext.title.rendered}}" (click)="loadPost(goNext.slug)"><span class="visible-xs">Next >></span></span>
-		</div>
-	</div>
-
+	</header>
 	<div #postContent></div>
 </div>
-
-	
-
-

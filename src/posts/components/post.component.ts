@@ -1,6 +1,6 @@
 import {Component, DynamicComponentLoader, ElementRef} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
-import {Router, RouteParams} from 'angular2/router';
+import {ROUTER_DIRECTIVES, Router, RouteParams} from 'angular2/router';
 
 import {PostService} from '../../shared/services/postService';
 import {TagService} from '../../shared/services/tagService';
@@ -14,7 +14,7 @@ declare var moment: any;
   moduleId: module.id,
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
-  directives: [CORE_DIRECTIVES]
+  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 export class PostComponent {
 	slug: string;
@@ -89,5 +89,4 @@ export class PostComponent {
 	loadTag(slug: string) {
 		this._router.navigate(['Tag', { slug: slug }]);
 	}
-
 }

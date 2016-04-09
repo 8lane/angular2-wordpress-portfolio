@@ -1,4 +1,63 @@
 @import "../../_assets/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+.post__pagination {
+	font-size: $font-size-base;
+
+	.pagination__direction {
+		color: $gray-dark;
+		padding-left: 6px;
+		transition: 120ms;
+		cursor: pointer;
+
+		&:hover, &:focus, &:active {
+			color: $brand-primary;
+
+			.icon-close {
+				background-color: $brand-primary;
+			}
+		}
+
+		span, [class^="icon"] {
+			vertical-align: middle;
+		}
+	}
+}
+
+.icon-close {
+	background: #373A3C;
+	border-radius: 18px;
+	height: 18px;
+	width: 18px;
+	line-height: 12px;
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+	color: white;
+	transition: 120ms;
+}
+
+@include media-breakpoint-up(lg) {
+	.post__pagination {
+		margin-top: -7px;
+		float: right;
+		font-size: 28px;
+
+		.pagination__direction {
+			color: $gray-dark;
+		}
+	}
+
+	.icon-close {
+		border-radius: 28px;
+		height: 28px;
+		width: 28px;
+		line-height: 18px;
+		font-size: 22px;
+	}
+}
+
+
 
 .post__meta {
 	display: inline-block;
