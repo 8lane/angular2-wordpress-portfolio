@@ -24,11 +24,18 @@ export class TagComponent {
               private _postService: PostService) {
 
     this.slug = _routeParams.get('slug');
-
-    let filter = ['tag', this.slug];
-    this._postService.fetchAllPosts(filter).subscribe((e) => {
+    this._postService.pagedResults.posts = [];
+    this._postService.fetchAllPosts(['tag', this.slug]).subscribe((e) => {
       //this.gotPost = true;
     });
+  }
+
+  get posts() {
+    return this._postService.pagedResults.posts;
+  }
+
+  get numberOfResults() {
+    return this._postService.pagedResults.postsTotal;
   }
 
 }

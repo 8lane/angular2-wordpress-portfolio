@@ -1,8 +1,9 @@
-<div class="app__tracks" *ngIf="_postService.pagedResults.postsTotal > 0">
-  <header class="page__header">
-    <h1 class="header__title h2">{{_postService.pagedResults.postsTotal}} posts found</h1>
-  </header>
-  <div class="track__container col-md-12" *ngFor="#result of _postService.pagedResults.posts">
-    <app-posts [post]="result"></app-posts>
-  </div>
+<div class="app__posts p-a-2" *ngIf="numberOfResults > 0">
+	<div class="container-fluid">
+		<div class="row">
+		  <div class="col-sm-6 col-md-4" *ngFor="#result of posts">
+		    <app-posts [post]="result"></app-posts>
+		  </div>
+		</div>
+	</div>
 </div>

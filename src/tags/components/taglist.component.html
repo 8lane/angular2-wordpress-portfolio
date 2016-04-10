@@ -2,7 +2,7 @@
 	<h3 class="app-tags__title m-b-3 p-b-1">Filter</h3>
 	<ul class="list-unstyled list-inline" *ngIf="tagList">
 		<li class="tag__item list-inline-item">
-			<button class="tag__btn btn btn-primary btn-sm">All</button>
+			<button [routerLink]="['Home']" [class.tag__btn--active]="_location.path() == ''" class="tag__btn tag__btn--all btn btn-primary btn-sm">All</button>
 		</li>
 		<li class="tag__item list-inline-item" id="tag-{{tag.id}}" *ngFor="#tag of tagList">
 			<button class="tag__btn btn btn-primary btn-sm" (click)="loadTag(tag.slug)">{{tag.name}}</button>
