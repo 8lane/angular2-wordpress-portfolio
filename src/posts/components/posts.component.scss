@@ -1,0 +1,25 @@
+@import "../../_assets/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+.posts {
+	position: relative;
+	cursor: pointer;
+}
+
+.posts__title {
+	width: 100%;
+	position: absolute;
+	bottom: 7px;
+	margin: 0;
+	padding: 15px;
+	color: $gray;
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-xs;
+	text-transform: uppercase;
+	color: white;
+	background: rgba(black, 0.8);
+
+	.posts:hover & {
+		color: white;
+	}
+}
