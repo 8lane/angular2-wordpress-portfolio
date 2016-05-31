@@ -5,13 +5,32 @@ import 'rxjs/add/operator/map';
 
 import {Settings} from '../../settings';
 import {MyRequestOptions} from './myRequestOptions';
+import {PostService} from '../../shared/services/postService';
 
 @Injectable()
 export class TagService {
   tags: any[];
+  postCollection: any[];
+  pagedResults: PagedResult;
 
-  constructor(private _http: Http) {
+  constructor(private _http: Http, private _postService: PostService) {
     this.tags = [];
+    this.postCollection = []; /* stores the set of posts for the specified tag */
+    this.pagedResults = new PagedResult();
+  }
+
+  fetchPosts(filter: any = null) {
+    this._postService.fetchPostsWithFilter(filter).subscribe((posts: any) => {
+      this.postCollection = posts;
+      this.setPagedResult(1);
+      console.log('TAG CMP POSTS: ', this.postCollection);
+    });
+  }
+
+  setPagedResult(pageNumber: number) {
+    this.pagedResults.pageNumber = pageNumber;
+    this.pagedResults.posts = this.postCollection.slice((pageNumber - 1) * 25, pageNumber * 25);
+    this.pagedResults.postsTotal = this.postCollection.length;
   }
 
   fetchTagsCollection(include:any[] = []): Observable<void> {
@@ -37,4 +56,11 @@ export class TagService {
         console.log(error);
       });
   }
+}
+
+
+export class PagedResult {
+  posts: any[];
+  pageNumber: number;
+  postsTotal: number;
 }

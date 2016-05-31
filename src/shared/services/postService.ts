@@ -13,8 +13,8 @@ export class PostService {
   pagedResults: PagedResult;
 
   constructor(private _http: Http) {
-    this.postSingle = [];
-    this.postCollection = [];
+    this.postSingle = []; /* stores individual posts */
+    this.postCollection = []; /* stores the core set of posts for lifetime of app */
     this.pagedResults = new PagedResult();
   }
 
@@ -42,33 +42,80 @@ export class PostService {
       });
   }
 
-  fetchAllPosts(filter: any = null): Observable<void> {
-    var requestOptions = new MyRequestOptions();
+  setAppPosts(posts: any) {
+		this.postCollection = posts;
+		this.setPagedResult(1);
+  }
 
-    let filterQuery = filter ? `?filter[${filter[0]}]=${filter[1]}` : '';
+  fetchPosts(): Observable<void> {
+		let requestOptions = new MyRequestOptions();
 
-    var options = requestOptions.merge({
-      url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/' + filterQuery,
+    let options = requestOptions.merge({
+      url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/',
     });
 
-    return this._http.request(new Request(options))
-      .map((responseData) => {
-        let data = responseData.json();
-        let posts: any[] = [];
-        this.postCollection = [];
+    return this._http.request(new Request(options)).map((responseData) => {
+      let data = responseData.json();
 
-        if (data) {
-          data.forEach((d: any) => posts.push(Object.assign(d)));
-          this.postCollection = posts;
+      if (data) {
+				let posts: any = [];
+        data.forEach((d: any) => posts.push(Object.assign(d)));
+        return posts;
+      }
+    }, (error: any) => {
+      console.log(error);
+    });
+	}
 
-          console.log('POST COLLECTION: ', this.postCollection);
-        }
+  fetchPostsWithFilter(filter: any = null): Observable<void> {
+		let requestOptions = new MyRequestOptions();
 
-        this.setPagedResult(1);
-      }, (error: any) => {
-        console.log(error);
-      });
-  }
+		let filterQuery = filter ? `?filter[${filter[0]}]=${filter[1]}` : '';
+
+    let options = requestOptions.merge({
+			url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/' + filterQuery,
+    });
+
+    return this._http.request(new Request(options)).map((responseData) => {
+      let data = responseData.json();
+
+      if (data) {
+				let posts: any = [];
+        data.forEach((d: any) => posts.push(Object.assign(d)));
+        return posts;
+      }
+    }, (error: any) => {
+      console.log(error);
+    });
+	}
+
+  // fetchAllPosts(filter: any = null): Observable<void> {
+  //   var requestOptions = new MyRequestOptions();
+
+  //   let filterQuery = filter ? `?filter[${filter[0]}]=${filter[1]}` : '';
+
+  //   var options = requestOptions.merge({
+  //     url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/' + filterQuery,
+  //   });
+
+    // return this._http.request(new Request(options))
+    //   .map((responseData) => {
+    //     let data = responseData.json();
+    //     let posts: any[] = [];
+    //     this.postCollection = [];
+
+    //     if (data) {
+    //       data.forEach((d: any) => posts.push(Object.assign(d)));
+    //       this.postCollection = posts;
+
+    //       console.log('POST COLLECTION: ', this.postCollection);
+    //     }
+
+    //     this.setPagedResult(1);
+    //   }, (error: any) => {
+    //     console.log(error);
+    //   });
+  // }
 
   setPagedResult(pageNumber: number) {
     this.pagedResults.pageNumber = pageNumber;

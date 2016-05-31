@@ -14,14 +14,13 @@ import {PostsComponent} from '../../posts/components/posts.component';
   directives: [SpinnerDirective, FORM_DIRECTIVES, CORE_DIRECTIVES, PostsComponent]
 })
 export class HomeComponent {
-  gotPosts: boolean = false;
   isLoading: boolean = false;
 
   constructor(private _postService: PostService) {
 
     if(!this.posts) {
-      this._postService.fetchAllPosts().subscribe(() => {
-        this.gotPosts = true;
+      this._postService.fetchPosts().subscribe((posts) => {
+        this._postService.setAppPosts(posts);
       });
     }
 

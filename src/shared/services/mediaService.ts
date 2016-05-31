@@ -9,8 +9,27 @@ import {MyRequestOptions} from './myRequestOptions';
 @Injectable()
 export class MediaService {
   media: any;
+  mediaStore: any = {}; // @todo: make into interface with ID, URL, Status etc
 
   constructor(private _http: Http) {}
+
+  getMedia(id: number) {
+
+    // this.mediaStore.push(id);
+
+   // this.mediaStore[id] = id;
+    console.log('media store: ', this.mediaStore);
+
+    // if(this.mediaStore[id]) {
+    //   console.log('has own prop!');
+    //   return this.mediaStore[id];
+    // } else {
+    //   return this.fetchMedia(id).subscribe((data) => {
+    //     this.mediaStore[id] = data;
+    //     console.log('httpd for data!', this.mediaStore);
+    //   });
+    // }
+  }
 
   fetchMedia(id: number): Observable<void> {
     var requestOptions = new MyRequestOptions();

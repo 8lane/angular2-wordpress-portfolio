@@ -1,6 +1,7 @@
 import {Component, DynamicComponentLoader, ElementRef} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {ROUTER_DIRECTIVES, Router, RouteParams} from 'angular2/router';
+import {EventStore} from '../../shared/services/eventStore';
 
 import {PostService} from '../../shared/services/postService';
 import {TagService} from '../../shared/services/tagService';
@@ -43,9 +44,7 @@ export class PostComponent {
 				this.post.tags = tags;
 			});
 
-			this._postService.fetchAllPosts().subscribe(() => {
-				this.setupPagination(this._postService.postCollection);
-			});
+			this.setupPagination(this._postService.postCollection);
 
 			let template = `${this.post.content.rendered}`;
 			let directives = [CORE_DIRECTIVES, MediaComponent, LazyLoadDirective];
@@ -61,8 +60,12 @@ export class PostComponent {
 		})
 		class FakeComponent {
 			directiveTest: boolean;
+			constructor(private _eventStore: EventStore) {}
 			ngOnInit() {
 				this.directiveTest = false;
+			}
+			loadImg(img: string) {
+				this._eventStore.lightbox.emit(img);
 			}
 		};
 		return FakeComponent;
