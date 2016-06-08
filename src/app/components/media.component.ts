@@ -20,11 +20,16 @@ export class MediaComponent {
   }
 
   ngOnInit() {
-    if (typeof this.id !== 'undefined' && this.id) {
-      this._mediaService.fetchMedia(this.id).subscribe((data) => {
-        this.media = data;
-      });
-    }
+    //if (typeof this.id !== 'undefined' && this.id) {
+    //}
+  }
+
+  ngAfterViewInit() {
+    this._mediaService.fetchMedia(this.id).subscribe((data) => {
+      this.media = data;
+      console.log('got media1', this.media);
+
+    });
   }
 
 }

@@ -1,5 +1,5 @@
 <div *ngIf="media">
 	<div class="media defer-image image-ratio:4x3 image-fill">
-		<div [attr.data-src]="media.source_url" [attr.data-alt]="media.title.rendered"></div>
+		<img [attr.src]="media.source_url" [attr.alt]="media.title.rendered" />
 	</div>
 </div>

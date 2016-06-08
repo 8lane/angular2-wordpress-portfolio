@@ -6,7 +6,6 @@ import {EventStore} from '../../shared/services/eventStore';
 import {PostService} from '../../shared/services/postService';
 import {TagService} from '../../shared/services/tagService';
 import {MediaComponent} from '../../app/components/media.component';
-import {LazyLoadDirective} from '../../shared/directives/lazyload';
 
 declare var moment: any;
 
@@ -47,7 +46,7 @@ export class PostComponent {
 			this.setupPagination(this._postService.postCollection);
 
 			let template = `${this.post.content.rendered}`;
-			let directives = [CORE_DIRECTIVES, MediaComponent, LazyLoadDirective];
+			let directives = [CORE_DIRECTIVES, MediaComponent];
 			this.dcl.loadIntoLocation(this.buildComponent(template, directives), this.elementRef, 'postContent');
 		});
 	}
