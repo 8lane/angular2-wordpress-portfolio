@@ -23,7 +23,7 @@ import {MediaService} from '../../shared/services/mediaService';
   directives: [ROUTER_DIRECTIVES, NavbarComponent, TagListComponent, LightboxComponent]
 })
 @RouteConfig([
-  { path: '/',      name: 'Home',  component: HomeComponent  },
+  { path: '/', name: 'Home',  component: HomeComponent },
   { path: '/portfolio/:slug', component: PostComponent, name: 'Post' },
   { path: '/tags/:slug', component: TagComponent, name: 'Tag' },
 ])
@@ -32,7 +32,7 @@ export class AppComponent {
   showLightbox: boolean = false;
   lightboxImg: string;
 
-  constructor(private _appService: AppService) {
+  constructor(private _appService: AppService, private _postService: PostService) {
 		this.appInfo = <any> false;
 
 		this._appService.fetchAppData().subscribe(() => {
@@ -40,4 +40,19 @@ export class AppComponent {
       this.appInfo.description = this.appInfo.description + ` Creator of <a target="_blank" href="http://ipsthemes.com">IPS Themes</a>`;
 		});
 	}
+
+  get posts() {
+    return this._postService.postCollection;
+  }
+
+  get gotPosts() {
+    return this.posts.length;
+  }
+
+  ngOnInit() {
+    console.log('APP INIT');
+    if (!this.gotPosts) {
+      this._postService.fetchPosts().subscribe();
+    }
+  }
 }

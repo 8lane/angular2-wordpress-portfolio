@@ -3,9 +3,9 @@ import {CORE_DIRECTIVES} from 'angular2/common';
 import {ROUTER_DIRECTIVES, Router, RouteParams} from 'angular2/router';
 import {EventStore} from '../../shared/services/eventStore';
 
+import {MediaComponent} from '../../app/components/media.component';
 import {PostService} from '../../shared/services/postService';
 import {TagService} from '../../shared/services/tagService';
-import {MediaComponent} from '../../app/components/media.component';
 
 declare var moment: any;
 
@@ -34,7 +34,7 @@ export class PostComponent {
 		private _tagService: TagService) {
 		this.slug = _routeParams.get('slug');
 
-		this._postService.fetchSinglePost(this.slug).subscribe((e) => {
+		this._postService.fetchPost(this.slug).subscribe((e) => {
 			this.post = this._postService.postSingle;
 			this.post.date = moment(this.post.date).format('MMMM Do YYYY');
 			this.gotPost = true;
@@ -72,7 +72,6 @@ export class PostComponent {
 
 	setupPagination(posts: any[]) {
 		let self = this;
-
 		posts.forEach(function(item, key) {
 			if (item.id === self.post.id) {
 				let prev = posts[key - 1];
@@ -81,7 +80,6 @@ export class PostComponent {
 				self.goNext = typeof (next) !== 'undefined' ? next : posts[0]; // Go to next item, if last item, skip to start
 			}
 		});
-
 	}
 
 	loadPost(slug: string) {

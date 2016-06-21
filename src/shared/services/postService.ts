@@ -10,17 +10,16 @@ import {MyRequestOptions} from './myRequestOptions';
 export class PostService {
   postSingle: any[];
   postCollection: any[];
-  pagedResults: PagedResult;
 
   constructor(private _http: Http) {
     this.postSingle = []; /* stores individual posts */
     this.postCollection = []; /* stores the core set of posts for lifetime of app */
-    this.pagedResults = new PagedResult();
   }
 
-  fetchSinglePost(slug: string): Observable<void> {
+  fetchPost(slug: string): Observable<void> {
     var requestOptions = new MyRequestOptions();
     var options = requestOptions.merge({
+      // @todo requestOptions() has better param handling. Refactor!
       url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/?slug=' + slug + '',
     });
 
@@ -35,16 +34,10 @@ export class PostService {
           this.postSingle = post[0];
           console.log('POST SINGLE: ', this.postSingle);
         }
-
-        // this.setPagedResult(1);
       }, (error: any) => {
-        console.log(error);
+        // @todo handle error
+        console.warn('ERROR IN GET SINGLE POST HTTP REQUEST ', error);
       });
-  }
-
-  setAppPosts(posts: any) {
-		this.postCollection = posts;
-		this.setPagedResult(1);
   }
 
   fetchPosts(): Observable<void> {
@@ -60,12 +53,19 @@ export class PostService {
       if (data) {
 				let posts: any = [];
         data.forEach((d: any) => posts.push(Object.assign(d)));
+        this.postCollection = posts; /* store our returned posts from the API in a postCollection array */
         return posts;
+      } else {
+        // @todo handle error
+        console.warn('ERROR IN GET POSTS HTTP REQUEST');
       }
     }, (error: any) => {
-      console.log(error);
+      // @todo handle error
+      console.warn('ERROR IN GET POSTS HTTP REQUEST ', error);
     });
 	}
+
+
 
   fetchPostsWithFilter(filter: any = null): Observable<void> {
 		let requestOptions = new MyRequestOptions();
@@ -88,44 +88,5 @@ export class PostService {
       console.log(error);
     });
 	}
-
-  // fetchAllPosts(filter: any = null): Observable<void> {
-  //   var requestOptions = new MyRequestOptions();
-
-  //   let filterQuery = filter ? `?filter[${filter[0]}]=${filter[1]}` : '';
-
-  //   var options = requestOptions.merge({
-  //     url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/' + filterQuery,
-  //   });
-
-    // return this._http.request(new Request(options))
-    //   .map((responseData) => {
-    //     let data = responseData.json();
-    //     let posts: any[] = [];
-    //     this.postCollection = [];
-
-    //     if (data) {
-    //       data.forEach((d: any) => posts.push(Object.assign(d)));
-    //       this.postCollection = posts;
-
-    //       console.log('POST COLLECTION: ', this.postCollection);
-    //     }
-
-    //     this.setPagedResult(1);
-    //   }, (error: any) => {
-    //     console.log(error);
-    //   });
-  // }
-
-  setPagedResult(pageNumber: number) {
-    this.pagedResults.pageNumber = pageNumber;
-    this.pagedResults.posts = this.postCollection.slice((pageNumber - 1) * 25, pageNumber * 25);
-    this.pagedResults.postsTotal = this.postCollection.length;
-  }
 }
 
-export class PagedResult {
-  posts: any[];
-  pageNumber: number;
-  postsTotal: number;
-}
