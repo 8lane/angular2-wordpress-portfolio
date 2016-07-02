@@ -120,7 +120,7 @@ export class SeedConfig {
    * `index.html`.
    * @type {string}
    */
-  APP_TITLE = 'Welcome to angular2-seed!';
+  APP_TITLE = 'Tom\'s Portfolio!';
 
   /**
    * The base folder of the applications source files.
@@ -244,7 +244,7 @@ export class SeedConfig {
    * The default value is false. Override with the '--scss' flag.
    * @type {boolean}
    */
-  ENABLE_SCSS = argv['scss'] || false;
+  ENABLE_SCSS = argv['scss'] || true;
 
   /**
    * The list of NPM dependcies to be injected in the `index.html`.
