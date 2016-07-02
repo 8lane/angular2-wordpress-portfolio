@@ -29,9 +29,6 @@ export class AppService {
           this.appInfo = data;
           console.log('APP DATA: ', data);
         }
-
-      }, (error: any) => {
-        console.log(error);
       });
   }
 }

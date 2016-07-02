@@ -1,11 +1,13 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
+import {Router} from 'angular2/router';
 
 import {EventStore} from '../../shared/misc/eventStore';
 import {HomeComponent} from '../../home/components/home.component';
 import {PostComponent} from '../../shared/components/posts/post.component';
 import {TagComponent} from '../../shared/components/tags/tag.component';
+import {ErrorComponent} from '../../shared/components/error/error.component';
 import {TagListComponent} from '../../shared/components/tags/taglist.component';
 import {AppService} from '../../shared/services/app.service';
 import {PostService} from '../../shared/services/post.service';
@@ -24,11 +26,14 @@ import {MediaService} from '../../shared/services/media.service';
   { path: '/', name: 'Home',  component: HomeComponent },
   { path: '/portfolio/:slug', component: PostComponent, name: 'Post' },
   { path: '/tags/:slug', component: TagComponent, name: 'Tag' },
+  { path: '/oops', name: 'Error', component: ErrorComponent },
 ])
 export class AppComponent {
 	appInfo: any;
 
-  constructor(private _appService: AppService, private _postService: PostService) {
+  constructor(private _appService: AppService,
+              private _postService: PostService,
+              private _router: Router) {
 		this.appInfo = <any> false;
 	}
 
@@ -41,6 +46,8 @@ export class AppComponent {
     this._appService.fetchAppData().subscribe(() => {
       this.appInfo = this._appService.appInfo;
       this.appInfo.description = this.appInfo.description + ` Creator of <a target="_blank" href="http://ipsthemes.com">IPS Themes</a>`;
+    }, (error) => {
+      this._router.navigate(['Error', { response: error }]);
     });
 
     /* Fetch core posts for our app */
