@@ -6,12 +6,16 @@ import 'rxjs/add/operator/map';
 import {Settings} from '../../settings';
 import {MyRequestOptions} from './myRequestOptions';
 
+declare var moment: any;
+
 @Injectable()
 export class PostService {
   postSingle: any[];
   postCollection: any[];
+  postCategories: any[];
 
   constructor(private _http: Http) {
+    this.postCategories = []; /* list of posts by year */
     this.postSingle = []; /* stores individual posts */
     this.postCollection = []; /* stores the core set of posts for lifetime of app */
   }
@@ -54,6 +58,7 @@ export class PostService {
 				let posts: any = [];
         data.forEach((d: any) => posts.push(Object.assign(d)));
         this.postCollection = posts; /* store our returned posts from the API in a postCollection array */
+        this.setupCategoriesByYear(posts); /* create a new restructured collection of posts organised by year */
         return posts;
       } else {
         // @todo handle error
@@ -64,8 +69,6 @@ export class PostService {
       console.warn('ERROR IN GET POSTS HTTP REQUEST ', error);
     });
 	}
-
-
 
   fetchPostsWithFilter(filter: any = null): Observable<void> {
 		let requestOptions = new MyRequestOptions();
@@ -88,5 +91,22 @@ export class PostService {
       console.log(error);
     });
 	}
+
+  setupCategoriesByYear(posts: Array<any>) {
+    posts.forEach((post: any, idx: number) => {
+      let year = moment(post.date).format('YYYY');
+
+      /* Check if the year already exists within the array, if not, add it and push the post to it */
+      if (this.postCategories.filter((e) => { return e.hasOwnProperty(year); }).length === 0) {
+        this.postCategories.push({ [year]: [post] });
+      } else { // Year already exists, push the post 
+        this.postCategories.forEach((cat, idx) => {
+          if (cat.hasOwnProperty(year)) {
+            cat[year].push(post);
+          }
+        });
+      }
+    });
+  }
 }
 

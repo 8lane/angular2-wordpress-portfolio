@@ -8,7 +8,6 @@ import {HomeComponent} from '../../home/components/home.component';
 import {PostComponent} from '../../posts/components/post.component';
 import {TagComponent} from '../../tags/components/tag.component';
 import {TagListComponent} from '../../tags/components/taglist.component';
-import {LightboxComponent} from '../../app/components/lightbox.component';
 import {AppService} from '../../shared/services/appService';
 import {PostService} from '../../shared/services/postService';
 import {TagService} from '../../shared/services/tagService';
@@ -20,7 +19,7 @@ import {MediaService} from '../../shared/services/mediaService';
   moduleId: module.id,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  directives: [ROUTER_DIRECTIVES, NavbarComponent, TagListComponent, LightboxComponent]
+  directives: [ROUTER_DIRECTIVES, NavbarComponent, TagListComponent]
 })
 @RouteConfig([
   { path: '/', name: 'Home',  component: HomeComponent },
@@ -29,30 +28,23 @@ import {MediaService} from '../../shared/services/mediaService';
 ])
 export class AppComponent {
 	appInfo: any;
-  showLightbox: boolean = false;
-  lightboxImg: string;
 
   constructor(private _appService: AppService, private _postService: PostService) {
 		this.appInfo = <any> false;
-
-		this._appService.fetchAppData().subscribe(() => {
-			this.appInfo = this._appService.appInfo;
-      this.appInfo.description = this.appInfo.description + ` Creator of <a target="_blank" href="http://ipsthemes.com">IPS Themes</a>`;
-		});
 	}
 
   get posts() {
     return this._postService.postCollection;
   }
 
-  get gotPosts() {
-    return this.posts.length;
-  }
-
   ngOnInit() {
-    console.log('APP INIT');
-    if (!this.gotPosts) {
-      this._postService.fetchPosts().subscribe();
-    }
+    /* Fetch and set core app data */
+    this._appService.fetchAppData().subscribe(() => {
+      this.appInfo = this._appService.appInfo;
+      this.appInfo.description = this.appInfo.description + ` Creator of <a target="_blank" href="http://ipsthemes.com">IPS Themes</a>`;
+    });
+
+    /* Fetch core posts for our app */
+    this._postService.fetchPosts().subscribe();
   }
 }

@@ -1,9 +1,19 @@
 <div class="app__posts p-a-2" *ngIf="gotPosts">
+
 	<div class="container-fluid">
 		<div class="row">
-		  <div class="col-sm-6 col-md-4" *ngFor="#post of posts">
-		    <app-posts [post]="post"></app-posts>
-		  </div>
+
+			<div *ngFor="#category of categories">
+				<div *ngFor="#year of category | mapToIterable">
+			  		<h2>{{year.key}}</h2>
+			  		<div class="row">
+						<div class="col-sm-6 col-md-4" *ngFor="#post of year.val">
+							<app-posts [post]="post"></app-posts>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 </div>

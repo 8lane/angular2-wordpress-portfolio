@@ -1,5 +1,5 @@
 <div class="post p-a-3 text-xs-center text-lg-left">
-	<header class="post__header" *ngIf="post">
+	<header class="post__header" *ngIf="post && postReady">
 		<nav class="post__pagination m-b-2" *ngIf="goPrev && goNext">
 			<span class="pagination__direction" title="{{goPrev.title.rendered}}" (click)="loadPost(goPrev.slug)">
 				<i class="icon-chevron-with-circle-left"></i>
@@ -23,3 +23,5 @@
 	</header>
 	<div #postContent></div>
 </div>
+
+<div *ngIf="!postReady">loading!!!!</div>

@@ -19,6 +19,7 @@ declare var moment: any;
 export class PostComponent {
 	slug: string;
 	post: any;
+	postReady: boolean = false;
 	gotPost: boolean = false;
 	goPrev: any;
 	goNext: any;
@@ -31,13 +32,16 @@ export class PostComponent {
 		private _router: Router,
 		private _dcl: DynamicComponentLoader,
 		private _postService: PostService,
-		private _tagService: TagService) {
+		private _tagService: TagService,
+		private _eventStore: EventStore) {
 		this.slug = _routeParams.get('slug');
+		this.postReady = false;
+	}
 
+	ngOnInit() {
 		this._postService.fetchPost(this.slug).subscribe((e) => {
 			this.post = this._postService.postSingle;
 			this.post.date = moment(this.post.date).format('MMMM Do YYYY');
-			this.gotPost = true;
 
 			this._tagService.fetchTagsCollection(this.post.tags).subscribe((tags) => {
 				this.post.tags = tags;
@@ -47,24 +51,29 @@ export class PostComponent {
 
 			let template = `${this.post.content.rendered}`;
 			let directives = [CORE_DIRECTIVES, MediaComponent];
-			this.dcl.loadIntoLocation(this.buildComponent(template, directives), this.elementRef, 'postContent');
+			this.dcl.loadIntoLocation(this.buildComponent(template, directives, this.post.id), this.elementRef, 'postContent');
+		});
+
+		this._eventStore.postContentReady.subscribe((id: any) => {
+			if (this.post.id === id) {
+				// @todo The component instance isn't being unloaded for some reason.
+				this.postReady = true;
+			}
 		});
 	}
 
 	/* Hacky way to do the equivalent of NG1's $compile (http://stackoverflow.com/a/34786039/1010691) */
-	buildComponent(template: any, directives: any) {
-		@Component({
-			selector: 'fake',
-			template, directives
-		})
+	buildComponent(template: any, directives: any, postId: number) {
+		@Component({ selector: 'fake', template, directives })
 		class FakeComponent {
 			directiveTest: boolean;
 			constructor(private _eventStore: EventStore) {}
-			ngOnInit() {
+			ngAfterViewInit() {
 				this.directiveTest = false;
+				this._eventStore.postContentReady.emit(postId);
 			}
-			loadImg(img: string) {
-				this._eventStore.lightbox.emit(img);
+			ngOnDestroy() {
+				postId = null;
 			}
 		};
 		return FakeComponent;
