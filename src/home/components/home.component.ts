@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
+import {PostsComponent} from '../../shared/components/posts/posts.component';
+import {PostService} from '../../shared/services/post.service';
 import {MapToIterable} from '../../shared/pipes/mapToIterable.pipe';
-import {PostsComponent} from '../../posts/components/posts.component';
-import {PostService} from '../../shared/services/postService';
 
 @Component({
   selector: 'sd-home',

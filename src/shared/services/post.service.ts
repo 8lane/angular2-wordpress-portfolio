@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
 import {Settings} from '../../settings';
-import {MyRequestOptions} from './myRequestOptions';
+import {MyRequestOptions} from '../misc/myRequestOptions';
 
 declare var moment: any;
 

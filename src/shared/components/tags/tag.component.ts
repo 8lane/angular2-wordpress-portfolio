@@ -2,10 +2,10 @@ import {Component} from 'angular2/core';
 import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
-import {EventStore} from '../../shared/services/eventStore';
-import {PostsComponent} from '../../posts/components/posts.component';
-import {TagService} from '../../shared/services/tagService';
-import {PostService} from '../../shared/services/postService';
+import {PostsComponent} from '../posts/posts.component';
+import {TagService} from '../../services/tag.service';
+import {PostService} from '../../services/post.service';
+import {EventStore} from '../../misc/eventStore';
 
 @Component({
   selector: 'app-tags',
@@ -24,7 +24,6 @@ export class TagComponent {
               private _postService: PostService) {
 
     this.slug = _routeParams.get('slug');
-    //this._postService.pagedResults.posts = [];
     this._tagService.fetchPosts(['tag', this.slug]);
   }
 

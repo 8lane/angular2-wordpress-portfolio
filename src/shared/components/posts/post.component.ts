@@ -1,11 +1,11 @@
 import {Component, DynamicComponentLoader, ElementRef} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {ROUTER_DIRECTIVES, Router, RouteParams} from 'angular2/router';
-import {EventStore} from '../../shared/services/eventStore';
 
-import {MediaComponent} from '../../app/components/media.component';
-import {PostService} from '../../shared/services/postService';
-import {TagService} from '../../shared/services/tagService';
+import {MediaComponent} from '../media/media.component';
+import {PostService} from '../../services/post.service';
+import {TagService} from '../../services/tag.service';
+import {EventStore} from '../../misc/eventStore';
 
 declare var moment: any;
 

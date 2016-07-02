@@ -2,7 +2,7 @@ import {Component, Input} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
-import {MediaService} from '../../shared/services/mediaService';
+import {MediaService} from '../../services/media.service';
 
 @Component({
   selector: 'app-media',

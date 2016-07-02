@@ -2,8 +2,8 @@ import {Component} from 'angular2/core';
 import {Router, ROUTER_DIRECTIVES, Location} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
-import {EventStore} from '../../shared/services/eventStore';
-import {TagService} from '../../shared/services/tagService';
+import {TagService} from '../../services/tag.service';
+import {EventStore} from '../../misc/eventStore';
 
 @Component({
   selector: 'app-tags',
@@ -23,8 +23,6 @@ export class TagListComponent {
 		this._tagService.fetchTagsCollection().subscribe(() => {
 			this.tagList = this._tagService.tags;
 		});
-
-    console.log('ROUTER: ', this._location.path());
 	}
 
   loadTag(slug: string) {

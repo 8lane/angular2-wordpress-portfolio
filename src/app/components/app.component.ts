@@ -2,16 +2,15 @@ import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
-import {EventStore} from '../../shared/services/eventStore';
-import {NavbarComponent} from './navbar.component';
+import {EventStore} from '../../shared/misc/eventStore';
 import {HomeComponent} from '../../home/components/home.component';
-import {PostComponent} from '../../posts/components/post.component';
-import {TagComponent} from '../../tags/components/tag.component';
-import {TagListComponent} from '../../tags/components/taglist.component';
-import {AppService} from '../../shared/services/appService';
-import {PostService} from '../../shared/services/postService';
-import {TagService} from '../../shared/services/tagService';
-import {MediaService} from '../../shared/services/mediaService';
+import {PostComponent} from '../../shared/components/posts/post.component';
+import {TagComponent} from '../../shared/components/tags/tag.component';
+import {TagListComponent} from '../../shared/components/tags/taglist.component';
+import {AppService} from '../../shared/services/app.service';
+import {PostService} from '../../shared/services/post.service';
+import {TagService} from '../../shared/services/tag.service';
+import {MediaService} from '../../shared/services/media.service';
 
 @Component({
   selector: 'sd-app',
@@ -19,7 +18,7 @@ import {MediaService} from '../../shared/services/mediaService';
   moduleId: module.id,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  directives: [ROUTER_DIRECTIVES, NavbarComponent, TagListComponent]
+  directives: [ROUTER_DIRECTIVES, TagListComponent]
 })
 @RouteConfig([
   { path: '/', name: 'Home',  component: HomeComponent },

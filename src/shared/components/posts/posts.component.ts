@@ -2,7 +2,7 @@ import {Component, Input} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {Router} from 'angular2/router';
 
-import {MediaComponent} from '../../app/components/media.component';
+import {MediaComponent} from '../media/media.component';
 
 @Component({
   selector: 'app-posts',

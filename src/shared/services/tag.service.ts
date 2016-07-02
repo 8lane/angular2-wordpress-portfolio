@@ -4,8 +4,8 @@ import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
 import {Settings} from '../../settings';
-import {MyRequestOptions} from './myRequestOptions';
-import {PostService} from '../../shared/services/postService';
+import {PostService} from '../../shared/services/post.service';
+import {MyRequestOptions} from '../misc/myRequestOptions';
 
 @Injectable()
 export class TagService {
