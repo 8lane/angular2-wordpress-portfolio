@@ -14,9 +14,6 @@ import {MapToIterable} from '../../shared/pipes/mapToIterable.pipe';
 })
 
 export class HomeComponent {
-  catYears: any = {};
-  gotCategories: boolean = false;
-
   constructor(private _postService: PostService) {}
 
   get posts() {
@@ -27,12 +24,11 @@ export class HomeComponent {
     return this._postService.postCategories;
   }
 
- get gotPosts() {
-    return this.posts.length;
+ gotPosts() {
+  return this.posts.length;
  }
 
- // get gotCategories() {
-    //console.log(this.categories);
-    //return this.categories;
- // }
+ gotCategories() {
+   return this.categories.length;
+ }
 }

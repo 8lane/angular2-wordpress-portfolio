@@ -93,7 +93,7 @@ export class PostService {
 	}
 
   setupCategoriesByYear(posts: Array<any>) {
-    posts.forEach((post: any, idx: number) => {
+    posts.forEach((post: any) => {
       let year = moment(post.date).format('YYYY');
 
       /* Check if the year already exists within the array, if not, add it and push the post to it */
