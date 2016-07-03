@@ -21,7 +21,7 @@
 			</li>
 		</ul>
 	</header>
-	<div #postContent></div>
+	<div *ngIf="post && postReady" [innerHtml]="post.content.rendered"></div>
 </div>
 
 <div *ngIf="!postReady">loading!!!!</div>
