@@ -23,6 +23,13 @@ export class ProjectConfig extends SeedConfig {
 
     this.NPM_DEPENDENCIES = seedDependencies.concat(additional_deps);
 
+    // ANW
+    this.APP_ASSETS = [
+      { src: `${this.ASSETS_SRC}/main.scss`, inject: true },
+    ];
+
+    this.CSS_PROD_BUNDLE = 'main.css';
+
     /* Add to or override NPM module configurations: */
     //this.mergeObject( this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false } );
 

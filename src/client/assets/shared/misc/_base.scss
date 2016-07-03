@@ -1,0 +1,18 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(xs) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 14px;
+  }
+}
