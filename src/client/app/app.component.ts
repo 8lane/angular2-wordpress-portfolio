@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { HTTP_PROVIDERS } from '@angular/http';
 
-import { Config, NameListService, NavbarComponent, ToolbarComponent } from './shared/index';
+import { Config } from './shared/index';
 
 import {EventStore} from './shared/misc';
 import {ErrorComponent} from './shared/components';
@@ -18,9 +18,9 @@ import {TagService} from './shared/services';
 @Component({
   moduleId: module.id,
   selector: 'tc-app',
-  viewProviders: [NameListService, HTTP_PROVIDERS, EventStore, AppService, PostService, TagService],
+  viewProviders: [HTTP_PROVIDERS, EventStore, AppService, PostService, TagService],
   templateUrl: 'app.component.html',
-  directives: [ROUTER_DIRECTIVES, NavbarComponent, ToolbarComponent, ErrorComponent, PostComponent]
+  directives: [ROUTER_DIRECTIVES, ErrorComponent, PostComponent]
 })
 export class AppComponent {
 	appInfo: any;
