@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
-import {CORE_DIRECTIVES} from '@angular/common';
-import {ROUTER_DIRECTIVES, Router, ActivatedRoute} from '@angular/router';
+import { Component } from '@angular/core';
+import { CORE_DIRECTIVES } from '@angular/common';
+import { ROUTER_DIRECTIVES, Router, ActivatedRoute } from '@angular/router';
 
 // import {MediaComponent} from '../media/media.component';
-import {PostService} from '../../services/post.service';
-// import {TagService} from '../../services/tag.service';
-import {EventStore} from '../../misc/eventStore';
+import { PostService } from '../../services/post.service';
+import { TagService } from '../../services/tag.service';
+import { EventStore } from '../../misc/eventStore';
 
 declare var moment: any;
 
@@ -34,7 +34,7 @@ export class PostComponent {
 		private _router: Router,
 		//private _dcl: DynamicComponentLoader,
 		private _postService: PostService,
-		// private _tagService: TagService,
+		private _tagService: TagService,
 		private _eventStore: EventStore) {
 	}
 
@@ -48,9 +48,9 @@ export class PostComponent {
 				this.post = this._postService.postSingle;
 				this.post.date = moment(this.post.date).format('MMMM Do YYYY');
 
-				// this._tagService.fetchTagsCollection(this.post.tags).subscribe((tags) => {
-				// 	this.post.tags = tags;
-				// });
+				this._tagService.fetchTagsCollection(this.post.tags).subscribe((tags) => {
+					this.post.tags = tags;
+				});
 
 				this.setupPagination(this._postService.postCollection);
 
@@ -100,10 +100,10 @@ export class PostComponent {
 	}
 
 	loadPost(slug: string) {
-		this._router.navigate(['/portfolio', slug ]);
+		this._router.navigate(['/portfolio', slug]);
 	}
 
 	loadTag(slug: string) {
-		this._router.navigate(['Tag', { slug: slug }]);
+		this._router.navigate(['/tags', slug]);
 	}
 }

@@ -9,6 +9,7 @@ import {ErrorComponent} from './shared/components';
 import {PostComponent} from './shared/components';
 import {AppService} from './shared/services';
 import {PostService} from './shared/services';
+import {TagService} from './shared/services';
 
 /**
  * This class represents the main application component. Within the @Routes annotation is the configuration of the
@@ -17,7 +18,7 @@ import {PostService} from './shared/services';
 @Component({
   moduleId: module.id,
   selector: 'tc-app',
-  viewProviders: [NameListService, HTTP_PROVIDERS, EventStore, AppService, PostService],
+  viewProviders: [NameListService, HTTP_PROVIDERS, EventStore, AppService, PostService, TagService],
   templateUrl: 'app.component.html',
   directives: [ROUTER_DIRECTIVES, NavbarComponent, ToolbarComponent, ErrorComponent, PostComponent]
 })

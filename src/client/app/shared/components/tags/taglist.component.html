@@ -1,0 +1,11 @@
+<section class="app-tags m-t-3 p-y-3 p-x-3 hidden-md-down">
+	<h3 class="app-tags__title m-b-3 p-b-1">Filter</h3>
+	<ul class="list-unstyled list-inline" *ngIf="tagList">
+		<li class="tag__item list-inline-item">
+			<button [routerLink]="['Home']" [class.tag__btn--active]="_location.path() == ''" class="tag__btn tag__btn--all btn btn-primary btn-sm">All</button>
+		</li>
+		<li class="tag__item list-inline-item" id="tag-{{tag.id}}" *ngFor="#tag of tagList">
+			<button class="tag__btn btn btn-primary btn-sm" (click)="loadTag(tag.slug)">{{tag.name}}</button>
+		</li>
+	</ul>
+</section>

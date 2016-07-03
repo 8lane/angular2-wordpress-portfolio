@@ -1,11 +1,11 @@
-import {Injectable} from 'angular2/core';
-import {Http, Request} from 'angular2/http';
+import {Injectable} from '@angular/core';
+import {Http, Request} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
-import {Settings} from '../../settings';
-import {PostService} from '../../shared/services/post.service';
-import {MyRequestOptions} from '../misc/myRequestOptions';
+import {Settings} from '../../../settings';
+import {PostService} from '../../shared/services';
+import {MyRequestOptions} from '../misc';
 
 @Injectable()
 export class TagService {
