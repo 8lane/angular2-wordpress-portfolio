@@ -1,0 +1,27 @@
+<div class="post p-a-3 text-xs-center text-lg-left">
+	<header class="post__header" *ngIf="post && postReady">
+		<nav class="post__pagination m-b-2" *ngIf="goPrev && goNext">
+			<span class="pagination__direction" title="{{goPrev.title.rendered}}" (click)="loadPost(goPrev.slug)">
+				<i class="icon-chevron-with-circle-left"></i> prev
+			</span>
+			<span class="pagination__direction" title="{{goNext.title.rendered}}" (click)="loadPost(goNext.slug)">
+				<i class="icon-chevron-with-circle-right"></i> next
+			</span>
+			<a class="pagination__direction" title="Return to posts" [routerLink]="['/']">
+				<i class="icon-close">×</i>
+			</a>
+		</nav>
+		<h2 class="post__title m-b-0 p-b-1" [innerHTML]="post.title.rendered"></h2>
+		<div class="post__meta text-muted p-b-2">
+			By Tom on {{ post.date }} <span *ngIf="post.tags">under</span>
+		</div>
+		<ul class="app-tags post__tags list-inline list-unstyled" *ngIf="post.tags">
+			<li class="tag__item list-inline-item" id="tag-{{tag.id}}" *ngFor="#tag of post.tags">
+				<button class="tag__btn btn btn-primary btn-sm" *ngIf="tag.id" (click)="loadTag(tag.slug)">{{tag.name}}</button>
+			</li>
+		</ul>
+	</header>
+	<div #postContent></div>
+</div>
+
+<div *ngIf="!postReady">loading!!!!</div>

@@ -1,0 +1,4 @@
+<div class="posts p-y-1" *ngIf="post" (click)="loadPost(post.slug)">
+	<tc-media title="{{post.title.rendered}}" [id]="post.featured_media"></tc-media>
+	<h3 class="posts__title" innerHTML="{{post.title.rendered}}"></h3>
+</div>

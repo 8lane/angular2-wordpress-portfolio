@@ -1,38 +1,36 @@
 import { Component } from '@angular/core';
-import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
-import { NameListService } from '../shared/index';
+import { PostsComponent } from '../shared/components';
+import { PostService } from '../shared/services';
+import { MapToIterable } from '../shared/pipes';
 
 /**
  * This class represents the lazy loaded HomeComponent.
  */
 @Component({
   moduleId: module.id,
-  selector: 'sd-home',
+  selector: 'tc-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
-  directives: [REACTIVE_FORM_DIRECTIVES]
+  directives: [PostsComponent],
+  pipes: [MapToIterable]
 })
 export class HomeComponent {
+  constructor(private _postService: PostService) {}
 
-  newName: string;
-
-  /**
-   * Creates an instance of the HomeComponent with the injected
-   * NameListService.
-   *
-   * @param {NameListService} nameListService - The injected NameListService.
-   */
-  constructor(public nameListService: NameListService) {}
-
-  /**
-   * Calls the add method of the NameListService with the current newName value of the form.
-   * @return {boolean} false to prevent default form submit behavior to refresh the page.
-   */
-  addName(): boolean {
-    this.nameListService.add(this.newName);
-    this.newName = '';
-    return false;
+  get posts() {
+    return this._postService.postCollection;
   }
 
+  get categories() {
+    return this._postService.postCategories;
+  }
+
+ gotPosts() {
+  return this.posts.length;
+ }
+
+ gotCategories() {
+   return this.categories.length;
+ }
 }

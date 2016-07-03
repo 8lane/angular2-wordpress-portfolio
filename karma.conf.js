@@ -46,6 +46,9 @@ module.exports = function(config) {
       // suppress annoying 404 warnings for resources, images, etc.
       { pattern: 'dist/dev/assets/**/*', watched: false, included: false, served: true },
 
+      // TOM'S DEPS
+      { pattern: 'node_modules/moment/moment.js', included: false, watched: false },
+
       'test-main.js'
     ],
 

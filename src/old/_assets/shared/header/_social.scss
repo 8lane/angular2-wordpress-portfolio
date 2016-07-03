@@ -1,0 +1,27 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.social__link {
+	color: $gray;
+	font-size: $font-size-lg;
+
+	&:hover, &:focus, &:active {
+		color: darken($gray, 10%);
+		text-decoration: none;
+		background: transparent;
+	}
+}
+
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(xs) {
+	.social__link {
+		font-size: $font-size-base;
+	}
+}

@@ -6,7 +6,7 @@
     "url": "https://github.com/mgechev/angular2-seed"
   },
   "config": {
-  "unsafe-perm":true
+    "unsafe-perm": true
   },
   "scripts": {
     "build.dev": "gulp build.dev --color",
@@ -122,8 +122,9 @@
     "@angular/platform-browser": "2.0.0-rc.3",
     "@angular/platform-browser-dynamic": "2.0.0-rc.3",
     "@angular/router": "3.0.0-alpha.8",
-    "es6-module-loader": "^0.17.8",
     "core-js": "^2.4.0",
+    "es6-module-loader": "^0.17.8",
+    "moment": "^2.13.0",
     "rxjs": "5.0.0-beta.6",
     "systemjs": "0.19.27",
     "zone.js": "^0.6.12"

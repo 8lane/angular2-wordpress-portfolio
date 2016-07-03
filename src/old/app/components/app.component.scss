@@ -1,0 +1,53 @@
+@import "../../_assets/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+.header > a {
+	text-decoration: none;
+}
+
+.header__title {
+	color: $gray-dark;
+}
+
+.header__subtitle {
+	font-size: $font-size-sm;
+}
+
+.header__wip {
+	background: $brand-danger;
+	display: block;
+	font-size: $font-size-sm;
+	color: white;
+	border-radius: $border-radius;
+}
+
+@include media-breakpoint-up(xs) {
+	.header__logo {
+		max-width: 115px;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.app__sidebar {
+		position: fixed;
+		height: 100%;
+		width: 300px;
+	}
+
+	.app__content {
+		padding-left: 300px;
+	}
+
+	.header__logo {
+		display: block;
+		width: 115px;
+		height: 115px;
+		min-height: 115px;
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.header {
+		padding-bottom: 0 !important;
+	}
+}
