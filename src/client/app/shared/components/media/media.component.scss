@@ -1,3 +1,6 @@
-img {
-	max-width: 200px;
+@import "../../../../assets/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+.media img {
+	border-radius: $border-radius-sm;
 }

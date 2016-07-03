@@ -1,29 +1,29 @@
-// @import "../../../_assets/variables";
-// @import "node_modules/bootstrap/scss/mixins";
+@import "../../../../assets/variables";
+@import "node_modules/bootstrap/scss/mixins";
 
-// .posts {
-// 	position: relative;
-// 	cursor: pointer;
-// }
+.posts {
+	position: relative;
+	cursor: pointer;
+}
 
-// .posts__title {
-// 	opacity: 0;
-// 	width: 100%;
-// 	position: absolute;
-// 	top: 7px;
-// 	bottom: 7px;
-// 	margin: 0;
-// 	padding: $grid-gutter-width;
-// 	line-height: 26px;
-// 	color: $gray;
-// 	font-family: $font-family-sans-serif;
-// 	font-size: $font-size-lg;
-// 	text-transform: uppercase;
-// 	color: white;
-// 	background: rgba(black, 0.8);
-// 	transition: 120ms ease-in;
+.posts__title {
+	opacity: 0;
+	width: 100%;
+	position: absolute;
+	top: 7px;
+	bottom: 7px;
+	margin: 0;
+	padding: $grid-gutter-width;
+	line-height: 26px;
+	color: $gray;
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-lg;
+	text-transform: uppercase;
+	color: white;
+	background: rgba(black, 0.8);
+	transition: 120ms ease-in;
 
-// 	.posts:hover & {
-// 		opacity: 1;
-// 	}
-// }
+	.posts:hover & {
+		opacity: 1;
+	}
+}

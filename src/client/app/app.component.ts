@@ -20,6 +20,7 @@ import {TagService} from './shared/services';
   selector: 'tc-app',
   viewProviders: [HTTP_PROVIDERS, EventStore, AppService, PostService, TagService],
   templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'],
   directives: [ROUTER_DIRECTIVES, ErrorComponent, PostComponent]
 })
 export class AppComponent {
