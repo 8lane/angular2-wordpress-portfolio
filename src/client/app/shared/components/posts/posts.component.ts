@@ -17,7 +17,6 @@ export class PostsComponent {
   constructor(private _router: Router) {}
 
   loadPost(slug: string) {
-    console.log('load: ', slug);
     this._router.navigate(['/portfolio', slug ]);
   }
 }

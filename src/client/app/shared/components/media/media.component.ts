@@ -16,9 +16,7 @@ export class MediaComponent {
   @Input() id: number;
   media: any;
 
-  constructor(private _mediaService: MediaService) {
-    console.log('media cmp!');
-  }
+  constructor(private _mediaService: MediaService) {}
 
   ngOnInit() {
     //if (typeof this.id !== 'undefined' && this.id) {
@@ -28,7 +26,6 @@ export class MediaComponent {
   ngAfterViewInit() {
     this._mediaService.fetchMedia(this.id).subscribe((data) => {
       this.media = data;
-      console.log('got media1', this.media);
     });
   }
 }
