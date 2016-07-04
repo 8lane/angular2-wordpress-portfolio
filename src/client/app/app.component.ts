@@ -17,6 +17,8 @@ import {HeaderTypeDirective} from './shared/directives';
  * This class represents the main application component. Within the @Routes annotation is the configuration of the
  * applications routes, configuring the paths for the lazy loaded components (HomeComponent, AboutComponent).
  */
+declare var smoothScroll: any;
+
 @Component({
   moduleId: module.id,
   selector: 'tc-app',
@@ -52,5 +54,9 @@ export class AppComponent {
 
     /* Fetch core posts for our app */
     this._postService.fetchPosts().subscribe();
+  }
+
+  scrollToPortfolio() {
+    smoothScroll.animateScroll(`#js-main-content`, null, { speed: 700, easing: 'easeOutQuart' });
   }
 }

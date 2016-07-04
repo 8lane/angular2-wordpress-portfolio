@@ -96,6 +96,7 @@
     "semver": "^5.1.0",
     "serve-static": "^1.10.2",
     "slash": "~1.0.0",
+    "smooth-scroll": "github:cferdinandi/smooth-scroll",
     "stream-series": "^0.1.1",
     "stylelint": "^6.3.3",
     "stylelint-config-standard": "^6.0.0",
