@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { PostsComponent } from '../shared/components';
+import { AppService } from '../shared/services';
 import { PostService } from '../shared/services';
 import { MapToIterable } from '../shared/pipes';
 
@@ -16,7 +17,13 @@ import { MapToIterable } from '../shared/pipes';
   pipes: [MapToIterable]
 })
 export class HomeComponent {
-  constructor(private _postService: PostService) {}
+  constructor(private _postService: PostService, private _appService: AppService) {}
+
+  ngAfterViewInit() {
+    if(this._appService.skipToPosts) {
+      document.getElementById('js-main-content').scrollIntoView();
+    }
+  }
 
   get posts() {
     return this._postService.postCollection;
@@ -32,5 +39,9 @@ export class HomeComponent {
 
  gotCategories() {
    return this.categories.length;
+ }
+
+ ngOnDestroy() {
+   this._appService.skipToPosts = true;
  }
 }

@@ -9,6 +9,7 @@ import {MyRequestOptions} from '../misc/myRequestOptions';
 @Injectable()
 export class AppService {
   appInfo: any[];
+  skipToPosts: boolean;
 
   constructor(private _http: Http) {
     this.appInfo = [];
