@@ -1,25 +1,32 @@
 @import "../assets/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
-.header > a {
-	text-decoration: none;
+.app-header {
+	background: $brand-primary;
+
+	&--epic {
+		text-align: center;
+	}
+}
+
+.app-header:not(.app-header--epic) {
+	max-height: 100px;
+
+	.app-header__logo {
+		display: none;
+	}
 }
 
 .header__title {
-	color: $gray-dark;
+	color: white;
 }
 
 .header__subtitle {
-	font-size: $font-size-sm;
+	color: rgba(white, 0.8);
 }
 
-.header__wip {
-	background: $brand-danger;
-	display: block;
-	font-size: $font-size-sm;
-	color: white;
-	border-radius: $border-radius;
-}
+
+
 
 @include media-breakpoint-up(xs) {
 	.header__logo {

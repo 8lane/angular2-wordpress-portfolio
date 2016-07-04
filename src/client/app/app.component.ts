@@ -10,6 +10,8 @@ import {PostComponent} from './shared/components';
 import {AppService} from './shared/services';
 import {PostService} from './shared/services';
 import {TagService} from './shared/services';
+import {ResizeHeaderDirective} from './shared/directives';
+import {HeaderTypeDirective} from './shared/directives';
 
 /**
  * This class represents the main application component. Within the @Routes annotation is the configuration of the
@@ -21,7 +23,7 @@ import {TagService} from './shared/services';
   viewProviders: [HTTP_PROVIDERS, EventStore, AppService, PostService, TagService],
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [ROUTER_DIRECTIVES, ErrorComponent, PostComponent]
+  directives: [ROUTER_DIRECTIVES, ErrorComponent, PostComponent, ResizeHeaderDirective, HeaderTypeDirective]
 })
 export class AppComponent {
 	appInfo: any;
@@ -31,6 +33,7 @@ export class AppComponent {
               private _router: Router) {
 		this.appInfo = <any> false;
 
+    console.log('ROUTER: ', this._router);
 		console.log('Environment config', Config);
 	}
 
