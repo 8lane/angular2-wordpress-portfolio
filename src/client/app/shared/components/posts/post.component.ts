@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
 import { ROUTER_DIRECTIVES, Router, ActivatedRoute } from '@angular/router';
 
-import { PostService } from '../../services/post.service';
-import { TagService } from '../../services/tag.service';
-import { EventStore } from '../../misc/eventStore';
+import { SpinnerComponent } from '../../components';
+import { PostService } from '../../services';
+import { TagService } from '../../services';
+import { EventStore } from '../../misc';
 
 declare var moment: any;
 
@@ -13,13 +14,13 @@ declare var moment: any;
   moduleId: module.id,
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
-  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES]
+  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, SpinnerComponent]
 })
 export class PostComponent {
 	nav: any;
 	slug: string;
 	post: any;
-	postReady: boolean = false;
+	isProcessing: boolean = true;
 	gotPost: boolean = false;
 	goPrev: any;
 	goNext: any;
@@ -44,7 +45,7 @@ export class PostComponent {
 
 				this._tagService.fetchTagsCollection(this.post.tags).subscribe((tags) => {
 					this.post.tags = tags;
-					this.postReady = true;
+					this.isProcessing = false;
 				});
 			});
 		});
@@ -63,7 +64,8 @@ export class PostComponent {
 	}
 
 	loadPost(slug: string) {
-		this._router.navigate(['/portfolio', slug]);
+		this.isProcessing = true; /* re-start the spinner */
+		this._router.navigate(['/portfolio', slug]); /* navigate to the new portfolio item */
 	}
 
 	loadTag(slug: string) {

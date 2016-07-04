@@ -1,0 +1,11 @@
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  &__svg {
+    width: 57px;
+    height: 57px;
+    stroke: black;
+  }
+}

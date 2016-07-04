@@ -1,5 +1,5 @@
 <div class="post p-a-3 text-xs-center text-lg-left">
-	<header class="post__header" *ngIf="post && postReady">
+	<header class="post__header" *ngIf="post && !isProcessing">
 		<nav class="post__pagination m-b-2" *ngIf="goPrev && goNext">
 			<span class="pagination__direction" title="{{goPrev.title.rendered}}" (click)="loadPost(goPrev.slug)">
 				<i class="icon-chevron-with-circle-left"></i>
@@ -21,7 +21,7 @@
 			</li>
 		</ul>
 	</header>
-	<div *ngIf="post && postReady" [innerHtml]="post.content.rendered"></div>
+	<div *ngIf="post && !isProcessing" [innerHtml]="post.content.rendered"></div>
 </div>
 
-<div *ngIf="!postReady">loading!!!!</div>
+<tc-spinner [isProcessing]="isProcessing"></tc-spinner>
