@@ -10,6 +10,7 @@ import {MyRequestOptions} from '../misc/myRequestOptions';
 export class AppService {
   appInfo: any[];
   skipToPosts: boolean;
+  sidebarActive: boolean = true;
 
   constructor(private _http: Http) {
     this.appInfo = [];

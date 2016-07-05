@@ -6,6 +6,7 @@ import { Config } from './shared/index';
 
 import {EventStore} from './shared/misc';
 import {ErrorComponent} from './shared/components';
+import {SidebarComponent} from './shared/components';
 import {PostComponent} from './shared/components';
 import {AppService} from './shared/services';
 import {PostService} from './shared/services';
@@ -25,7 +26,7 @@ declare var smoothScroll: any;
   viewProviders: [HTTP_PROVIDERS, EventStore, AppService, PostService, TagService],
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [ROUTER_DIRECTIVES, ErrorComponent, PostComponent, ResizeHeaderDirective, HeaderTypeDirective]
+  directives: [ROUTER_DIRECTIVES, ErrorComponent, SidebarComponent, PostComponent, ResizeHeaderDirective, HeaderTypeDirective]
 })
 export class AppComponent {
 	appInfo: any;
@@ -38,6 +39,10 @@ export class AppComponent {
     console.log('ROUTER: ', this._router);
 		console.log('Environment config', Config);
 	}
+
+  get hasSidebar() {
+    return this._appService.sidebarActive;
+  }
 
   get posts() {
     return this._postService.postCollection;
@@ -54,6 +59,15 @@ export class AppComponent {
 
     /* Fetch core posts for our app */
     this._postService.fetchPosts().subscribe();
+
+    /* Sidebar display @TODO: move to directive */
+    this._router.events.subscribe((e) => {
+      if(this._router.url.indexOf('/portfolio') > -1) {
+        this._appService.sidebarActive = false;
+      } else {
+        this._appService.sidebarActive = true;
+      }
+    });
   }
 
   scrollToPortfolio() {

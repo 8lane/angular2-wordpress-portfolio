@@ -14,6 +14,13 @@
 
 <main class="app-content" id="js-main-content">
 	<div class="container-fluid">
-		<router-outlet></router-outlet>
+		<div class="row">
+			<div [ngClass]="{'col-sm-9': hasSidebar }">
+				<router-outlet></router-outlet>
+			</div>
+			<div [ngClass]="{'col-sm-3': hasSidebar }" *ngIf="hasSidebar">
+				<tc-sidebar></tc-sidebar>
+			</div>
+		</div>
 	</div>
 </main>

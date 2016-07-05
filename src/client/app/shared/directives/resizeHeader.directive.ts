@@ -18,6 +18,6 @@ export class ResizeHeaderDirective {
 	}
 
 	ngOnDestroy() {
-		window.removeEventListener('resize');
+		window.removeEventListener('resize', null);
 	}
 }

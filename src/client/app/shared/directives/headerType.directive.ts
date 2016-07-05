@@ -25,8 +25,4 @@ export class HeaderTypeDirective {
     	ele.classList.remove(this.htmlClassName);
   	}
 	}
-
-	ngOnDestroy() {
-		this._router.events.unsubscribe();
-	}
 }
