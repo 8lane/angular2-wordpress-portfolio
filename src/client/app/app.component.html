@@ -1,24 +1,27 @@
 <header class="app-header" resizeHeader headerType>
 	<div class="container-fluid">
 		<a [routerLink]="['/']">
-			<div class="app-header__logo center-block">
-				<img class="img-fluid img-circle" src="/_assets/images/logo.jpg">
+			<div class="app-header__logo center-block m-b-2">
+				<img class="img-fluid img-circle" src="/assets/images/logo.jpg">
 			</div>
-			<h1 class="header__title p-t-3 p-b-1 m-y-0" [innerHTML]="appInfo.name"></h1>
+			<h1 class="app-header__title p-t-3 p-b-1 m-y-0" [innerHTML]="appInfo.name"></h1>
 		</a>
-		<p class="header__subtitle text-muted m-b-3" [innerHTML]="appInfo.description"></p>
-		<a (click)="!!scrollToPortfolio()" href="#js-main-content">View Portfolio</a>
-		<a href="/cv.pdf" target="_blank">Download CV</a>
+		<p class="app-header__subtitle text-muted m-b-3" [innerHTML]="appInfo.description + authorSite"></p>
+		<div class="app-header__actions">
+			<a class="app-header__cta btn btn-secondary-outline btn-lg m-r-3" (click)="!!scrollToPortfolio()" href="#js-main-content">View Portfolio</a>
+			<span class="app-header__sep">or</span>
+			<a class="app-header__cta btn btn-secondary-outline btn-lg m-l-3" href="/cv.pdf" target="_blank">Download CV</a>
+		</div>
 	</div>
 </header>
 
-<main class="app-content" id="js-main-content">
+<main class="app-content" [class.app-content--with-sidebar]="hasSidebar" id="js-main-content">
 	<div class="container-fluid">
 		<div class="row">
-			<div [ngClass]="{'col-sm-9': hasSidebar }">
+			<div class="app-content__main">
 				<router-outlet></router-outlet>
 			</div>
-			<div [ngClass]="{'col-sm-3': hasSidebar }" *ngIf="hasSidebar">
+			<div class="app-content__sidebar">
 				<tc-sidebar></tc-sidebar>
 			</div>
 		</div>

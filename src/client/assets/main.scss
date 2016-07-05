@@ -19,7 +19,14 @@
 @import "fonts/fonts";
 
 
+.app-loader {
+	color: pink;
+}
 
+/* The link is dynamically inserted and therefore not stylable within the component */
+.app-header__subtitle a {
+	color: $brand-primary;
+}
 
 .no-js .defer-image {
 	display: none;

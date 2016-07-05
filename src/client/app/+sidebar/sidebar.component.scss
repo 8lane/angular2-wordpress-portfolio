@@ -1,3 +1,11 @@
 :host {
   display: block;
 }
+
+$sidebar-bg: 				#131518;
+
+
+.app-sidebar {
+	background: $sidebar-bg;
+	min-height: 300px; /* temp */
+}

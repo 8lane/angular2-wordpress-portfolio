@@ -30,6 +30,7 @@ declare var smoothScroll: any;
 })
 export class AppComponent {
 	appInfo: any;
+  authorSite = `<br>Creator of <a target="_blank" href="http://ipsthemes.com">IPS Themes</a>`;
 
   constructor(private _appService: AppService,
               private _postService: PostService,
@@ -52,7 +53,6 @@ export class AppComponent {
     /* Fetch and set core app data */
     this._appService.fetchAppData().subscribe(() => {
       this.appInfo = this._appService.appInfo;
-      this.appInfo.description = this.appInfo.description + ` Creator of <a target="_blank" href="http://ipsthemes.com">IPS Themes</a>`;
     }, (error) => {
       this._router.navigate(['error']);
     });
