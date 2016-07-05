@@ -24,15 +24,19 @@ $sidebar-width:								16rem;
 	max-width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+}
 
-	&__sidebar {
+.app-content__sidebar {
+	.app-content--with-sidebar & {
 		min-width: $sidebar-width;
 		position: absolute;
 		top: 0;
 		right: 0;
 	}
+}
 
-	&__main {
+.app-content__main {
+	.app-content--with-sidebar & {
 		padding-right: $sidebar-width + ($spacer * 3);
 	}
 }
@@ -112,7 +116,9 @@ $sidebar-width:								16rem;
 .app-header:not(.app-header--epic) {
 	max-height: $header-minimal-height;
 
-	.app-header__logo {
+	/* hide elements not needed on minimal header */
+	.app-header__logo,
+	.app-header__actions {
 		display: none;
 	}
 }

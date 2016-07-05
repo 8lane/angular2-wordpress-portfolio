@@ -21,7 +21,7 @@
 			<div class="app-content__main">
 				<router-outlet></router-outlet>
 			</div>
-			<div class="app-content__sidebar">
+			<div class="app-content__sidebar" *ngIf="hasSidebar">
 				<tc-sidebar></tc-sidebar>
 			</div>
 		</div>
