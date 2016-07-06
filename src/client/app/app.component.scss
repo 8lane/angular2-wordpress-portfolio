@@ -1,7 +1,9 @@
 @import "../assets/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
-$app-width:										80%;
+$xs-app-width:								95%;
+$lg-app-width:								80%;
+
 $app-min-width:								320px;
 
 $header-minimal-height:				100px;
@@ -21,23 +23,31 @@ $sidebar-width:								16rem;
 
 .app-content {
 	position: relative;
-	max-width: 80%;
+	max-width: $xs-app-width;
 	margin-left: auto;
 	margin-right: auto;
-}
 
-.app-content__sidebar {
-	.app-content--with-sidebar & {
-		min-width: $sidebar-width;
-		position: absolute;
-		top: 0;
-		right: 0;
+	/* Switch to a thinner container width on LG breakpoints for better clarity */
+	@include media-breakpoint-up(lg) {
+		max-width: $lg-app-width;
 	}
 }
 
-.app-content__main {
-	.app-content--with-sidebar & {
-		padding-right: $sidebar-width + ($spacer * 3);
+/* Two column layout on MD breakpoint & up */
+@include media-breakpoint-up(md) {
+	.app-content__sidebar {
+		.app-content--with-sidebar & {
+			min-width: $sidebar-width;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+
+	.app-content__main {
+		.app-content--with-sidebar & {
+			padding-right: $sidebar-width + ($spacer * 3);
+		}
 	}
 }
 
@@ -48,7 +58,7 @@ $sidebar-width:								16rem;
     padding-top: 5rem;
 		text-align: center;
 
-		/* pull the main content up into the epic header */
+		/* Pull the main content up into the epic header */
 		+ .app-content {
 			margin-top: $content-offset-top;
 		}
@@ -116,7 +126,7 @@ $sidebar-width:								16rem;
 .app-header:not(.app-header--epic) {
 	max-height: $header-minimal-height;
 
-	/* hide elements not needed on minimal header */
+	/* Hide elements not needed on minimal header */
 	.app-header__logo,
 	.app-header__actions {
 		display: none;
