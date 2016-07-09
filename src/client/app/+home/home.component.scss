@@ -6,6 +6,13 @@ $timeline-peak-height:				40px;
 $timeline-peak-bg:						$brand-primary;
 $timeline-peak-pip-size:			10px;
 
+%timeline-point {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 50%;
+	z-index: 1;
+}
 
 :host {
   display: block;
@@ -15,20 +22,21 @@ $timeline-peak-pip-size:			10px;
 .timeline {
 
 	&__year {
+		/* Current year on timeline */
 		&[data-pos="0"] {
 			position: absolute;
-			top: -#{$timeline-peak-height * 2};
+			top: -5.8rem;
 			right: 0;
 			left: 0;
 			color: white;
-			font-size: 1.5rem;
+			font-size: $font-size-h3;
 		}
 
+		/* All other years on timeline */
 		&:not([data-pos="0"]) {
 			position: relative;
 			margin: ($spacer * 2) 0 ($spacer * 2);
-			padding-left: 6rem;
-			font-size: 1.3rem;
+			padding-left: 5.5rem;
 
 			@include media-breakpoint-up(sm) {
 				margin: ($spacer * 1) 0 ($spacer * 2);
@@ -39,18 +47,15 @@ $timeline-peak-pip-size:			10px;
 			}
 
 			&:before {
-				content: "";
-				display: block;
-				position: absolute;
-				width: 10px;
+				@extend %timeline-point;
+				top: 50%;
 				height: 10px;
-				left: 50%;
+				width: 10px;
+				margin-top: -5px;
 				margin-left: -5px;
 				background: #ffffff;
 				border-radius: 50%;
-				border: 2px solid #d8dde2;
-				top: 50%;
-				margin-top: -5px;
+				border: 2px solid $timeline-path-bg;
 			}
 		}
 	}
@@ -71,26 +76,20 @@ $timeline-peak-pip-size:			10px;
 .home__category {
 	&:first-child {
 		&:before {
-			content: "";
-			display: block;
+			@extend %timeline-point;
+			top: -#{$timeline-peak-height};
 			height: $timeline-peak-height;
 			width: 2px;
-			position: absolute;
-			top: -#{$timeline-peak-height};
-			left: 50%;
 			margin-left: -1px;
 			background: $timeline-peak-bg;
-			z-index: 1;
 		}
 
 		&:after {
-			content: "";
-			display: block;
-			height: $timeline-peak-pip-size;
-			width: $timeline-peak-pip-size;
-			position: absolute;
+			@extend %timeline-point;
 			top: -49px;
 			left: 50%;
+			height: $timeline-peak-pip-size;
+			width: $timeline-peak-pip-size;
 			margin-left: -#{$timeline-peak-pip-size / 2};
 			border: 2px solid $timeline-peak-bg;
 			border-radius: 50%;
