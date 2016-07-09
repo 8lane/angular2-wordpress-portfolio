@@ -2,13 +2,58 @@
 @import "node_modules/bootstrap/scss/mixins";
 
 $posts-bg:											white;
+$xs-posts-inner-padding:				$spacer * 3;
+$sm-posts-inner-padding:				$spacer $spacer $spacer 0;
+$md-posts-inner-padding:				$spacer * 2;
 
 $media-max-width:								16rem;
 
 .posts {
 	width: 100%;
+	margin-bottom: $spacer * 3;
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
 	background: $posts-bg;
+
+	&__details {
+		position: relative;
+		padding: $xs-posts-inner-padding;
+	}
+
+	&__title {
+		color: $gray-dark;
+		font-weight: normal;
+		white-space: nowrap;
+	}
+
+	&__desc {
+		font-weight: 200;
+		font-size: $font-size-sm;
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.posts {
+		margin-bottom: $spacer * 5;
+		transform-style: preserve-3d;
+
+		&__details {
+	    position: absolute;
+	    top: 50%;
+	    right: 0;
+	    transform: translateY(-50%);
+			max-width: 60%;
+			padding: $sm-posts-inner-padding;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.posts {
+		&__details {
+			max-width: 50%;
+			padding: $md-posts-inner-padding;
+		}
+	}
 }

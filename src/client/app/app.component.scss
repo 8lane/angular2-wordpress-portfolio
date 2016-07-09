@@ -28,13 +28,13 @@ $sidebar-width:								16rem;
 	margin-right: auto;
 
 	/* Switch to a thinner container width on LG breakpoints for better clarity */
-	@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up(xl) {
 		max-width: $lg-app-width;
 	}
 }
 
-/* Two column layout on MD breakpoint & up */
-@include media-breakpoint-up(md) {
+/* Two column layout on LG breakpoint & up */
+@include media-breakpoint-up(lg) {
 	.app-content__sidebar {
 		.app-content--with-sidebar & {
 			min-width: $sidebar-width;
@@ -55,7 +55,9 @@ $sidebar-width:								16rem;
 	background: linear-gradient(to bottom, darken($header-bg-color, 35%) 0%, $header-bg-color 100%);
 
 	&--epic {
+		box-sizing: content-box;
     padding-top: 5rem;
+    padding-bottom: 5rem;
 		text-align: center;
 
 		/* Pull the main content up into the epic header */
@@ -147,25 +149,6 @@ $sidebar-width:								16rem;
 @include media-breakpoint-up(xs) {
 	.header__logo {
 		max-width: 115px;
-	}
-}
-
-@include media-breakpoint-up(lg) {
-	.app__sidebar {
-		position: fixed;
-		height: 100%;
-		width: 300px;
-	}
-
-	.app__content {
-		padding-left: 300px;
-	}
-
-	.header__logo {
-		display: block;
-		width: 115px;
-		height: 115px;
-		min-height: 115px;
 	}
 }
 
