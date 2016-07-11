@@ -1,8 +1,9 @@
 @import "../assets/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
-$xs-app-width:								95%;
-$lg-app-width:								80%;
+$xs-app-width:								100%;
+$sm-app-width:								95%;
+$xl-app-width:								80%;
 
 $app-min-width:								320px;
 
@@ -27,9 +28,12 @@ $sidebar-width:								18rem;
 	margin-left: auto;
 	margin-right: auto;
 
-	/* Switch to a thinner container width on LG breakpoints for better clarity */
+	@include media-breakpoint-up(sm) {
+		max-width: $sm-app-width;
+	}
+
 	@include media-breakpoint-up(xl) {
-		max-width: $lg-app-width;
+		max-width: $xl-app-width;
 	}
 }
 
@@ -46,7 +50,7 @@ $sidebar-width:								18rem;
 
 	.app-content__main {
 		.app-content--with-sidebar & {
-			padding-right: $sidebar-width + ($spacer * 3);
+			padding-right: $sidebar-width + ($spacer * 5);
 		}
 	}
 }
@@ -142,8 +146,6 @@ $sidebar-width:								18rem;
 .header__subtitle {
 	color: rgba(white, 0.8);
 }
-
-
 
 
 @include media-breakpoint-up(xs) {

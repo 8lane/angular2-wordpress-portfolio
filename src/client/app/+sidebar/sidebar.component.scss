@@ -2,18 +2,25 @@
 @import "../../assets/utilities/mixins";
 @import "node_modules/bootstrap/scss/mixins";
 
-$sidebar-bg: 								#131518;
-$sidebar-max-width:					280px;
-$sidebar-border:						#2c3036;
+$xs-sidebar-max-width:					100%;
+$lg-sidebar-max-width:					280px;
+
+$sidebar-bg: 										#131518;
+$sidebar-border:								#2c3036;
 
 :host {
   display: block;
 	background: $sidebar-bg;
 	min-height: 300px; /* temp */
-	max-width: $sidebar-max-width;
+	max-width: $xs-sidebar-max-width;
+
+	@include media-breakpoint-up(lg) {
+		max-width: $lg-sidebar-max-width;
+	}
 }
 
 .app-sidebar {
+	$root: &;
 
 	&__title {
 		color: white;
@@ -30,7 +37,14 @@ $sidebar-border:						#2c3036;
 		color: white;
 		font-weight: 300;
 		font-size: $font-size-root + 2;
+		text-decoration: none;
 		@include truncate(100%);
+	
+		&:hover {
+			#{$root}__icon {
+				color: $brand-primary;
+			}
+		}
 	}
 
 	&__icon {
@@ -57,6 +71,40 @@ $sidebar-border:						#2c3036;
 
 		&:not(:last-child) {
 			border-right: 1px solid $sidebar-border;
+		}
+	}
+
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, 'sm')) and (max-width: map-get($grid-breakpoints, 'lg')) {
+
+	.app-sidebar {
+		&__title {
+			font-size: $font-size-h2;
+		}
+
+		&__recent {
+			@include make-row();
+
+			li {
+				@include make-col();
+				@include make-col-span(6);
+				text-align: center;
+
+				&:not(:nth-last-of-type(-n+2)) {
+					margin-bottom: $spacer * 3; /* margin bottom on all <li>'s except the bottom two */
+				}
+			}
+		}
+
+		&__icon {
+			display: block;
+			margin: 0 auto $spacer;
+			font-size: 41px;
+
+			&--large {
+				font-size: 41px;
+			}
 		}
 	}
 
