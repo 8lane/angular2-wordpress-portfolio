@@ -1,11 +1,63 @@
+@import "../../assets/variables";
+@import "../../assets/utilities/mixins";
+@import "node_modules/bootstrap/scss/mixins";
+
+$sidebar-bg: 								#131518;
+$sidebar-max-width:					280px;
+$sidebar-border:						#2c3036;
+
 :host {
   display: block;
-}
-
-$sidebar-bg: 				#131518;
-
-
-.app-sidebar {
 	background: $sidebar-bg;
 	min-height: 300px; /* temp */
+	max-width: $sidebar-max-width;
+}
+
+.app-sidebar {
+
+	&__title {
+		color: white;
+	}
+
+	&__recent, &__external-work {
+		padding: 0;
+		list-style-type: none;
+	}
+
+	&__item {
+		display: inline-block;
+		margin-bottom: $spacer;
+		color: white;
+		font-weight: 300;
+		font-size: $font-size-root + 2;
+		@include truncate(100%);
+	}
+
+	&__icon {
+		display: inline-block;
+		vertical-align: middle;
+		width: 30px;
+		font-size: 21px;
+		text-align: center;
+		color: $gray-dark;
+
+		&--large {
+			font-size: 26px;
+		}
+
+		&--github { color: #4183c4; }
+		&--medium { color: #00ab6b; }
+		&--codepen { color: #c0c3c7; }
+	}
+
+	&__external-item {
+		display: inline-block;
+		padding: ($spacer * 3) 0;
+		border-top: 1px solid $sidebar-border;
+
+		&:not(:last-child) {
+			border-right: 1px solid $sidebar-border;
+		}
+	}
+
 }

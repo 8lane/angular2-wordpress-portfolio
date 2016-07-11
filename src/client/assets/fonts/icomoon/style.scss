@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: 'icomoon';
-    src:    url('#{$icomoon-font-path}/icomoon.eot?npopc');
-    src:    url('#{$icomoon-font-path}/icomoon.eot?npopc#iefix') format('embedded-opentype'),
-        url('#{$icomoon-font-path}/icomoon.ttf?npopc') format('truetype'),
-        url('#{$icomoon-font-path}/icomoon.woff?npopc') format('woff'),
-        url('#{$icomoon-font-path}/icomoon.svg?npopc#icomoon') format('svg');
+    src:    url('#{$icomoon-font-path}/icomoon.eot?xmxosv');
+    src:    url('#{$icomoon-font-path}/icomoon.eot?xmxosv#iefix') format('embedded-opentype'),
+        url('#{$icomoon-font-path}/icomoon.ttf?xmxosv') format('truetype'),
+        url('#{$icomoon-font-path}/icomoon.woff?xmxosv') format('woff'),
+        url('#{$icomoon-font-path}/icomoon.svg?xmxosv#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -26,11 +26,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-linkedin-square {
-    &:before {
-        content: $icon-linkedin-square;
-    }
-}
 .icon-twitter {
     &:before {
         content: $icon-twitter;
@@ -41,9 +36,24 @@
         content: $icon-github;
     }
 }
-.icon-instagram {
+.icon-linkedin {
     &:before {
-        content: $icon-instagram;
+        content: $icon-linkedin;
+    }
+}
+.icon-codepen {
+    &:before {
+        content: $icon-codepen;
+    }
+}
+.icon-facebook-official {
+    &:before {
+        content: $icon-facebook-official;
+    }
+}
+.icon-medium {
+    &:before {
+        content: $icon-medium;
     }
 }
 .icon-chevron-with-circle-left {
