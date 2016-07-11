@@ -57,3 +57,15 @@ $media-max-width:								16rem;
 		}
 	}
 }
+
+@media screen and (min-width: map-get($grid-breakpoints, 'lg')) and (max-width: map-get($grid-breakpoints, 'xl') + 200) {
+	.posts {
+		&__title {
+			font-size: 1.3rem;
+		}
+
+		&__desc {
+			font-size: 0.95rem;
+		}
+	}
+}
