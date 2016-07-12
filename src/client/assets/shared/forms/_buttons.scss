@@ -4,3 +4,10 @@
 
 /*  Styles
 /*--------------------------------------------------------------*/
+
+.btn {
+	&:hover, &:focus {
+		background-color: transparent;
+		border-color: $brand-danger;
+	}
+}

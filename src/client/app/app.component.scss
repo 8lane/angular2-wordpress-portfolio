@@ -99,6 +99,15 @@ $sidebar-width:								18rem;
 	&__cta {
 		font-size: 1.4rem;
 		font-weight: 100;
+		transition: all 150ms ease-in;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+
+		&:active {
+			transform: scale(1);
+		}
 	}
 
 	&__sep {
