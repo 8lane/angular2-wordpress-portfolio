@@ -53,7 +53,9 @@ $sidebar-border:								#2c3036;
 		width: 30px;
 		font-size: 21px;
 		text-align: center;
+		text-decoration: none;
 		color: $gray-dark;
+		@include base-transition();
 
 		&--large {
 			font-size: 26px;
@@ -68,6 +70,13 @@ $sidebar-border:								#2c3036;
 		display: inline-block;
 		padding: ($spacer * 3) 0;
 		border-top: 1px solid $sidebar-border;
+		@include base-transition();
+
+		&:hover {
+			i {
+				transform: scale(1.15);
+			}
+		}
 
 		&:not(:last-child) {
 			border-right: 1px solid $sidebar-border;
