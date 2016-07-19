@@ -31,12 +31,15 @@ $media-max-width:								16rem;
 		font-weight: 200;
 		font-size: $font-size-sm;
 	}
+
+	&__overlay {
+		display: none;
+	}
 }
 
 @include media-breakpoint-up(sm) {
 	.posts {
 		margin-bottom: $spacer * 5;
-		transform-style: preserve-3d;
 
 		&__details {
 	    position: absolute;
@@ -54,6 +57,59 @@ $media-max-width:								16rem;
 		&__details {
 			max-width: 50%;
 			padding: $md-posts-inner-padding;
+		}
+
+		&__overlay {
+			display: block;
+			position: absolute;
+			z-index: 1;
+			height: 100%;
+			width: 100%;
+			max-width: 50%;
+			opacity: 0;
+			background: rgba(13, 16, 24, 0.6);
+			pointer-events: none;
+			transition: opacity 100ms ease-in;
+
+			.posts:hover & {
+				opacity: 1;
+			}
+		}
+
+		&__overlay-title {
+			&:before {
+				content: "";
+				display: block;
+				width: 250px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 200px;
+				height: 50px;
+				margin-left: -100px;
+				z-index: 1;
+				margin-top: -25px;
+				line-height: 50px;
+				text-align: center;
+				font-size: 1.2rem;
+				color: white;
+				content: "View case study";
+				z-index: 2;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 200px;
+				height: 50px;
+				margin-top: -25px;
+				margin-left: -100px;
+				background: #000000;
+				color: white;
+				transform: skewX(-10deg);
+			}
 		}
 	}
 }
