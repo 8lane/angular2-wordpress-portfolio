@@ -22,7 +22,8 @@ $sidebar-width:								18rem;
 	min-width: $app-min-width;
 }
 
-.app-content {
+.app-content,
+/deep/ .app-footer {
 	position: relative;
 	max-width: $xs-app-width;
 	margin-left: auto;

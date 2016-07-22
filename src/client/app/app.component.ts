@@ -7,6 +7,7 @@ import { Config } from './shared/index';
 import {EventStore} from './shared/misc';
 import {ErrorComponent} from './shared/components';
 import {SidebarComponent} from './shared/components';
+import {FooterComponent} from './shared/components';
 import {PostComponent} from './shared/components';
 import {AppService} from './shared/services';
 import {PostService} from './shared/services';
@@ -26,7 +27,15 @@ declare var smoothScroll: any;
   viewProviders: [HTTP_PROVIDERS, EventStore, AppService, PostService, TagService],
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [ROUTER_DIRECTIVES, ErrorComponent, SidebarComponent, PostComponent, ResizeHeaderDirective, HeaderTypeDirective]
+  directives: [
+    ROUTER_DIRECTIVES,
+    ErrorComponent,
+    SidebarComponent,
+    FooterComponent,
+    PostComponent,
+    ResizeHeaderDirective,
+    HeaderTypeDirective
+  ]
 })
 export class AppComponent {
 	appInfo: any;

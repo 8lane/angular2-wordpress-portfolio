@@ -1,0 +1,42 @@
+@import "../../assets/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+$footer-bg-color:             #191b1f;
+
+:host {
+  display: block;
+  position: relative;
+  margin-top: $spacer * 8;
+  background: linear-gradient(to bottom, darken($footer-bg-color, 20%) 0%, $footer-bg-color 100%);
+}
+
+.app-footer {
+  padding-top: $spacer * 15;
+  padding-bottom: $spacer * 15;
+  font-size: 1.2rem;
+  font-weight: 300;
+
+  /* Footer list items */
+  &__item {
+    &:not(:last-child) {
+      margin-right: $spacer * 3;
+    }
+  }
+
+  /* Footer anchors */
+  &__link {
+    .app-footer__social & {
+      color: white;
+    }
+
+    .app-footer__credits & {
+      color: rgba(white, 0.5);
+    }
+  }
+
+  &__social {
+  }
+
+  &__credits {
+  }
+}

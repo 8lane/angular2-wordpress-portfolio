@@ -4,3 +4,4 @@ export * from './components/media/index';
 export * from './components/posts/index';
 export * from './components/tags/index';
 export * from '../+sidebar/index';
+export * from '../+footer/footer.component';
