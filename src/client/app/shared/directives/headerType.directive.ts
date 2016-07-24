@@ -1,5 +1,7 @@
 import {Directive, ElementRef} from '@angular/core';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router';
+import {Router, ROUTER_DIRECTIVES} from '@angular/router';
+
+import {AppService} from '../services';
 
 @Directive({
     selector: '[headerType]'
@@ -7,7 +9,7 @@ import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 export class HeaderTypeDirective {
 	htmlClassName: string = 'app-header--epic';
 
-	constructor(private el: ElementRef, private _router: Router) {}
+	constructor(private el: ElementRef, private _router: Router, private _appService: AppService) {}
 
 	ngOnInit() {
 		this.setHeaderType();
@@ -20,9 +22,11 @@ export class HeaderTypeDirective {
 		let ele = this.el.nativeElement;
 
     if(this._router.url === '/') {
-    	ele.classList.add(this.htmlClassName);
+    	//ele.classList.add(this.htmlClassName);
+      this._appService.epicHeader = true;
   	} else {
-    	ele.classList.remove(this.htmlClassName);
+    	//ele.classList.remove(this.htmlClassName);
+      this._appService.epicHeader = false;
   	}
 	}
 }
