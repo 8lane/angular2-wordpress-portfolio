@@ -10,111 +10,117 @@ $sidebar-border:								#2c3036;
 
 :host {
   display: block;
-	background: $sidebar-bg;
-	min-height: 300px; /* temp */
-	max-width: $xs-sidebar-max-width;
+  background: $sidebar-bg;
+  min-height: 300px; /* temp */
+  max-width: $xs-sidebar-max-width;
 
-	@include media-breakpoint-up(lg) {
-		max-width: $lg-sidebar-max-width;
-	}
+  @include media-breakpoint-up(lg) {
+    max-width: $lg-sidebar-max-width;
+  }
 }
 
 .app-sidebar {
-	$root: &;
+  margin-top: $spacer-y * 9;
 
-	&__title {
-		color: white;
-	}
+  @include media-breakpoint-up(lg) {
+    margin-top: 0;
+  }
 
-	&__recent, &__external-work {
-		padding: 0;
-		list-style-type: none;
-	}
+  $root: &;
 
-	&__item {
-		display: inline-block;
-		margin-bottom: $spacer;
-		color: white;
-		font-weight: 300;
-		font-size: $font-size-root + 2;
-		text-decoration: none;
-		@include truncate(100%);
-	
-		&:hover {
-			#{$root}__icon {
-				color: $brand-primary;
-			}
-		}
-	}
+  &__title {
+    color: white;
+  }
 
-	&__icon {
-		display: inline-block;
-		vertical-align: middle;
-		width: 30px;
-		font-size: 21px;
-		text-align: center;
-		text-decoration: none;
-		color: $gray-dark;
-		@include base-transition();
+  &__recent, &__external-work {
+    padding: 0;
+    list-style-type: none;
+  }
 
-		&--large {
-			font-size: 26px;
-		}
+  &__item {
+    display: inline-block;
+    margin-bottom: $spacer;
+    color: white;
+    font-weight: 300;
+    font-size: $font-size-root + 2;
+    text-decoration: none;
+    @include truncate(100%);
 
-		&--github { color: #4183c4; }
-		&--medium { color: #00ab6b; }
-		&--codepen { color: #c0c3c7; }
-	}
+    &:hover {
+      #{$root}__icon {
+        color: $brand-primary;
+      }
+    }
+  }
 
-	&__external-item {
-		display: inline-block;
-		padding: ($spacer * 3) 0;
-		border-top: 1px solid $sidebar-border;
-		@include base-transition();
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    font-size: 21px;
+    text-align: center;
+    text-decoration: none;
+    color: $gray-dark;
+    @include base-transition();
 
-		&:hover {
-			i {
-				transform: scale(1.15);
-			}
-		}
+    &--large {
+      font-size: 26px;
+    }
 
-		&:not(:last-child) {
-			border-right: 1px solid $sidebar-border;
-		}
-	}
+    &--github { color: #4183c4; }
+    &--medium { color: #00ab6b; }
+    &--codepen { color: #c0c3c7; }
+  }
+
+  &__external-item {
+    display: inline-block;
+    padding: ($spacer * 3) 0;
+    border-top: 1px solid $sidebar-border;
+    @include base-transition();
+
+    &:hover {
+      i {
+        transform: scale(1.15);
+      }
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid $sidebar-border;
+    }
+  }
 
 }
 
 @media screen and (min-width: map-get($grid-breakpoints, 'sm')) and (max-width: map-get($grid-breakpoints, 'lg')) {
 
-	.app-sidebar {
-		&__title {
-			font-size: $font-size-h2;
-		}
+  .app-sidebar {
+    &__title {
+      font-size: $font-size-h2;
+    }
 
-		&__recent {
-			@include make-row();
+    &__recent {
+      @include make-row();
 
-			li {
-				@include make-col();
-				@include make-col-span(6);
-				text-align: center;
+      li {
+        @include make-col();
+        @include make-col-span(6);
+        text-align: center;
 
-				&:not(:nth-last-of-type(-n+2)) {
-					margin-bottom: $spacer * 3; /* margin bottom on all <li>'s except the bottom two */
-				}
-			}
-		}
+        &:not(:nth-last-of-type(-n+2)) {
+          margin-bottom: $spacer * 3; /* margin bottom on all <li>'s except the bottom two */
+        }
+      }
+    }
 
-		&__icon {
-			display: block;
-			margin: 0 auto $spacer;
-			font-size: 41px;
+    &__icon {
+      display: block;
+      margin: 0 auto $spacer;
+      font-size: 41px;
 
-			&--large {
-				font-size: 41px;
-			}
-		}
-	}
+      &--large {
+        font-size: 41px;
+      }
+    }
+  }
 
 }
