@@ -9,6 +9,7 @@ import {ErrorComponent} from './shared/components';
 import {SidebarComponent} from './shared/components';
 import {FooterComponent} from './shared/components';
 import {PostComponent} from './shared/components';
+import {CallToActionComponent} from './shared/components';
 import {AppService} from './shared/services';
 import {PostService} from './shared/services';
 import {TagService} from './shared/services';
@@ -19,7 +20,6 @@ import {HeaderTypeDirective} from './shared/directives';
  * This class represents the main application component. Within the @Routes annotation is the configuration of the
  * applications routes, configuring the paths for the lazy loaded components (HomeComponent, AboutComponent).
  */
-declare var smoothScroll: any;
 
 @Component({
   moduleId: module.id,
@@ -33,6 +33,7 @@ declare var smoothScroll: any;
     SidebarComponent,
     FooterComponent,
     PostComponent,
+    CallToActionComponent,
     ResizeHeaderDirective,
     HeaderTypeDirective
   ]
@@ -69,7 +70,7 @@ export class AppComponent {
     /* Fetch core posts for our app */
     this._postService.fetchPosts().subscribe();
 
-    /* Sidebar display @TODO: move to directive */
+    /* Sidebar display TODO: move to directive */
     this._router.events.subscribe((e) => {
       if(this._router.url.indexOf('/portfolio') > -1) {
         this._appService.sidebarActive = false;
@@ -77,9 +78,5 @@ export class AppComponent {
         this._appService.sidebarActive = true;
       }
     });
-  }
-
-  scrollToPortfolio() {
-    smoothScroll.animateScroll(`#js-main-content`, null, { speed: 700, easing: 'easeOutQuart' });
   }
 }

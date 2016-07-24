@@ -87,56 +87,11 @@ $sidebar-width:								18rem;
 	}
 
 	&__subtitle {
+		margin-bottom: $spacer-x * 10;
 		color: rgba(white, 0.7);
 		font-size: $font-size-h4;
 		font-weight: 100;
 	}
-
-	&__actions {
-		position: relative;
-		margin-top: $spacer-x * 8;
-	}
-
-	&__cta {
-		font-size: 1.4rem;
-		font-weight: 100;
-		transition: all 150ms ease-in;
-
-		&:hover {
-			transform: scale(1.05);
-		}
-
-		&:active {
-			transform: scale(1);
-		}
-	}
-
-	&__sep {
-		color: rgba(white, 0.3);
-		font-size: 0.9rem;
-		font-weight: 100;
-		text-transform: uppercase;
-
-		&:before, &:after {
-			content: '';
-			display: block;
-			position: absolute;
-			left: 50%;
-			margin-left: -1px;
-			width: 1px;
-			height: 3rem;
-			background: rgba(white, 0.2);
-		}
-
-		&:before {
-			top: -2.2rem;
-		}
-
-		&:after {
-			bottom: -2.2rem;
-		}
-	}
-
 }
 
 .app-header:not(.app-header--epic) {

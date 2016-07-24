@@ -11,10 +11,14 @@ $footer-bg-color:             #191b1f;
 }
 
 .app-footer {
-  padding-top: $spacer * 15;
-  padding-bottom: $spacer * 15;
+  padding-top: $spacer * 24;
+  padding-bottom: $spacer * 8;
   font-size: 1.2rem;
   font-weight: 300;
+
+  &__social {
+    margin-top: $spacer-x * 22;
+  }
 
   /* Footer list items */
   &__item {
@@ -32,11 +36,5 @@ $footer-bg-color:             #191b1f;
     .app-footer__credits & {
       color: rgba(white, 0.5);
     }
-  }
-
-  &__social {
-  }
-
-  &__credits {
   }
 }

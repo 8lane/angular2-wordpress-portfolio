@@ -6,12 +6,9 @@
 			</div>
 			<h1 class="app-header__title p-t-3 p-b-1 m-y-0" [innerHTML]="appInfo.name"></h1>
 		</a>
-		<p class="app-header__subtitle text-muted m-b-3" [innerHTML]="appInfo.description + authorSite"></p>
-		<div class="app-header__actions">
-			<a class="app-header__cta btn btn-secondary-outline btn-lg m-r-3" (click)="!!scrollToPortfolio()" href="#js-main-content">View Portfolio</a>
-			<span class="app-header__sep">or</span>
-			<a class="app-header__cta btn btn-secondary-outline btn-lg m-l-3" href="/cv.pdf" target="_blank">Download CV</a>
-		</div>
+		<p class="app-header__subtitle text-muted" [innerHTML]="appInfo.description + authorSite"></p>
+
+		<tc-calltoactions></tc-calltoactions>
 	</div>
 </header>
 

@@ -1,0 +1,48 @@
+@import "../../../../assets/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+.app-ctas {
+  position: relative;
+
+  /* Button styles */
+  &__btn {
+    font-size: 1.4rem;
+		font-weight: 100;
+		transition: all 150ms ease-in;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+
+		&:active {
+			transform: scale(1);
+		}
+  }
+
+  /* Separator line */
+  &__sep {
+    color: rgba(white, 0.3);
+    font-size: 0.9rem;
+    font-weight: 100;
+    text-transform: uppercase;
+
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      margin-left: -1px;
+      width: 1px;
+      height: 3rem;
+      background: rgba(white, 0.2);
+    }
+
+    &:before {
+      top: -2.2rem;
+    }
+
+    &:after {
+      bottom: -2.2rem;
+    }
+  }
+}
