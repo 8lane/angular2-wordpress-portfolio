@@ -9,9 +9,12 @@ $timeline-peak-pip-size:			10px;
 %timeline-point {
 	content: "";
 	display: block;
+	height: 10px;
+	width: 10px;
 	position: absolute;
 	left: 50%;
 	z-index: 1;
+	border-radius: 50%;
 }
 
 :host {
@@ -49,12 +52,9 @@ $timeline-peak-pip-size:			10px;
 			&:before {
 				@extend %timeline-point;
 				top: 50%;
-				height: 10px;
-				width: 10px;
 				margin-top: -5px;
 				margin-left: -5px;
 				background: #ffffff;
-				border-radius: 50%;
 				border: 2px solid $timeline-path-bg;
 			}
 		}
@@ -69,6 +69,14 @@ $timeline-peak-pip-size:			10px;
 		left: 50%;
 		margin-left: -1px;
 		background: $timeline-path-bg;
+
+		&:after {
+			@extend %timeline-point;
+			bottom: -9px;
+			margin-left: -5px;
+			background: #ffffff;
+			border: 2px solid $timeline-path-bg;
+		}
 	}
 
 }
@@ -92,7 +100,6 @@ $timeline-peak-pip-size:			10px;
 			width: $timeline-peak-pip-size;
 			margin-left: -#{$timeline-peak-pip-size / 2};
 			border: 2px solid $timeline-peak-bg;
-			border-radius: 50%;
 		}
 	}
 }
