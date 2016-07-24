@@ -14,6 +14,6 @@ export class CallToActionComponent {
 	constructor() {}
 
   scrollToPortfolio(): void {
-    smoothScroll.animateScroll(`#js-main-content`, null, { speed: 700, easing: 'easeOutQuart' });
+    smoothScroll.animateScroll('#timeline-year-0', null, { speed: 700, easing: 'easeOutQuart' });
   }
 }
