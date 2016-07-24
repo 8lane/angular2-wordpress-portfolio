@@ -74,6 +74,10 @@ $sidebar-width:								18rem;
 	a {
 		color: white;
 		text-decoration: none;
+
+		.app-header:not(.app-header--epic) & {
+			display: inline-block;
+		}
 	}
 
 	&__logo {
@@ -84,43 +88,47 @@ $sidebar-width:								18rem;
 	&__title {
 		font-size: $font-size-h1 * 1.3;
 		font-weight: 600;
+
+		.app-header:not(.app-header--epic) & {
+			display: inline-block;
+			margin-right: $spacer-x;
+			font-size: $font-size-h1;
+			font-weight: 300;
+		}
 	}
 
 	&__subtitle {
-		margin-bottom: $spacer-x * 10;
+		margin-bottom: 0;
 		color: rgba(white, 0.7);
 		font-size: $font-size-h4;
 		font-weight: 100;
+
+		.app-header--epic & {
+			margin-bottom: $spacer-x * 10;
+		}
+
+		.app-header:not(.app-header--epic) & {
+			display: inline-block;
+		}
+	}
+
+	/deep/ &__author-site {
+		display: block;
+
+		.app-header:not(.app-header--epic) & {
+			display: inline-block;
+			padding-left: $spacer-x;
+		}
 	}
 }
 
 .app-header:not(.app-header--epic) {
 	max-height: $header-minimal-height;
+	line-height: $header-minimal-height;
+	background: linear-gradient(to bottom, darken($header-bg-color, 10%) 0%, $header-bg-color 100%);
 
 	/* Hide elements not needed on minimal header */
-	.app-header__logo,
-	.app-header__actions {
+	.app-header__logo {
 		display: none;
-	}
-}
-
-.header__title {
-	color: white;
-}
-
-.header__subtitle {
-	color: rgba(white, 0.8);
-}
-
-
-@include media-breakpoint-up(xs) {
-	.header__logo {
-		max-width: 115px;
-	}
-}
-
-@include media-breakpoint-down(lg) {
-	.header {
-		padding-bottom: 0 !important;
 	}
 }

@@ -40,7 +40,7 @@ import {HeaderTypeDirective} from './shared/directives';
 })
 export class AppComponent {
 	appInfo: any;
-  authorSite = `<br>Creator of <a target="_blank" href="http://ipsthemes.com">IPS Themes</a>`;
+  authorSite = `<span class="app-header__author-site">Creator of <a target="_blank" href="http://ipsthemes.com">IPS Themes</a></span>`;
 
   constructor(private _appService: AppService,
               private _postService: PostService,

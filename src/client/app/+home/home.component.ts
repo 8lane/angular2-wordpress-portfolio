@@ -21,7 +21,7 @@ export class HomeComponent {
 
   ngAfterViewInit() {
     if(this._appService.skipToPosts) {
-      document.getElementById('js-main-content').scrollIntoView();
+      document.getElementById('timeline-year-0').scrollIntoView();
     }
   }
 

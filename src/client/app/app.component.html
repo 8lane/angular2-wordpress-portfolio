@@ -8,7 +8,7 @@
 		</a>
 		<p class="app-header__subtitle text-muted" [innerHTML]="appInfo.description + authorSite"></p>
 
-		<tc-calltoactions></tc-calltoactions>
+		<tc-calltoactions *ngIf="hasSidebar"></tc-calltoactions>
 	</div>
 </header>
 
