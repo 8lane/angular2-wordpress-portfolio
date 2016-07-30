@@ -4,12 +4,11 @@
 			<div class="app-sidebar__content p-x-3 p-y-3">
 				<h3 class="app-sidebar__title text-xs-center m-t-2 m-b-3">Recent</h3>
 				<ul class="app-sidebar__recent">
-					<li><a class="app-sidebar__item" href="#"><i class="app-sidebar__icon icon-github"></i> angular2-spinners</a></li>
-					<li><a class="app-sidebar__item" href="#"><i class="app-sidebar__icon icon-codepen"></i> ng2 dynamic content loader</a></li>
-					<li><a class="app-sidebar__item" href="#"><i class="app-sidebar__icon icon-medium"></i> sass color palettes</a></li>
-					<li><a class="app-sidebar__item" href="#"><i class="app-sidebar__icon icon-github"></i> angular2-wordpress-portfolio</a></li>
-					<li><a class="app-sidebar__item" href="#"><i class="app-sidebar__icon icon-codepen"></i> @extending %placeholders</a></li>
-					<li><a class="app-sidebar__item" href="#"><i class="app-sidebar__icon icon-github"></i> edd statistics app</a></li>
+					<li *ngFor="let post of sidebarPosts;">
+						<a href="{{post.Url}}" class="app-sidebar__item">
+							<i class="app-sidebar__icon icon-{{post.Source}}"></i> {{post.Name}}
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div class="app-sidebar__external-work text-xs-center">
