@@ -20,7 +20,6 @@ export class PostComponent {
 	nav: any;
 	slug: string;
 	post: any;
-	isProcessing: boolean = true;
 	gotPost: boolean = false;
 	goPrev: any;
 	goNext: any;
@@ -41,32 +40,19 @@ export class PostComponent {
 				this.post = this._postService.postSingle;
 				this.post.date = moment(this.post.date).format('MMMM Do YYYY');
 
-				this.setupPagination(this._postService.postCollection);
+        this._postService.currentPost = this.slug;
 
 				this._tagService.fetchTagsCollection(this.post.tags).subscribe((tags) => {
 					this.post.tags = tags;
-					this.isProcessing = false;
+					this._postService.isProcessing = false;
 				});
 			});
 		});
 	}
 
-	setupPagination(posts: any[]) {
-		let self = this;
-		posts.forEach(function(item, key) {
-			if (item.id === self.post.id) {
-				let prev = posts[key - 1];
-				let next = posts[key + 1];
-				self.goPrev = typeof (prev) !== 'undefined' ? prev : posts[posts.length - 1]; // Go to previous item, if first item, skip to end
-				self.goNext = typeof (next) !== 'undefined' ? next : posts[0]; // Go to next item, if last item, skip to start
-			}
-		});
-	}
-
-	loadPost(slug: string) {
-		this.isProcessing = true; /* re-start the spinner */
-		this._router.navigate(['/portfolio', slug]); /* navigate to the new portfolio item */
-	}
+  get isProcessing(): boolean {
+    return this._postService.isProcessing;
+  }
 
 	loadTag(slug: string) {
 		this._router.navigate(['/tags', slug]);

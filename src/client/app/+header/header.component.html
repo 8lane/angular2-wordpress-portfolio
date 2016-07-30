@@ -8,6 +8,8 @@
 		</a>
 		<p class="app-header__subtitle text-muted" [innerHTML]="appInfo.description + authorSite" *ngIf="appInfo.description"></p>
 
+		<tc-pagination *ngIf="!hasEpicHeader"></tc-pagination>
+
 		<tc-calltoactions *ngIf="hasSidebar"></tc-calltoactions>
 	</div>
 </header>

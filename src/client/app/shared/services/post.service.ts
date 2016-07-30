@@ -13,6 +13,8 @@ export class PostService {
   postSingle: any[];
   postCollection: any[];
   postCategories: any[];
+  currentPost: string;
+  isProcessing: boolean = true;
 
   constructor(private _http: Http) {
     this.postCategories = []; /* list of posts by year */
@@ -99,7 +101,7 @@ export class PostService {
       /* Check if the year already exists within the array, if not, add it and push the post to it */
       if (this.postCategories.filter((e) => { return e.hasOwnProperty(year); }).length === 0) {
         this.postCategories.push({ [year]: [post] });
-      } else { // Year already exists, push the post 
+      } else { // Year already exists, push the post
         this.postCategories.forEach((cat, idx) => {
           if (cat.hasOwnProperty(year)) {
             cat[year].push(post);
@@ -109,4 +111,3 @@ export class PostService {
     });
   }
 }
-

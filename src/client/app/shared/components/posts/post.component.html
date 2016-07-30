@@ -1,16 +1,5 @@
 <div class="post p-a-3 text-xs-center text-lg-left">
 	<header class="post__header" *ngIf="post && !isProcessing">
-		<nav class="post__pagination m-b-2" *ngIf="goPrev && goNext">
-			<span class="pagination__direction" title="{{goPrev.title.rendered}}" (click)="loadPost(goPrev.slug)">
-				<i class="icon-chevron-with-circle-left"></i>
-			</span>
-			<span class="pagination__direction" title="{{goNext.title.rendered}}" (click)="loadPost(goNext.slug)">
-				<i class="icon-chevron-with-circle-right"></i>
-			</span>
-			<a class="pagination__direction" title="Return to posts" [routerLink]="['/']">
-				<i class="icon-close">×</i>
-			</a>
-		</nav>
 		<h2 class="post__title m-b-0 p-b-1" [innerHTML]="post.title.rendered"></h2>
 		<div class="post__meta text-muted p-b-2">
 			By Tom on {{ post.date }} <span *ngIf="post.tags">under</span>

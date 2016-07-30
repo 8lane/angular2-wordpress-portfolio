@@ -1,6 +1,14 @@
 @import "../../../../assets/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
+$post-bg-color: 									white;
+
+
+:host {
+	display: block;
+	background: $post-bg-color;
+}
+
 .post__pagination {
 	font-size: $font-size-base;
 

@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Router, ROUTER_DIRECTIVES} from '@angular/router';
 
 import {AppService} from '../shared/services';
+import {PaginationComponent} from '../shared/components';
 import {CallToActionComponent} from '../shared/components';
 import {ResizeHeaderDirective} from '../shared/directives';
 import {HeaderTypeDirective} from '../shared/directives';
@@ -13,6 +14,7 @@ import {HeaderTypeDirective} from '../shared/directives';
   styleUrls: ['header.component.css'],
   directives: [
     ROUTER_DIRECTIVES,
+    PaginationComponent,
     CallToActionComponent,
     ResizeHeaderDirective,
     HeaderTypeDirective
