@@ -67,6 +67,8 @@ export class AppComponent {
 
     /* Sidebar display TODO: move to directive */
     this._router.events.subscribe((e) => {
+      window.scrollTo(0,0);
+
       if(this._router.url.indexOf('/portfolio') > -1) {
         this._appService.sidebarActive = false;
       } else {
