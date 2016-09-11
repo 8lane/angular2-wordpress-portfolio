@@ -1,14 +1,17 @@
 @import "../assets/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
+$app-min-width:								320px;
+
 $xs-app-width:								100%;
 $sm-app-width:								95%;
 $xl-app-width:								80%;
 
-$app-min-width:								320px;
+$xs-app-content-width:				960px;
+$xs-app-content-offset-top:		-7rem;
+
 $sidebar-width:								18rem;
 
-$content-offset-top:					-7rem;
 
 
 :host {
@@ -35,7 +38,12 @@ $content-offset-top:					-7rem;
 .app-content {
 	&--offset {
 		/* Pull the main content up into the epic header */
-		margin-top: $content-offset-top;
+		margin-top: $xs-app-content-offset-top;
+	}
+
+	/* Smaller container widths on content pages */
+	&:not(&--with-sidebar) {
+		max-width: $xs-app-content-width;
 	}
 }
 
