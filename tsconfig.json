@@ -20,8 +20,12 @@
     "node_modules",
     "dist",
     "typings/index.d.ts",
-    "typings/modules",
-    "src"
+    "typings/modules"
   ],
-  "compileOnSave": false
+  "compileOnSave": false,
+  "filesGlob": [
+      "**/*.ts",
+      "**/*.tsx",
+      "!node_modules/**"
+  ]
 }
