@@ -19,19 +19,21 @@ $sidebar-width:								18rem;
 	min-width: $app-min-width;
 }
 
-.app-content,
-/deep/ .app-footer {
+.app-content {
 	position: relative;
-	max-width: $xs-app-width;
 	margin-left: auto;
 	margin-right: auto;
 
-	@include media-breakpoint-up(sm) {
-		max-width: $sm-app-width;
-	}
+	&:not(.app-content--with-post) {
+		max-width: $xs-app-width;
 
-	@include media-breakpoint-up(xl) {
-		max-width: $xl-app-width;
+		@include media-breakpoint-up(sm) {
+			max-width: $sm-app-width;
+		}
+
+		@include media-breakpoint-up(xl) {
+			max-width: $xl-app-width;
+		}
 	}
 }
 
@@ -41,8 +43,8 @@ $sidebar-width:								18rem;
 		margin-top: $xs-app-content-offset-top;
 	}
 
-	/* Smaller container widths on content pages */
-	&:not(&--with-sidebar) {
+	/* Smaller container widths on content pages except posts as we control widths via the post styles */
+	&:not(&--with-sidebar):not(&--with-post) {
 		max-width: $xs-app-content-width;
 	}
 }

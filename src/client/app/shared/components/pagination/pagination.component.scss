@@ -1,6 +1,23 @@
+@import "../../../../assets/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+/*  Variables
+/*--------------------------------------------------------------*/
 
 
+/*  Styles
+/*--------------------------------------------------------------*/
 
 :host {
   display: inline-block;
+}
+
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(sm) {
+  :host {
+    float: right;
+  }
 }

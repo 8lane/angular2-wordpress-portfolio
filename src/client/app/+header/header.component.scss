@@ -3,6 +3,7 @@
 
 $header-minimal-height:				85px;
 $header-bg-color:							#1f4295;
+$header-bg-gradient:					linear-gradient(to bottom, darken($header-bg-color, 35%) 0%, $header-bg-color 100%);
 $header-logo-min-width:				150px;
 $header-logo-max-width:				200px;
 
@@ -11,7 +12,7 @@ $header-logo-max-width:				200px;
 }
 
 .app-header {
-	background: linear-gradient(to bottom, darken($header-bg-color, 35%) 0%, $header-bg-color 100%);
+	background: $header-bg-gradient;
 
 	&--epic {
 		box-sizing: content-box;
@@ -36,7 +37,7 @@ $header-logo-max-width:				200px;
 	}
 
 	&__title {
-		font-size: $font-size-h1 * 1.3;
+		font-size: $font-size-h1 * 1.5;
 
 		.app-header:not(.app-header--epic) & {
 			display: inline-block;
@@ -72,14 +73,24 @@ $header-logo-max-width:				200px;
 }
 
 .app-header:not(.app-header--epic) {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	width: 100%;
 	max-height: $header-minimal-height;
 	line-height: $header-minimal-height;
 	padding-left: 1rem;
 	padding-right: 1rem;
-	background: linear-gradient(to bottom, darken($header-bg-color, 10%) 0%, $header-bg-color 100%);
+	background: transparent;
 
 	/* Hide elements not needed on minimal header */
 	.app-header__logo {
 		display: none;
 	}
+}
+
+/* Add spacing to post header banners to cater for fixed header positioning */
+/deep/ .post__header {
+	padding-top: $header-minimal-height;
+	background: $header-bg-gradient;
 }

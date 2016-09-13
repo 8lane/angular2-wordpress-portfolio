@@ -1,14 +1,10 @@
-<div class="post p-a-3 text-xs-center text-lg-left">
+<div class="post text-xs-center text-lg-left">
 	<header class="post__header" *ngIf="post && !isProcessing">
-		<h2 class="post__title m-b-0 p-b-1" [innerHTML]="post.title.rendered"></h2>
-		<div class="post__meta text-muted p-b-2">
-			By Tom on {{ post.date }} <span *ngIf="post.tags">under</span>
+		<div class="post__header-inner container text-xs-center">
+			<h2 class="post__title m-b-0" [innerHTML]="post.excerpt.rendered"></h2>
+			<div class="post__hero"></div>
 		</div>
-		<ul class="app-tags post__tags list-inline list-unstyled" *ngIf="post.tags">
-			<li class="tag__item list-inline-item" id="tag-{{tag.id}}" *ngFor="let tag of post.tags">
-				<button class="tag__btn btn btn-primary btn-sm" *ngIf="tag.id" (click)="loadTag(tag.slug)">{{tag.name}}</button>
-			</li>
-		</ul>
+		<div class="post__slope"></div>
 	</header>
 	<div *ngIf="post && !isProcessing" [innerHtml]="post.content.rendered"></div>
 </div>

@@ -1,6 +1,10 @@
 <tc-header></tc-header>
 
-<main class="app-content" [class.app-content--with-sidebar]="hasSidebar" [class.app-content--offset]="hasEpicHeader">
+<main class="app-content" [ngClass]="{
+	'app-content--offset': hasEpicHeader,
+	'app-content--with-sidebar': hasSidebar,
+	'app-content--with-post': isPostPage
+}">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="app-content__main">

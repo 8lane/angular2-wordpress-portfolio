@@ -9,6 +9,57 @@ $post-bg-color: 									white;
 	background: $post-bg-color;
 }
 
+.post {
+	&__header {
+    position: relative;
+		min-height: 400px;
+		width: 100%;
+	}
+
+	&__title {
+		width: 320px;
+		margin: 0 auto;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+		color: white;
+
+		/deep/ p {
+			margin: 0; /* WP API outputs title in p tags :/ */
+		}
+	}
+
+	&__hero {
+		display: block;
+		width: 100%;
+		min-height: 550px;
+		background: url(assets/images/hero-banner@2x.png) no-repeat;
+		background-size: cover;
+		margin: 0 auto;
+	}
+	// 
+	// &__slope {
+	// 	display: block;
+	// 	min-height: 117px;
+	// 	background: url(assets/images/slope-right.svg) no-repeat;
+	// 	margin: 0 auto;
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	right: 0;
+	// 	width: 100%;
+  //   background-size: 100%;
+  //   background-position: 0px 4px;
+	// }
+}
+
+
+
+
+
+
+
+
+/* REFACTORRRRRR */
 .post__pagination {
 	font-size: $font-size-base;
 
