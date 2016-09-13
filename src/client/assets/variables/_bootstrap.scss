@@ -96,7 +96,7 @@ $body-color:                 $gray !default;
 $link-color:                 $brand-danger !default;
 $link-decoration:            none !default;
 $link-hover-color:           darken($link-color, 15%) !default;
-$link-hover-decoration:      underline !default;
+$link-hover-decoration:      none !default;
 
 
 // Grid breakpoints
@@ -142,10 +142,10 @@ $grid-gutter-width:          1rem !default; // 30px
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:     "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:          "Proxima Nova", Georgia, "Times New Roman", Times, serif !default;
+$font-family-sans-serif:     "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:          "Futura PT", Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
-$font-family-base:           $font-family-serif !default;
+$font-family-base:           $font-family-sans-serif !default;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root:             15px !default;
