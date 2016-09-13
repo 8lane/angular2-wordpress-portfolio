@@ -1,18 +1,13 @@
 import { Component} from '@angular/core';
-import { ActivatedRoute, ROUTER_DIRECTIVES} from '@angular/router';
-import { HTTP_PROVIDERS} from '@angular/http';
+import { ActivatedRoute } from '@angular/router';
 
-import { PostsComponent } from '../../components';
 import { TagService } from '../../services';
 import { PostService } from '../../services';
-import { EventStore } from '../../misc';
 
 @Component({
   moduleId: module.id,
   selector: 'tc-tags',
-  viewProviders: [HTTP_PROVIDERS, EventStore],
-  templateUrl: './tag.component.html',
-  directives: [ROUTER_DIRECTIVES, PostsComponent]
+  templateUrl: './tag.component.html'
 })
 
 export class TagComponent {

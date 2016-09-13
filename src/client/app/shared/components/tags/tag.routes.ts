@@ -1,10 +1,9 @@
-import { RouterConfig } from '@angular/router';
-
+import { Route } from '@angular/router';
 import { TagComponent } from './index';
 
-export const TagRoutes: RouterConfig = [
+export const TagRoutes: Route[] = [
   {
-		path: 'tags/:slug',
-		component: TagComponent
-  },
+    path: 'tags/:slug',
+    component: TagComponent
+  }
 ];

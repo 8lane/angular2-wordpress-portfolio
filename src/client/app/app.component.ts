@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
-import {Config} from './shared/index';
-import {EventStore} from './shared/misc';
+import { Config } from './shared/index';
 
-import {AppService} from './shared/services';
-import {PostService} from './shared/services';
-import {TagService} from './shared/services';
+import { AppService } from './shared/services';
+import { PostService } from './shared/services';
 
 /**
  * This class represents the main application component. Within the @Routes annotation is the configuration of the
@@ -15,7 +13,6 @@ import {TagService} from './shared/services';
 @Component({
   moduleId: module.id,
   selector: 'tc-app',
-  viewProviders: [EventStore, AppService, PostService, TagService],
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css']
 })
