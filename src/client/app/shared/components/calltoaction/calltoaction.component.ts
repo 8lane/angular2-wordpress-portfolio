@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 
 declare var smoothScroll: any;
 
@@ -12,7 +12,9 @@ declare var smoothScroll: any;
 export class CallToActionComponent {
 	constructor() {}
 
-  scrollToPortfolio(): void {
-    smoothScroll.animateScroll('#timeline-year-0', null, { speed: 700, easing: 'easeOutQuart' });
+  scrollToPortfolio($event: any): void {
+    $event.preventDefault();
+    let projectsElement = document.querySelector('#timeline-year-0');
+    smoothScroll.animateScroll(projectsElement);
   }
 }
