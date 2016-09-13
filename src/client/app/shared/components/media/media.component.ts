@@ -1,16 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-import { HTTP_PROVIDERS } from '@angular/http';
 
 import { MediaService } from '../../services';
 
 @Component({
   moduleId: module.id,
   selector: 'tc-media',
-  viewProviders: [HTTP_PROVIDERS, MediaService],
+  viewProviders: [MediaService],
   templateUrl: './media.component.html',
-  styleUrls: ['./media.component.css'], 
-  directives: [ROUTER_DIRECTIVES]
+  styleUrls: ['./media.component.css']
 })
 export class MediaComponent {
   @Input() id: number;

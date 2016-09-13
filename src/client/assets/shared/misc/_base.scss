@@ -1,0 +1,30 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(xs) {
+  html, body {
+    font-size: 12px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  html, body {
+    font-size: 13px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html, body {
+    font-size: 14px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html, body {
+    font-size: 15px;
+  }
+}

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 
-import { PostsComponent } from '../shared/components';
 import { AppService } from '../shared/services';
 import { PostService } from '../shared/services';
-import { MapToIterable } from '../shared/pipes';
 
 /**
  * This class represents the lazy loaded HomeComponent.
@@ -13,8 +11,6 @@ import { MapToIterable } from '../shared/pipes';
   selector: 'tc-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
-  directives: [PostsComponent],
-  pipes: [MapToIterable]
 })
 export class HomeComponent {
   constructor(private _postService: PostService, private _appService: AppService) {}

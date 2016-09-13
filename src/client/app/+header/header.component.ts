@@ -1,24 +1,13 @@
 import {Component} from '@angular/core';
-import {Router, ROUTER_DIRECTIVES} from '@angular/router';
+import {Router} from '@angular/router';
 
 import {AppService} from '../shared/services';
-import {PaginationComponent} from '../shared/components';
-import {CallToActionComponent} from '../shared/components';
-import {ResizeHeaderDirective} from '../shared/directives';
-import {HeaderTypeDirective} from '../shared/directives';
 
 @Component({
   moduleId: module.id,
   selector: 'tc-header',
   templateUrl: 'header.component.html',
-  styleUrls: ['header.component.css'],
-  directives: [
-    ROUTER_DIRECTIVES,
-    PaginationComponent,
-    CallToActionComponent,
-    ResizeHeaderDirective,
-    HeaderTypeDirective
-  ]
+  styleUrls: ['header.component.css']
 })
 export class HeaderComponent {
   authorSite = `<span class="app-header__author-site">Creator of <a target="_blank" href="http://ipsthemes.com">IPS Themes</a></span>`;

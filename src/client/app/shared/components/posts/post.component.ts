@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { CORE_DIRECTIVES } from '@angular/common';
-import { ROUTER_DIRECTIVES, Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
-import { SpinnerComponent } from '../../components';
 import { PostService } from '../../services';
 import { TagService } from '../../services';
 import { EventStore } from '../../misc';
@@ -14,7 +12,6 @@ declare var moment: any;
   moduleId: module.id,
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
-  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, SpinnerComponent]
 })
 export class PostComponent {
 	nav: any;

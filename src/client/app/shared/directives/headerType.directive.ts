@@ -1,5 +1,5 @@
 import {Directive, ElementRef} from '@angular/core';
-import {Router, ROUTER_DIRECTIVES} from '@angular/router';
+import {Router} from '@angular/router';
 
 import {AppService} from '../services';
 

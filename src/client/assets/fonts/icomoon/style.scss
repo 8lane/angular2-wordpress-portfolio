@@ -1,0 +1,74 @@
+@import "variables";
+
+@font-face {
+    font-family: 'icomoon';
+    src:    url('#{$icomoon-font-path}/icomoon.eot?xmxosv');
+    src:    url('#{$icomoon-font-path}/icomoon.eot?xmxosv#iefix') format('embedded-opentype'),
+        url('#{$icomoon-font-path}/icomoon.ttf?xmxosv') format('truetype'),
+        url('#{$icomoon-font-path}/icomoon.woff?xmxosv') format('woff'),
+        url('#{$icomoon-font-path}/icomoon.svg?xmxosv#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter {
+    &:before {
+        content: $icon-twitter;
+    }
+}
+.icon-github {
+    &:before {
+        content: $icon-github;
+    }
+}
+.icon-linkedin {
+    &:before {
+        content: $icon-linkedin;
+    }
+}
+.icon-codepen {
+    &:before {
+        content: $icon-codepen;
+    }
+}
+.icon-facebook-official {
+    &:before {
+        content: $icon-facebook-official;
+    }
+}
+.icon-medium {
+    &:before {
+        content: $icon-medium;
+    }
+}
+.icon-chevron-with-circle-left {
+    &:before {
+        content: $icon-chevron-with-circle-left;
+    }
+}
+.icon-chevron-with-circle-right {
+    &:before {
+        content: $icon-chevron-with-circle-right;
+    }
+}
+.icon-cross {
+    &:before {
+        content: $icon-cross;
+    }
+}
+

@@ -1,10 +1,9 @@
-import { RouterConfig } from '@angular/router';
-
+import { Route } from '@angular/router';
 import { PostComponent } from './index';
 
-export const PostRoutes: RouterConfig = [
+export const PostRoutes: Route[] = [
   {
-		path: 'portfolio/:slug',
-		component: PostComponent
-  },
+    path: 'portfolio/:slug',
+    component: PostComponent
+  }
 ];

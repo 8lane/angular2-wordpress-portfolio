@@ -3,6 +3,7 @@ export * from './components/error/index';
 export * from './components/media/index';
 export * from './components/posts/index';
 export * from './components/tags/index';
+export * from './components/pagination/index';
 export * from './components/calltoaction/calltoaction.component';
 export * from '../+sidebar/index';
 export * from '../+header/header.component';

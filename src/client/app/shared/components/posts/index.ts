@@ -4,4 +4,3 @@
 export * from './post.component';
 export * from './post.routes';
 export * from './posts.component';
-export * from './pagination.component';

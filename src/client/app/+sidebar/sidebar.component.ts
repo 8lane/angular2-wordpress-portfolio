@@ -7,9 +7,7 @@ import { AppService } from '../shared/services';
   moduleId: module.id,
   selector: 'tc-sidebar',
   templateUrl: 'sidebar.component.html',
-  styleUrls: ['sidebar.component.css'],
-  directives: [],
-  pipes: []
+  styleUrls: ['sidebar.component.css']
 })
 export class SidebarComponent {
   sidebarPosts: Array<Object>;

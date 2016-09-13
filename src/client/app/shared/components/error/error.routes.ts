@@ -1,10 +1,9 @@
-import { RouterConfig } from '@angular/router';
-
+import { Route } from '@angular/router';
 import { ErrorComponent } from './index';
 
-export const ErrorRoutes: RouterConfig = [
+export const ErrorRoutes: Route[] = [
   {
     path: 'error',
     component: ErrorComponent
-  },
+  }
 ];

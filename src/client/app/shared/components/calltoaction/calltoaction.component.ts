@@ -7,8 +7,7 @@ declare var smoothScroll: any;
   selector: 'tc-calltoactions',
   viewProviders: [],
   templateUrl: './calltoaction.component.html',
-  styleUrls: ['./calltoaction.component.css'],
-  directives: []
+  styleUrls: ['./calltoaction.component.css']
 })
 export class CallToActionComponent {
 	constructor() {}

@@ -1,0 +1,15 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.btn {
+	@include base-transition();
+
+	&:hover, &:focus {
+		background-color: transparent;
+		border-color: $brand-danger;
+	}
+}
