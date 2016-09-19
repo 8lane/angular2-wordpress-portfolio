@@ -1,11 +1,21 @@
 @import "../../assets/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
-$header-minimal-height:				85px;
+
+/*  Variables
+/*--------------------------------------------------------------*/
+
+$xs-header-scrolled-height:		70px;
+$header-minimal-height:				125px;
 $header-bg-color:							#1f4295;
+$header-scrolled-bg-color:		rgba(5,12,28,0.97);
 $header-bg-gradient:					linear-gradient(to bottom, darken($header-bg-color, 35%) 0%, $header-bg-color 100%);
 $header-logo-min-width:				150px;
 $header-logo-max-width:				200px;
+
+
+/*  Styles
+/*--------------------------------------------------------------*/
 
 :host {
 	display: block;
@@ -14,11 +24,42 @@ $header-logo-max-width:				200px;
 .app-header {
 	background: $header-bg-gradient;
 
+	/* Giant homepage header */
 	&--epic {
 		box-sizing: content-box;
     padding-top: 5rem;
     padding-bottom: 5rem;
 		text-align: center;
+	}
+
+	/* Minimal header on post pages */
+	&:not(.app-header--epic) {
+		max-height: $header-minimal-height;
+		width: 100%;
+		min-width: 320px;
+		position: fixed;
+		top: 0;
+		z-index: 10;
+		padding: .5rem 1rem;
+		text-align: center;
+
+		&:not(.app-header--scrolled) {
+			background: transparent; /* Apply transparent bg except when the scrolled header is active */
+		}
+
+		/* Hide elements not needed on minimal header */
+		.app-header__logo {
+			display: none;
+		}
+	}
+
+	/* Minimal header when scrolled */
+	&--scrolled:not(.app-header--epic) {
+		max-height: $xs-header-scrolled-height;
+		background: $header-scrolled-bg-color;
+		border-bottom: 1px solid white;
+		text-align: left;
+		transition: all 120ms ease-in;
 	}
 
 	a {
@@ -44,21 +85,33 @@ $header-logo-max-width:				200px;
 			margin-right: $spacer-x;
 			font-size: $font-size-h1;
 			font-weight: 300;
+			transition: font-size 120ms ease-in;
+		}
+
+		.app-header--scrolled:not(.app-header--epic) & {
+			font-size: 1.5rem;
 		}
 	}
 
 	&__subtitle {
+		opacity: 1;
 		margin-bottom: 0;
 		color: rgba(white, 0.7);
 		font-size: $font-size-h4;
 		font-weight: 100;
+		white-space: nowrap;
+		transition: opacity 120ms ease-in;
 
 		.app-header--epic & {
 			margin-bottom: $spacer-x * 10;
 		}
 
+		.app-header--scrolled & {
+			opacity: 0;
+		}
+
 		.app-header:not(.app-header--epic) & {
-			display: inline-block;
+			display: block;
 		}
 	}
 
@@ -66,26 +119,8 @@ $header-logo-max-width:				200px;
 		display: block;
 
 		.app-header:not(.app-header--epic) & {
-			display: inline-block;
-			padding-left: $spacer-x;
+			display: none;
 		}
-	}
-}
-
-.app-header:not(.app-header--epic) {
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	width: 100%;
-	max-height: $header-minimal-height;
-	line-height: $header-minimal-height;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	background: transparent;
-
-	/* Hide elements not needed on minimal header */
-	.app-header__logo {
-		display: none;
 	}
 }
 
@@ -93,4 +128,14 @@ $header-logo-max-width:				200px;
 /deep/ .post__header {
 	padding-top: $header-minimal-height;
 	background: $header-bg-gradient;
+}
+
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(sm) {
+	.app-header:not(.app-header--epic) {
+		text-align: left;
+	}
 }
