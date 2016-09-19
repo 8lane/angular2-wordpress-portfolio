@@ -1,0 +1,31 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+$xs-research-img-size:              150px;
+
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.s-research {
+  &__item {
+    margin-bottom: $spacer * 5;
+  }
+
+  &__img {
+    min-width: $xs-research-img-size;
+    min-height: $xs-research-img-size;
+    max-width: $xs-research-img-size;
+    max-height: $xs-research-img-size;
+  }
+
+  &__title {
+    margin-top: $spacer * 3;
+  }
+}
+
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(sm) {}

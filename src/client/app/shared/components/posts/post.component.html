@@ -8,12 +8,81 @@
 	</header>
 	<!-- <div *ngIf="post && !isProcessing" [innerHtml]="post.content.rendered"></div> -->
 	<div class="post__content" *ngIf="post && !isProcessing">
-		<div class="panel panel--light">
-			<div class="panel__container">
-				<h2 class="panel__title">Introduction</h2>
+
+		<!-- Intro -->
+		<div class="s-intro panel panel--light">
+			<div class="panel__container container">
+				<h2 class="panel__title panel__heading">Introduction</h2>
 				<p class="panel__desc">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design &amp; front-end, iOS, and Android app designs as well as all marketing efforts such as the main corporate site.</p>
 			</div>
 		</div>
+
+		<!-- Key Contributions -->
+		<div class="s-contributions panel panel--light">
+			<div class="panel__container container">
+				<h2 class="panel__title panel__heading">Key contributions</h2>
+				<div class="post__contributions container-fluid text-xs-left">
+				  <div class="row">
+				    <div class="post__contribution col-xs-12 col-sm-6">
+				      <img class="post__contribution-logo" src="assets/images/logo-ai.svg" alt="Adobe Illustrator CC" />
+							<p class="post__contribution-desc m-b-0">Lead designer providing initial AI mockups to fully coded Angular 2 components</p>
+				    </div>
+						<div class="post__contribution col-xs-12 col-sm-6">
+				      <img class="post__contribution-logo" src="assets/images/logo-node.svg" alt="Gulp.js" />
+							<p class="post__contribution-desc m-b-0">Setup front-end build tools with Gulp.js for SASS &amp; Autoprefixer compilation</p>
+				    </div>
+						<div class="post__contribution col-xs-12 col-sm-6">
+				      <img class="post__contribution-logo" src="assets/images/logo-invision.svg" alt="Invision App" />
+							<p class="post__contribution-desc m-b-0">Assist with initial research including paper prototyping, wireframing & A/B testing</p>
+				    </div>
+						<div class="post__contribution col-xs-12 col-sm-6">
+				      <img class="post__contribution-logo" src="assets/images/logo-angular.svg" alt="Angular 2" />
+							<p class="post__contribution-desc m-b-0">Built the UI and contributed towards core functionality written in TypeScript</p>
+				    </div>
+						<div class="post__contribution col-xs-12 col-sm-6">
+				      <img class="post__contribution-logo" src="assets/images/logo-sass.svg" alt="SASS" />
+							<p class="post__contribution-desc m-b-0">Modular Angular 2 component based SASS written using BEM syntax</p>
+				    </div>
+						<div class="post__contribution col-xs-12 col-sm-6">
+				      <img class="post__contribution-logo" src="assets/images/logo-adobe.svg" alt="Adobe" />
+							<p class="post__contribution-desc m-b-0">Provided services to communicate with backend API’s and Adobe's CEP bridge</p>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Research -->
+		<div class="s-research panel panel--lg panel--dark">
+			<div class="panel__container container">
+				<h2 class="panel__title panel__heading">Research</h2>
+				<p class="panel__desc">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design &amp; front-end, iOS, and Android app designs as well as all marketing efforts such as the main corporate site.</p>
+
+				<div class="s-research__path">
+					<div class="row">
+						<div class="s-research__item col-xs-12 col-md-4 text-xs-center">
+							<img class="s-research__img" src="assets/images/research-journey.svg" alt="User journey" />
+							<h3 class="s-research__title panel__heading">User journey</h3>
+							<p class="s-research__desc">Having joined the Audio Network Adobe scrum team a couple of weeks after the project has begun, I was able to offer</p>
+						</div>
+						<div class="s-research__item col-xs-12 col-md-4 text-xs-center">
+							<img class="s-research__img" src="assets/images/research-wireframe.svg" alt="User journey" />
+							<h3 class="s-research__title panel__heading">Wireframe and mockup</h3>
+							<p class="s-research__desc">Having joined the Audio Network Adobe scrum team a couple of weeks after the project has begun, I was able to offer</p>
+						</div>
+						<div class="s-research__item col-xs-12 col-md-4 text-xs-center">
+							<img class="s-research__img" src="assets/images/research-iterate.svg" alt="User journey" />
+							<h3 class="s-research__title panel__heading">Test and iterate</h3>
+							<p class="s-research__desc">Having joined the Audio Network Adobe scrum team a couple of weeks after the project has begun, I was able to offer</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
 	</div>
 </div>
 

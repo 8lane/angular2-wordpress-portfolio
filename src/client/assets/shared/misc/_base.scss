@@ -7,24 +7,33 @@
 
 @include media-breakpoint-up(xs) {
   html, body {
-    font-size: 12px;
+    font-size: 15px;
+  }
+
+  .container {
+    padding-left: $spacer * 3;
+    padding-right: $spacer * 3;
   }
 }
 
 @include media-breakpoint-up(sm) {
   html, body {
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 
 @include media-breakpoint-up(md) {
   html, body {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 @include media-breakpoint-up(lg) {
   html, body {
-    font-size: 15px;
+    font-size: 17px;
   }
+}
+
+p {
+  font-weight: lighter;
 }
