@@ -1,11 +1,10 @@
-<nav class="pagination m-b-2">
-  <span class="pagination__prev" title="" (click)="loadPrevious()">
-    <i class="icon-chevron-with-circle-left"></i>
-  </span>
-  <span class="pagination__next" title="" (click)="loadNext()">
-    <i class="icon-chevron-with-circle-right"></i>
-  </span>
+<nav class="pagination">
   <a class="pagination__close" title="Return to posts" [routerLink]="['/']">
-    <i class="icon-close">×</i>
+    <img class="pagination__img pagination__img--close" src="assets/images/case-studies.svg" alt="View case studies" />
+    <span class="pagination__title pagination__title--close hidden-xs-down">View case studies</span>
+  </a>
+  <a class="pagination__next" title="" (click)="loadNext($event)" href="#">
+    <span class="pagination__title pagination__title--next hidden-xs-down">Next case study</span>
+    <img class="pagination__img pagination__img--next" src="assets/images/next-case-study.svg" alt="Next case studies" />
   </a>
 </nav>

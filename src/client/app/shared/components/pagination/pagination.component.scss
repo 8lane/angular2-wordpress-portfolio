@@ -4,6 +4,10 @@
 /*  Variables
 /*--------------------------------------------------------------*/
 
+$xs-pagination-img-size:              35px;
+
+$sm-pagination-img-size:              25px;
+
 
 /*  Styles
 /*--------------------------------------------------------------*/
@@ -11,10 +15,33 @@
 :host {
   display: inline-block;
   position: absolute;
-  top: $spacer * 5;
+  top: 18px;
   right: $spacer * 2;
 }
 
+.pagination {
+  opacity: 0;
+  pointer-events: none;
+  transition: 120ms ease-in;
+  transition-delay: 100ms;
+
+  :host-context(.app-header--scrolled) & {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  &__close,
+  &__next {
+    padding: 1.5rem .8rem;
+  }
+
+  &__img {
+    max-height: $xs-pagination-img-size;
+    max-width: $xs-pagination-img-size;
+    min-width: $xs-pagination-img-size;
+    min-height: $xs-pagination-img-size;
+  }
+}
 
 /*  Media Queries
 /*--------------------------------------------------------------*/
@@ -22,5 +49,34 @@
 @include media-breakpoint-up(sm) {
   :host {
     float: right;
+  }
+
+  .pagination {
+    opacity: 1;
+    pointer-events: initial;
+
+    &__img {
+      max-height: $sm-pagination-img-size;
+      max-width: $sm-pagination-img-size;
+      min-width: $sm-pagination-img-size;
+      min-height: $sm-pagination-img-size;
+    }
+
+    &__title {
+      color: rgba(white, 0.7);
+
+      .pagination__close:hover &,
+      .pagination__next:hover & {
+        color: white;
+      }
+
+      &--close {
+        margin-left: $spacer-x * 1.5;
+      }
+
+      &--next {
+        margin-right: $spacer-x * 1.5;
+      }
+    }
   }
 }

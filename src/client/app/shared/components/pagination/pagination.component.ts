@@ -25,7 +25,9 @@ export class PaginationComponent {
     });
   }
 
-  loadNext(): void {
+  loadNext($event: Event): void {
+    $event.preventDefault();
+
     this.findPost('next').then((slug) => {
       this._postService.isProcessing = true;
       this._router.navigate(['/portfolio', slug])
