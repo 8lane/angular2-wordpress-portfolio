@@ -2,11 +2,19 @@
 	<header class="post__header" *ngIf="post && !isProcessing">
 		<div class="post__header-inner container text-xs-center">
 			<h2 class="post__title m-b-0" [innerHTML]="post.excerpt.rendered"></h2>
-			<div class="post__hero"></div>
+			<img class="post__hero" src="assets/images/hero-banner@2x.png" />
 		</div>
 		<div class="post__slope"></div>
 	</header>
-	<div *ngIf="post && !isProcessing" [innerHtml]="post.content.rendered"></div>
+	<!-- <div *ngIf="post && !isProcessing" [innerHtml]="post.content.rendered"></div> -->
+	<div class="post__content" *ngIf="post && !isProcessing">
+		<div class="panel panel--light">
+			<div class="panel__container">
+				<h2 class="panel__title">Introduction</h2>
+				<p class="panel__desc">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design &amp; front-end, iOS, and Android app designs as well as all marketing efforts such as the main corporate site.</p>
+			</div>
+		</div>
+	</div>
 </div>
 
 <tc-spinner [isProcessing]="isProcessing"></tc-spinner>

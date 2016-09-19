@@ -1,8 +1,17 @@
 @import "../../../../assets/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
-$post-bg-color: 									white;
 
+/*  Variables
+/*--------------------------------------------------------------*/
+
+$post-bg-color: 									white;
+$post-slope-height:								100px;
+$post-slope-angle:								-3deg;
+
+
+/*  Styles
+/*--------------------------------------------------------------*/
 
 :host {
 	display: block;
@@ -16,11 +25,15 @@ $post-bg-color: 									white;
 		width: 100%;
 	}
 
+	&__header-inner {
+		margin-bottom: -15%; /* Half cover the hero image with the slope */
+	}
+
 	&__title {
-		width: 320px;
+		width: 28rem;
 		margin: 0 auto;
-		padding-top: 5rem;
-		padding-bottom: 5rem;
+		padding-top: 2rem;
+		padding-bottom: 3rem;
 		color: white;
 
 		/deep/ p {
@@ -29,34 +42,27 @@ $post-bg-color: 									white;
 	}
 
 	&__hero {
-		display: block;
 		width: 100%;
-		min-height: 550px;
-		background: url(assets/images/hero-banner@2x.png) no-repeat;
-		background-size: cover;
-		margin: 0 auto;
 	}
-	// 
-	// &__slope {
-	// 	display: block;
-	// 	min-height: 117px;
-	// 	background: url(assets/images/slope-right.svg) no-repeat;
-	// 	margin: 0 auto;
-	// 	position: absolute;
-	// 	bottom: 0;
-	// 	left: 0;
-	// 	right: 0;
-	// 	width: 100%;
-  //   background-size: 100%;
-  //   background-position: 0px 4px;
-	// }
+
+	&__slope {
+		height: $post-slope-height;
+		background: $post-bg-color;
+		transform: skewY($post-slope-angle);
+		padding-bottom: 20px;
+		margin-bottom: -60px;
+		width: 100%;
+	}
+
+	&__content {
+		position: relative;
+		z-index: 2;
+    margin-top: -#{$post-slope-height / 2};
+		padding-top: $spacer * 4;
+		background: $post-bg-color;
+	}
+
 }
-
-
-
-
-
-
 
 
 /* REFACTORRRRRR */
@@ -96,6 +102,19 @@ $post-bg-color: 									white;
 	transition: 120ms;
 }
 
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(sm) {
+	.post {
+		&__title {
+			padding-top: 5rem;
+			padding-bottom: 5rem;
+		}
+	}
+}
+
 @include media-breakpoint-up(lg) {
 	.post__pagination {
 		margin-top: -7px;
@@ -116,13 +135,7 @@ $post-bg-color: 									white;
 	}
 }
 
-
-
 .post__meta {
 	display: inline-block;
 	font-size: $font-size-sm;
-}
-
-.post__tags {
-	display: inline-block;
 }
