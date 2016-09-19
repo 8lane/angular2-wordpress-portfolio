@@ -19,6 +19,14 @@
 @import "fonts/fonts";
 
 
+body {
+	min-width: 320px;
+}
+
+img {
+	min-width: 100%;
+}
+
 .app-loader {
 	color: pink;
 }

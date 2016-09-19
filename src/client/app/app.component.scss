@@ -12,11 +12,12 @@ $xs-app-content-offset-top:		-7rem;
 
 $sidebar-width:								18rem;
 
-
+body {
+	min-width: $app-min-width;
+}
 
 :host {
 	display: block;
-	min-width: $app-min-width;
 }
 
 .app-content {

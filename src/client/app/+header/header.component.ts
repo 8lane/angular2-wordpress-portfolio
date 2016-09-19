@@ -18,6 +18,10 @@ export class HeaderComponent {
     return this._appService.appInfo;
   }
 
+  get hasScrolledHeader() {
+    return this._appService.isPageScrolled && !this.hasEpicHeader;
+  }
+
   get hasEpicHeader() {
     return this._appService.epicHeader;
   }

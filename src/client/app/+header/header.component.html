@@ -1,10 +1,13 @@
-<header class="app-header" [class.app-header--epic]="hasEpicHeader" resizeHeader headerType>
+<header class="app-header" resizeHeader headerType [ngClass]="{
+	'app-header--epic': hasEpicHeader,
+	'app-header--scrolled': hasScrolledHeader
+}">
 	<div class="container-fluid">
 		<a [routerLink]="['/']">
 			<div class="app-header__logo center-block m-b-2">
 				<img class="img-fluid img-circle" src="/assets/images/logo.jpg">
 			</div>
-			<h1 class="app-header__title p-t-3 p-b-1 m-y-0" [innerHTML]="appInfo.name" *ngIf="appInfo.name"></h1>
+			<h1 class="app-header__title p-t-3 m-y-0" [innerHTML]="appInfo.name" *ngIf="appInfo.name"></h1>
 		</a>
 		<p class="app-header__subtitle text-muted" [innerHTML]="appInfo.description + authorSite" *ngIf="appInfo.description"></p>
 
