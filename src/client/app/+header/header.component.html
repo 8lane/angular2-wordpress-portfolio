@@ -7,7 +7,7 @@
 			<div class="app-header__logo center-block m-b-2">
 				<img class="img-fluid img-circle" src="/assets/images/logo.jpg">
 			</div>
-			<h1 class="app-header__title p-t-3 m-y-0" [innerHTML]="appInfo.name" *ngIf="appInfo.name"></h1>
+			<h1 class="app-header__title m-y-0" [innerHTML]="appInfo.name" *ngIf="appInfo.name"></h1>
 		</a>
 		<p class="app-header__subtitle text-muted" [innerHTML]="appInfo.description + authorSite" *ngIf="appInfo.description"></p>
 

@@ -6,7 +6,7 @@
 /*--------------------------------------------------------------*/
 
 $xs-header-scrolled-height:		70px;
-$header-minimal-height:				125px;
+$xs-header-minimal-height:		125px;
 $header-bg-color:							#1f4295;
 $header-scrolled-bg-color:		rgba(5,12,28,0.97);
 $header-bg-gradient:					linear-gradient(to bottom, darken($header-bg-color, 35%) 0%, $header-bg-color 100%);
@@ -34,7 +34,7 @@ $header-logo-max-width:				200px;
 
 	/* Minimal header on post pages */
 	&:not(.app-header--epic) {
-		max-height: $header-minimal-height;
+		max-height: $xs-header-minimal-height;
 		width: 100%;
 		min-width: 320px;
 		position: fixed;
@@ -59,7 +59,7 @@ $header-logo-max-width:				200px;
 		background: $header-scrolled-bg-color;
 		border-bottom: 1px solid white;
 		text-align: left;
-		transition: all 120ms ease-in;
+		transition: background 120ms ease-in;
 	}
 
 	a {
@@ -78,7 +78,7 @@ $header-logo-max-width:				200px;
 	}
 
 	&__title {
-		font-size: $font-size-h1 * 1.5;
+		color: white;
 
 		.app-header:not(.app-header--epic) & {
 			display: inline-block;
@@ -89,7 +89,12 @@ $header-logo-max-width:				200px;
 		}
 
 		.app-header--scrolled:not(.app-header--epic) & {
-			font-size: 1.5rem;
+			font-size: 2.1rem;
+			padding: .4rem 0;
+		}
+
+		.app-header:not(.app-header--scrolled) & {
+			padding-top: $spacer * 3;
 		}
 	}
 
@@ -97,7 +102,6 @@ $header-logo-max-width:				200px;
 		opacity: 1;
 		margin-bottom: 0;
 		color: rgba(white, 0.7);
-		font-size: $font-size-h4;
 		font-weight: 100;
 		white-space: nowrap;
 		transition: opacity 120ms ease-in;
@@ -126,7 +130,7 @@ $header-logo-max-width:				200px;
 
 /* Add spacing to post header banners to cater for fixed header positioning */
 /deep/ .post__header {
-	padding-top: $header-minimal-height;
+	padding-top: $xs-header-minimal-height;
 	background: $header-bg-gradient;
 }
 
