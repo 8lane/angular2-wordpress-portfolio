@@ -35,6 +35,10 @@ $sm-pagination-img-size:              25px;
     padding: 1.5rem .8rem;
   }
 
+  &__next {
+    padding-right: 0;
+  }
+
   &__img {
     max-height: $xs-pagination-img-size;
     max-width: $xs-pagination-img-size;
