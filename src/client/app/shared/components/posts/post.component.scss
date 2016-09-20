@@ -26,7 +26,7 @@ $post-slope-angle:								3deg;
 	}
 
 	&__header-inner {
-		margin-bottom: -15%; /* Half cover the hero image with the slope */
+		margin-bottom: -5%; /* Half cover the hero image with the slope */
 	}
 
 	&__title {
@@ -90,6 +90,15 @@ $post-slope-angle:								3deg;
 		}
 	}
 }
+
+@include media-breakpoint-up(md) {
+	.post {
+		&__header-inner {
+			margin-bottom: -10%; /* Half cover the hero image with the slope */
+		}
+	}
+}
+
 
 
 
