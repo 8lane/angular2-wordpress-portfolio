@@ -12,16 +12,16 @@ $xs-panel-title-margin-bottom:                $spacer * 3;
 /*--------------------------------------------------------------*/
 
 .panel {
-  padding-top: $xs-panel-padding;
   padding-bottom: $xs-panel-padding;
+
+  &:not(:first-child) {
+    padding-top: $xs-panel-padding;
+  }
 
   &--lg {
     padding-top: $xs-panel-padding-lg;
     padding-bottom: $xs-panel-padding-lg;
   }
-
-  padding-top: $xs-panel-padding;
-  padding-bottom: $xs-panel-padding;
 
   &--light { background: white; }
   &--dark { background: black; }

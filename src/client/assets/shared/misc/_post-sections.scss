@@ -3,6 +3,8 @@
 
 $xs-research-img-size:              150px;
 
+$xs-story-border-style1:            $brand-warning;
+$xs-story-border-style2:            $brand-info;
 
 /*  Styles
 /*--------------------------------------------------------------*/
@@ -21,6 +23,38 @@ $xs-research-img-size:              150px;
 
   &__title {
     margin-top: $spacer * 3;
+    margin-bottom: $spacer * 2;
+  }
+
+  &__agile {
+    padding-top: $spacer * 3;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  &__story-container {
+    margin-top: $spacer * 5;
+  }
+
+  &__story-title {
+    margin-bottom: $spacer;
+  }
+
+  &__stories {
+    padding: $spacer * 3;
+    border: 1px solid $xs-story-border-style1;
+
+    &:not(:last-child) {
+      margin-bottom: $spacer * 3;
+    }
+
+    &--style1 { border-color: $xs-story-border-style1; }
+    &--style2 { border-color: $xs-story-border-style2; }
+  }
+
+  &__story {
+    &:not(:last-child) {
+      margin-bottom: $spacer / 2;
+    }
   }
 }
 
