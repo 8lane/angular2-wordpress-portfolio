@@ -1,0 +1,48 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+$xs-logo-width:                         50px;
+$xs-sass-logo-width:                    150px;
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.s-development {
+  &__tech {
+    margin-top: $spacer * 7;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: $spacer * 7;
+    }
+  }
+
+  &__logo {
+    min-width: $xs-logo-width;
+    max-width: $xs-logo-width;
+  }
+
+  &__sass {
+    background: #181c21 url(/assets/images/bg-sass.svg) no-repeat;
+    background-position: -13rem -8rem;
+    background-size: 70rem;
+  }
+
+  &__sass-logo {
+    max-width: $xs-sass-logo-width;
+    min-width: $xs-sass-logo-width;
+    margin-bottom: $spacer * 3;
+  }
+
+  &__items {
+    margin-top: $spacer * 5;
+  }
+}
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(sm) {
+/**/
+}

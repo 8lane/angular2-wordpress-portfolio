@@ -16,8 +16,8 @@ $xs-story-border-style2:            $brand-info;
 
   &__img {
     min-width: $xs-research-img-size;
-    min-height: $xs-research-img-size;
     max-width: $xs-research-img-size;
+    min-height: $xs-research-img-size;
     max-height: $xs-research-img-size;
   }
 
@@ -27,8 +27,8 @@ $xs-story-border-style2:            $brand-info;
   }
 
   &__agile {
-    padding-top: $spacer * 3;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: $xs-panel-padding;
+    border-top: 1px solid rgba(white, 0.2);
   }
 
   &__story-container {
@@ -62,4 +62,6 @@ $xs-story-border-style2:            $brand-info;
 /*  Media Queries
 /*--------------------------------------------------------------*/
 
-@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(sm) {
+/**/
+}

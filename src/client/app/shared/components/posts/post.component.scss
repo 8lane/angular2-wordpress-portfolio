@@ -20,9 +20,9 @@ $post-slope-angle:								3deg;
 
 .post {
 	&__header {
-    position: relative;
-		min-height: 400px;
 		width: 100%;
+		min-height: 400px;
+		position: relative;
 	}
 
 	&__header-inner {
@@ -47,12 +47,12 @@ $post-slope-angle:								3deg;
 	}
 
 	&__slope {
+		width: 100%;
 		height: $post-slope-height;
+		margin-bottom: -60px;
+		padding-bottom: 20px;
 		background: $post-bg-color;
 		transform: skewY($post-slope-angle);
-		padding-bottom: 20px;
-		margin-bottom: -60px;
-		width: 100%;
 	}
 
 	&__content {
@@ -61,33 +61,6 @@ $post-slope-angle:								3deg;
     margin-top: -#{$post-slope-height / 2};
 		padding-top: $spacer * 2;
 		background: $post-bg-color;
-	}
-
-
-
-
-	/* CONTRIBUTIONS PANEL */
-	$xs-panel-contribution-logo-size:						45px;
-
-	&__contribution {
-		margin-bottom: $spacer * 4;
-		padding-left: $xs-panel-contribution-logo-size + 20px;
-	}
-
-	&__contribution-logo {
-		position: absolute;
-		top: 6px;
-		left: 0;
-		min-width: $xs-panel-contribution-logo-size;
-		max-width: $xs-panel-contribution-logo-size;
-	}
-}
-
-@include media-breakpoint-up(sm) {
-	.post {
-		&__contribution {
-			min-height: 76px;
-		}
 	}
 }
 
@@ -107,12 +80,14 @@ $post-slope-angle:								3deg;
 	font-size: $font-size-base;
 
 	.pagination__direction {
-		color: $gray-dark;
 		padding-left: 6px;
+		color: $gray-dark;
 		transition: 120ms;
 		cursor: pointer;
 
-		&:hover, &:focus, &:active {
+		&:hover,
+		&:focus,
+		&:active {
 			color: $brand-primary;
 
 			.icon-close {
@@ -120,22 +95,23 @@ $post-slope-angle:								3deg;
 			}
 		}
 
-		span, [class^="icon"] {
+		span,
+		[class^="icon"] {
 			vertical-align: middle;
 		}
 	}
 }
 
 .icon-close {
-	background: #373A3C;
-	border-radius: 18px;
-	height: 18px;
-	width: 18px;
-	line-height: 12px;
 	display: inline-block;
-	text-align: center;
+	width: 18px;
+	height: 18px;
+	line-height: 12px;
+	background: #373a3c;
+	border-radius: 18px;
 	font-size: 16px;
 	color: white;
+	text-align: center;
 	transition: 120ms;
 }
 
@@ -164,10 +140,10 @@ $post-slope-angle:								3deg;
 	}
 
 	.icon-close {
-		border-radius: 28px;
-		height: 28px;
 		width: 28px;
+		height: 28px;
 		line-height: 18px;
+		border-radius: 28px;
 		font-size: 22px;
 	}
 }

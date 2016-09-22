@@ -1,10 +1,8 @@
 /*  Variables
 /*--------------------------------------------------------------*/
 
-$xs-panel-padding:                            $spacer * 5;
-$xs-panel-padding-lg:                         $xs-panel-padding * 1.5;
+$xs-panel-padding:                            $spacer * 7;
 
-$xs-panel-title-margin-top:                   $spacer * 2;
 $xs-panel-title-margin-bottom:                $spacer * 3;
 
 
@@ -18,25 +16,19 @@ $xs-panel-title-margin-bottom:                $spacer * 3;
     padding-top: $xs-panel-padding;
   }
 
-  &--lg {
-    padding-top: $xs-panel-padding-lg;
-    padding-bottom: $xs-panel-padding-lg;
-  }
-
   &--light { background: white; }
-  &--dark { background: black; }
+  &--dark { background: #181c21; }
 
   &__heading {
     .panel--dark & { color: white; }
   }
 
   &__title {
-    margin-top: $xs-panel-title-margin-top;
     margin-bottom: $xs-panel-title-margin-bottom;
   }
 
   &__desc {
-    .panel--dark & { color: rgba(255,255,255, 0.6); }
+    .panel--dark & { color: rgba(white, 0.6); }
   }
 }
 
@@ -44,4 +36,6 @@ $xs-panel-title-margin-bottom:                $spacer * 3;
 /*  Media Queries
 /*--------------------------------------------------------------*/
 
-@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(sm) {
+  /**/
+}
