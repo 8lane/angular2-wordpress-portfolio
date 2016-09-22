@@ -1,0 +1,100 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+$xs-logo-width:                         50px;
+$xs-example-width:                      18rem;
+$xs-codepen-logo-size:                  100px;
+
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.s-examples {
+  background: $brand-warning url(/assets/images/bg-codepen.svg) repeat;
+  background-position: -13rem -8rem;
+  background-size: 70rem;
+
+  &__items {
+    margin-top: $spacer * 7;
+  }
+
+  &__item {
+    display: inline-block;
+    max-width: $xs-example-width;
+    float: none;
+    padding: 0 0 $spacer * 4;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 7px;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.03);
+    transform: scale(1);
+    transition: all 120ms ease-in;
+
+    &:not(:last-child) {
+      margin-bottom: $spacer * 7;
+    }
+
+    &:hover {
+      box-shadow: 0 0 20px rgba(black, 0.1);
+      transform: scale(1.05);
+    }
+  }
+
+  &__items {
+    margin-top: $spacer * 5;
+  }
+
+  &__preview {
+    display: inline-block;
+    width: 100%;
+    max-width: $xs-example-width;
+    height: 12rem;
+    background: url(/assets/images/demo-tint@2x.png) no-repeat;
+    background-position: -14rem -16rem;
+    background-size: 47rem;
+    border-radius: 7px 7px 0 0;
+
+    .s-examples__item--tint & { background: url(/assets/images/demo-tint@2x.png) no-repeat; }
+    .s-examples__item--media-query & { background: url(/assets/images/demo-media@2x.png) no-repeat; }
+    .s-examples__item--loading-anim & { background: url(/assets/images/demo-loader@2x.png) no-repeat; }
+    .s-examples__item--undo-pattern & { background: url(/assets/images/demo-undo@2x.png) no-repeat; }
+  }
+
+  &__title,
+  &__desc,
+  &__cta {
+    padding-right: $spacer * 3;
+    padding-left: $spacer * 3;
+  }
+
+  &__cta {
+    margin-top: $spacer * 2;
+  }
+
+  &__live-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 2px;
+    margin-right: $spacer;
+    color: rgba(white, 0.6);
+    text-transform: uppercase;
+    transition: 120ms ease-in;
+
+    .s-examples__item:hover & {
+      color: white;
+    }
+  }
+
+  &__codepen {
+    display: inline-block;
+    width: $xs-codepen-logo-size;
+    min-width: $xs-codepen-logo-size;
+  }
+}
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(sm) {
+/**/
+}

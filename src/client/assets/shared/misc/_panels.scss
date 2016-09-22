@@ -18,6 +18,7 @@ $xs-panel-title-margin-bottom:                $spacer * 3;
 
   &--light { background: white; }
   &--dark { background: #181c21; }
+  &--purple { background: $brand-warning; }
 
   &__heading {
     .panel--dark & { color: white; }
