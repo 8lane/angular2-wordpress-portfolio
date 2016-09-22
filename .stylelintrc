@@ -1,12 +1,128 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "block-no-empty": null,
-    "at-rule-empty-line-before": null,
-    "rule-non-nested-empty-line-before": null,
-    "selector-pseudo-class-no-unknown" : [ true, {
-      "ignorePseudoClasses": [
-        "host"
+    "indentation": null,
+    "max-empty-lines": 2,
+
+    "font-family-name-quotes": "always-unless-keyword",
+    "function-url-quotes": "never",
+    "selector-attribute-quotes": "always",
+    "string-quotes": "double",
+
+    "declaration-block-properties-order": [
+      "content",
+      "display",
+      "visibility",
+      "opacity",
+      {
+        order: "flexible",
+        properties: [
+          "width",
+          "min-width",
+          "max-width"
+        ]
+      },
+      {
+        order: "flexible",
+        properties: [
+          "height",
+          "min-height",
+          "max-height",
+          "line-height"
+        ]
+      },
+      {
+        properties: [
+          "position",
+          "top",
+          "right",
+          "bottom",
+          "left",
+          "z-index"
+        ]
+      },
+      {
+        properties: [
+          "margin",
+          "margin-top",
+          "margin-right",
+          "margin-bottom",
+          "margin-left"
+        ]
+      },
+      {
+        properties: [
+          "padding",
+          "padding-top",
+          "padding-right",
+          "padding-bottom",
+          "padding-left"
+        ]
+      },
+      "background",
+      "background-image",
+      "background-color",
+      "background-position",
+      "background-size",
+      {
+        properties: [
+          "border",
+          "border-top",
+          "border-right",
+          "border-bottom",
+          "border-left",
+        ]
+      },
+      {
+        order: "flexible",
+        properties: [
+          "color",
+          "font-size",
+          "font-weight",
+          "font-style",
+        ]
+      },
+      {
+        order: "flexible",
+        properties: [
+          "text-align",
+          "text-decoration",
+          "text-transform",
+          "text-shadow"
+        ]
+      },
+      "box-shadow",
+      "transform",
+      "animation",
+      "transition"
+    ],
+
+    "at-rule-no-vendor-prefix": true,
+    "media-feature-name-no-vendor-prefix": true,
+    "property-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": true,
+    "value-no-vendor-prefix": true,
+
+    "max-nesting-depth": 3,
+    "selector-max-compound-selectors": 3,
+    "selector-max-specificity": "0,4,0",
+
+    "color-named": "always-where-possible",
+    "declaration-no-important": true,
+    "unit-whitelist": ["rem", "px", "%", "ms", "s", "deg"],
+    "selector-no-attribute": true,
+    "selector-no-id": true,
+    "selector-no-qualifying-type": true,
+    "selector-no-universal": true,
+    "selector-no-type": null,
+    selector-type-no-unknown: null,
+    selector-pseudo-element-colon-notation: 'single',
+
+    "comment-whitespace-inside": null,
+    "number-leading-zero": null,
+    "property-no-unknown": [ true, {
+      "ignoreProperties": [
+        "composes"
       ]
     }]
   }
