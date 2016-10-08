@@ -11,14 +11,10 @@ $footer-bg-color:             #191b1f;
 }
 
 .app-footer {
-  padding-top: $spacer * 24;
-  padding-bottom: $spacer * 8;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
   font-size: 1.2rem;
   font-weight: 300;
-
-  &__social {
-    margin-top: $spacer-x * 22;
-  }
 
   /* Footer list items */
   &__item {

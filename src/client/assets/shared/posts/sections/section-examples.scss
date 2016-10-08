@@ -50,14 +50,31 @@ $xs-codepen-logo-size:                  100px;
     max-width: $xs-example-width;
     height: 12rem;
     background: url(/assets/images/demo-tint@2x.png) no-repeat;
-    background-position: -14rem -16rem;
-    background-size: 47rem;
     border-radius: 7px 7px 0 0;
 
-    .s-examples__item--tint & { background: url(/assets/images/demo-tint@2x.png) no-repeat; }
-    .s-examples__item--media-query & { background: url(/assets/images/demo-media@2x.png) no-repeat; }
-    .s-examples__item--loading-anim & { background: url(/assets/images/demo-loader@2x.png) no-repeat; }
-    .s-examples__item--undo-pattern & { background: url(/assets/images/demo-undo@2x.png) no-repeat; }
+    .s-examples__item--tint & {
+      background: url(/assets/images/demo-tint@2x.png) no-repeat;
+      background-position: -14rem -16rem;
+      background-size: 47rem;
+    }
+
+    .s-examples__item--media-query & {
+      background: url(/assets/images/demo-media@2x.png) no-repeat;
+      background-position: -1rem -1rem;
+      background-size: 39rem;
+    }
+
+    .s-examples__item--loading-anim & {
+      background: url(/assets/images/demo-loader@2x.png) no-repeat;
+      background-position: -8rem -6.7rem;
+      background-size: 36rem;
+    }
+
+    .s-examples__item--undo-pattern & {
+      background: url(/assets/images/demo-undo@2x.png) no-repeat;
+      background-position: -14rem -9rem;
+      background-size: 50rem;
+    }
   }
 
   &__title,

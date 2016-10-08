@@ -1,0 +1,54 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.s-outcome {
+  &__items {
+    margin-top: $spacer * 5;
+    margin-bottom: $spacer * 2;
+  }
+
+  &__image {
+    max-width: 100%;
+		border-radius: 0 0 3px 3px;
+  }
+
+	&__highlights {
+		margin-top: $spacer * 6;
+	}
+
+	&__highlight {
+		position: relative;
+		margin-bottom: $spacer * 5;
+	}
+
+	&__highlight-title {
+		color: $brand-success;
+
+		&--success {
+			color: $brand-success;
+		}
+
+		&--info {
+			color: $brand-info;
+		}
+
+		&--warning {
+			color: $brand-warning;
+		}
+	}
+
+	&__highlight-desc {
+		max-width: 420px;
+	}
+}
+
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(sm) {
+/**/
+}

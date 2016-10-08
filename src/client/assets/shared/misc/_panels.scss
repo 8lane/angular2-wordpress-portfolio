@@ -10,7 +10,7 @@ $xs-panel-title-margin-bottom:                $spacer * 3;
 /*--------------------------------------------------------------*/
 
 .panel {
-  padding-bottom: $xs-panel-padding;
+	padding-bottom: $xs-panel-padding;
 
   &:not(:first-child) {
     padding-top: $xs-panel-padding;
@@ -18,6 +18,7 @@ $xs-panel-title-margin-bottom:                $spacer * 3;
 
   &--light { background: white; }
   &--dark { background: #181c21; }
+  &--gray { background: #f1f1f1; }
   &--purple { background: $brand-warning; }
 
   &__heading {
