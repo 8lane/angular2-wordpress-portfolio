@@ -27,6 +27,7 @@ $xs-story-border-style2:            $brand-info;
   }
 
   &__agile {
+		margin-top: $xs-panel-padding / 2;
     padding-top: $xs-panel-padding;
     border-top: 1px solid rgba(white, 0.2);
   }
