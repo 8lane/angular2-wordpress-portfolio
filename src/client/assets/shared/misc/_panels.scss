@@ -2,8 +2,9 @@
 /*--------------------------------------------------------------*/
 
 $xs-panel-padding:                            $spacer * 9;
-
 $xs-panel-title-margin-bottom:                $spacer * 3;
+
+$lg-panel-padding:                            $spacer * 14;
 
 
 /*  Styles
@@ -45,6 +46,12 @@ $xs-panel-title-margin-bottom:                $spacer * 3;
 /*  Media Queries
 /*--------------------------------------------------------------*/
 
-@include media-breakpoint-up(sm) {
-  /**/
+@include media-breakpoint-up(lg) {
+	.panel {
+		padding-bottom: $lg-panel-padding;
+
+	  &:not(:first-child) {
+	    padding-top: $lg-panel-padding;
+	  }
+	}
 }

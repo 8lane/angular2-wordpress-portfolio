@@ -4,6 +4,9 @@
 $xs-logo-width:                         50px;
 $xs-example-width:                      18rem;
 $xs-codepen-logo-size:                  100px;
+$xs-item-preview-size:									12rem;
+
+$sm-item-preview-width:									10rem;
 
 
 /*  Styles
@@ -22,6 +25,7 @@ $xs-codepen-logo-size:                  100px;
     display: inline-block;
     max-width: $xs-example-width;
     float: none;
+		margin-bottom: $spacer * 4;
     padding: 0 0 $spacer * 4;
     cursor: pointer;
     background: rgba(255, 255, 255, 0.1);
@@ -48,7 +52,7 @@ $xs-codepen-logo-size:                  100px;
     display: inline-block;
     width: 100%;
     max-width: $xs-example-width;
-    height: 12rem;
+    height: $xs-item-preview-size;
     background: url(/assets/images/demo-tint@2x.png) no-repeat;
     border-radius: 7px 7px 0 0;
 
@@ -113,5 +117,41 @@ $xs-codepen-logo-size:                  100px;
 /*--------------------------------------------------------------*/
 
 @include media-breakpoint-up(sm) {
-/**/
+	.s-examples {
+		&__item {
+			max-width: 100%;
+			height: $xs-item-preview-size;
+			margin-bottom: $grid-gutter-width / 2;
+			padding-left: $sm-item-preview-width;
+		}
+
+		&__preview {
+			max-width: $sm-item-preview-width;
+			position: absolute;
+			top: 0;
+	    left: 0;
+	    border-radius: 7px 0 0 7px;
+		}
+
+		&__title {
+			padding-top: $spacer * 2;
+		}
+
+		&__desc {
+  		font-size: .85rem;
+		}
+
+		&__cta {
+			margin-top: $spacer;
+			text-align: left;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.s-examples {
+		&__item {
+			margin-bottom: $grid-gutter-width;
+		}
+	}
 }
