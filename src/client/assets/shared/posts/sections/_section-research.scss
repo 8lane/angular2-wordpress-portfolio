@@ -10,6 +10,11 @@ $xs-story-border-style2:            $brand-info;
 /*--------------------------------------------------------------*/
 
 .s-research {
+	&__path {
+		margin-top: $grid-gutter-width / 2;
+		margin-bottom: $grid-gutter-width / 2;
+	}
+
   &__item {
     margin-bottom: $spacer * 5;
   }
@@ -34,7 +39,7 @@ $xs-story-border-style2:            $brand-info;
   &__agile {
 		margin-top: $xs-panel-padding / 2;
     padding-top: $xs-panel-padding;
-    border-top: 1px solid rgba(white, 0.2);
+    border-top: 1px solid rgba(white, 0.15);
   }
 
   &__story-container {
@@ -76,19 +81,38 @@ $xs-story-border-style2:            $brand-info;
 	.s-research {
 		padding-bottom: 0;
 
+		&__path {
+			margin-top: $grid-gutter-width;
+		}
+
+		&__sep {
+			opacity: 0.15;
+			max-width: 25px;
+			position: absolute;
+	    top: 2.2rem;
+	    right: -12px;
+		}
+
+		&__sep-line {
+			fill: none;
+			stroke: white;
+			stroke-miterlimit: 10;
+			stroke-width: 1px;
+		}
+
 		&__agile {
 			padding-top: 0;
 		}
 
 		&__agile-info {
-			padding-top: 3.95rem;
+			padding-top: $grid-gutter-width;
 		}
 
 		&__story-container {
 			margin-top: 0;
-	    padding-top: $xs-panel-padding / 2;
+	    padding-top: $grid-gutter-width;
 			padding-bottom: $xs-panel-padding / 2;
-	    border-left: 1px solid rgba(white, 0.2);
+	    border-left: 1px solid rgba(white, 0.15);
 			font-size: 14px;
 		}
 
