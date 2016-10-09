@@ -24,7 +24,7 @@ $xs-sass-logo-width:                    150px;
   }
 
   &__sass {
-    background: #181c21 url(/assets/images/bg-sass.svg) no-repeat;
+    background: #181c21 url(/assets/images/bg-sass.svg) repeat;
     background-position: -13rem -8rem;
     background-size: 70rem;
   }
@@ -43,6 +43,79 @@ $xs-sass-logo-width:                    150px;
 /*  Media Queries
 /*--------------------------------------------------------------*/
 
-@include media-breakpoint-up(sm) {
-/**/
+@include media-breakpoint-up(lg) {
+	.s-development {
+		&__tech {
+    	min-height: 500px;
+			position: relative;
+		}
+
+		&__items {
+			&--tech {
+				width: 370px;
+				float: right;
+				margin-right: 60%;
+			}
+
+			&--sass {
+				max-width: 79%;
+				float: left;
+				margin-top: 0;
+		    padding-left: $spacer * 3;
+			}
+		}
+
+		&__item {
+			.s-development__items--tech & {
+				width: 100%;
+				float: none;
+				padding: 0;
+				padding-left: $xs-logo-width + 20;
+				text-align: left;
+			}
+
+			.s-development__items--sass & {
+				&:nth-last-child(2) {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&__logo {
+			position: absolute;
+			top: 6px;
+	    left: 0;
+		}
+
+		&__editor-img {
+			min-width: auto;
+			max-width: 55%;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		&__sass-logo {
+			float: left;
+	    max-width: 20%;
+	  }
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.s-development {
+		&__tech {
+    	min-height: 600px;
+		}
+
+		&__items {
+			&--tech {
+				margin-right: 720px + 30px;
+			}
+		}
+
+		&__editor-img {
+			max-width: 720px;
+		}
+	}
 }

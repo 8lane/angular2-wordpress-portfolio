@@ -6,34 +6,52 @@
 /*--------------------------------------------------------------*/
 
 @include media-breakpoint-up(xs) {
-  html, body {
+  html,
+	body {
     font-size: 15px;
   }
 
   .container {
+		padding-right: $spacer * 3;
     padding-left: $spacer * 3;
-    padding-right: $spacer * 3;
   }
 }
 
 @include media-breakpoint-up(sm) {
-  html, body {
+  html,
+	body {
     font-size: 15px;
   }
 }
 
+@include media-breakpoint-down(sm) {
+  .container {
+  	max-width: 100%;
+  }
+}
+
 @include media-breakpoint-up(md) {
-  html, body {
+  html,
+	body {
     font-size: 16px;
   }
 }
 
+@include media-breakpoint-down(md) {
+  .container {
+  	max-width: 100%;
+  }
+}
+
 @include media-breakpoint-up(lg) {
-  html, body {
+  html,
+	body {
     font-size: 17px;
   }
 }
 
-p, ul, li {
+p,
+ul,
+li {
   font-weight: lighter;
 }

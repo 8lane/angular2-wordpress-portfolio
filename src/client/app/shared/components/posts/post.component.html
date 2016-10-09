@@ -11,9 +11,9 @@
 
 		<!-- Intro -->
 		<div class="s-intro panel panel--light p-b-0">
-			<div class="panel__container container">
+			<div class="panel__container container text-xs-center">
 				<h2 class="panel__title panel__heading">Introduction</h2>
-				<p class="panel__desc">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design &amp; front-end, iOS, and Android app designs as well as all marketing efforts such as the main corporate site.</p>
+				<p class="panel__desc panel__desc--middle">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design &amp; front-end, iOS, and Android app designs as well as all marketing efforts such as the main corporate site.</p>
 			</div>
 		</div>
 
@@ -56,10 +56,9 @@
 		<!-- Research -->
 		<div class="s-research panel panel--lg panel--dark">
 			<div class="panel__container container">
-				<h2 class="panel__title panel__heading">Research</h2>
-				<p class="panel__desc">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design &amp; front-end, iOS, and Android app designs as well as all marketing efforts such as the main corporate site.</p>
-
-				<div class="s-research__path">
+				<h2 class="panel__title panel__heading text-xs-center">Research</h2>
+				<p class="panel__desc panel__desc--middle">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design &amp; front-end, iOS, and Android app designs as well as all marketing efforts such as the main corporate site.</p>
+				<div class="s-research__path container-fluid">
 					<div class="row">
 						<div class="s-research__item col-xs-12 col-md-4 text-xs-center">
 							<img class="s-research__img" src="assets/images/research-journey.svg" alt="User journey" />
@@ -83,45 +82,56 @@
 			<!-- Research: Agile -->
 			<div class="s-research__agile">
 				<div class="panel__container container">
-					<h2 class="panel__title panel__heading">User stories</h2>
-					<p class="panel__desc">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design &amp; front-end, iOS, and Android app designs as well as all marketing efforts such as the main corporate site.</p>
+					<div class="s-research__agile-info text-md-left col-md-6">
+						<h2 class="panel__title panel__heading">User stories</h2>
+						<p class="panel__desc panel__desc--middle text-md-left">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design &amp; front-end, iOS, and Android app designs as well as all marketing efforts such as the main corporate site.</p>
+					</div>
+					<div class="s-research__story-container col-md-6">
 
-					<div class="s-research__story-container">
-						<div class="s-research__stories s-research__stories--style1 text-xs-left">
-							<h4 class="s-research__story-title panel__heading">Tracks</h4>
-							<ul class="list-unstyled m-b-0 panel__desc">
-								<li class="s-research__story">Play a track</li>
-								<li class="s-research__story">Pause a track</li>
-								<li class="s-research__story">See track progress</li>
-								<li class="s-research__story">See track wavform</li>
-								<li class="s-research__story">Interact with track waveform</li>
-							</ul>
+						<canvas class="s-research__canvas hidden-md-down" id="canvas"></canvas>
+
+						<div class="s-research__story-column">
+							<div class="s-research__stories s-research__stories--style1 text-xs-left" data-path-point="bottomRight" data-path-color="7766c3">
+								<h4 class="s-research__story-title panel__heading">Tracks</h4>
+								<ul class="list-unstyled m-b-0 panel__desc">
+									<li class="s-research__story">Play a track</li>
+									<li class="s-research__story">Pause a track</li>
+									<li class="s-research__story">See track progress</li>
+									<li class="s-research__story">See track wavform</li>
+									<li class="s-research__story">Scrub waveform</li>
+									<li class="s-research__story">Add to cart</li>
+								</ul>
+							</div>
+							<div class="s-research__stories s-research__stories--style2 text-xs-left" data-path-point="topRight" data-path-color="00c3e2">
+								<h4 class="s-research__story-title panel__heading">Account</h4>
+								<ul class="list-unstyled m-b-0 panel__desc">
+									<li class="s-research__story">Sign in</li>
+									<li class="s-research__story">Sign out</li>
+									<li class="s-research__story">Register</li>
+								</ul>
+							</div>
 						</div>
-						<div class="s-research__stories s-research__stories--style2 text-xs-left">
-							<h4 class="s-research__story-title panel__heading">Projects</h4>
-							<ul class="list-unstyled m-b-0 panel__desc">
-								<li class="s-research__story">See list of projects</li>
-								<li class="s-research__story">View a project</li>
-								<li class="s-research__story">Delete a project</li>
-								<li class="s-research__story">Add track to project</li>
-								<li class="s-research__story">Delete track from project</li>
-							</ul>
-						</div>
-						<div class="s-research__stories s-research__stories--style1 text-xs-left">
-							<h4 class="s-research__story-title panel__heading">Account</h4>
-							<ul class="list-unstyled m-b-0 panel__desc">
-								<li class="s-research__story">Sign in to account</li>
-								<li class="s-research__story">Sign out of account</li>
-								<li class="s-research__story">Register new account</li>
-							</ul>
-						</div>
-						<div class="s-research__stories s-research__stories--style2 text-xs-left">
-							<h4 class="s-research__story-title panel__heading">Download</h4>
-							<ul class="list-unstyled m-b-0 panel__desc">
-								<li class="s-research__story">Download a track</li>
-								<li class="s-research__story">See download progress</li>
-								<li class="s-research__story">Auto replace MP3 with WAV</li>
-							</ul>
+						<div class="s-research__story-column">
+							<div class="s-research__stories s-research__stories--style2 text-xs-left" data-path-point="bottomLeft" data-path-color="00c3e2">
+								<h4 class="s-research__story-title panel__heading">Projects</h4>
+								<ul class="list-unstyled m-b-0 panel__desc">
+									<li class="s-research__story">See projects</li>
+									<li class="s-research__story">View project</li>
+									<li class="s-research__story">Delete project</li>
+									<li class="s-research__story">Add track</li>
+									<li class="s-research__story">Delete track</li>
+									<li class="s-research__story">Undo delete</li>
+								</ul>
+							</div>
+							<div class="s-research__stories s-research__stories--style1 text-xs-left" data-path-point="topLeft" data-path-color="7766c3">
+								<h4 class="s-research__story-title panel__heading">Download</h4>
+								<ul class="list-unstyled m-b-0 panel__desc">
+									<li class="s-research__story">Download track</li>
+									<li class="s-research__story">Live progress</li>
+									<li class="s-research__story">Auto replace MP3 with WAV</li>
+									<li class="s-research__story">Success notification</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -130,28 +140,32 @@
 
 		<!-- Development -->
 		<div class="s-development panel panel--light">
-			<div class="panel panel__container container">
-				<h2 class="panel__title panel__heading">Development</h2>
-				<p class="panel__desc">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design &amp; front-end, iOS, and Android app designs as well as all marketing efforts such as the main corporate site.</p>
+			<div class="panel panel__container">
+				<div class="container">
+					<h2 class="panel__title panel__heading text-xs-center">Development</h2>
+					<p class="panel__desc panel__desc--middle">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design &amp; front-end, iOS, and Android app designs as well as all marketing efforts such as the main corporate site.</p>
+				</div>
 
 				<div class="s-development__tech container-fluid text-xs-center">
-				  <div class="row">
-				    <div class="s-development__item col-xs-12 col-sm-6">
+				  <div class="s-development__items s-development__items--tech row">
+				    <div class="s-development__item col-xs-12 col-sm-4">
 				      <img class="s-development__logo" src="assets/images/logo-angular.svg" alt="Angular 2" />
 							<h4 class="s-development__title m-t-2 m-b-1">Angular 2</h4>
 							<p class="s-development__desc m-b-0">Lead designer providing initial AI mockups to fully coded Angular 2 components</p>
 				    </div>
-						<div class="s-development__item col-xs-12 col-sm-6">
+						<div class="s-development__item col-xs-12 col-sm-4">
 				      <img class="s-development__logo" src="assets/images/logo-es6.svg" alt="ECMAScript 6" />
 							<h4 class="s-development__title m-t-2 m-b-1">ECMAScript 6</h4>
 							<p class="s-development__desc m-b-0">Setup front-end build tools with Gulp.js for SASS &amp; Autoprefixer compilation</p>
 				    </div>
-						<div class="s-development__item col-xs-12 col-sm-6">
+						<div class="s-development__item col-xs-12 col-sm-4">
 				      <img class="s-development__logo" src="assets/images/logo-jasmine.svg" alt="Jasmine &amp; Karma" />
 							<h4 class="s-development__title m-t-2 m-b-1">Jasmine &amp; Karma</h4>
 							<p class="s-development__desc m-b-0">Assist with initial research including paper prototyping, wireframing & A/B testing</p>
 				    </div>
 				  </div>
+
+					<img class="s-development__editor-img hidden-md-down" src="assets/images/code@2x.png" alt="BEM Sass &amp; ES6 Javascript" />
 				</div>
 			</div>
 
@@ -159,22 +173,22 @@
 				<div class="panel__container container">
 					<img class="s-development__sass-logo" src="assets/images/logo-sass.svg" alt="SASS pre-processor" />
 
-					<div class="s-development__items panel__container container">
-						<div class="container-fluid text-xs-center">
+					<div class="s-development__items s-development__items--sass panel__container container">
+						<div class="container-fluid text-xs-center text-lg-left">
 						  <div class="row">
-						    <div class="s-development__item col-xs-12 col-sm-6">
+						    <div class="s-development__item col-xs-12 col-md-6">
 									<h4 class="s-development__title panel__heading">Bootstrap framework</h4>
 									<p class="s-development__desc panel__desc m-b-0">Lead designer providing initial AI mockups to fully coded Angular 2 components</p>
 						    </div>
-								<div class="s-development__item col-xs-12 col-sm-6">
+								<div class="s-development__item col-xs-12 col-md-6">
 									<h4 class="s-development__title panel__heading">BEM syntax</h4>
 									<p class="s-development__desc panel__desc m-b-0">Setup front-end build tools with Gulp.js for SASS &amp; Autoprefixer compilation</p>
 						    </div>
-								<div class="s-development__item col-xs-12 col-sm-6">
+								<div class="s-development__item col-xs-12 col-md-6">
 									<h4 class="s-development__title panel__heading">Powerful mixins &amp; functions</h4>
 									<p class="s-development__desc panel__desc m-b-0">Assist with initial research including paper prototyping, wireframing & A/B testing</p>
 						    </div>
-								<div class="s-development__item col-xs-12 col-sm-6">
+								<div class="s-development__item col-xs-12 col-md-6">
 									<h4 class="s-development__title panel__heading">Graceful animations</h4>
 									<p class="s-development__desc panel__desc m-b-0">Assist with initial research including paper prototyping, wireframing & A/B testing</p>
 						    </div>
@@ -190,7 +204,7 @@
 		<div class="s-examples panel panel--dark panel--purple">
 			<div class="panel panel__container container p-b-0">
 				<h2 class="panel__title panel__heading">Live examples</h2>
-				<p class="panel__desc">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design & front-end, iOS, and Android</p>
+				<p class="panel__desc panel__desc--middle">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design & front-end, iOS, and Android</p>
 
 				<div class="s-examples__items container-fluid text-xs-center">
 					<div class="row">
@@ -248,7 +262,7 @@
 				<!-- Home -->
 				<div class="panel__container container">
 					<h2 class="panel__title panel__heading">Outcome</h2>
-					<p class="panel__desc">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design & front-end, iOS, and Android</p>
+					<p class="panel__desc panel__desc--middle">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design & front-end, iOS, and Android</p>
 
 					<div class="s-outcome__items text-xs-center">
 						<div class="s-outcome__item">
@@ -305,7 +319,7 @@
 					<div class="s-outcome__items text-xs-center">
 						<div class="s-outcome__item">
 							<h3 class="panel__title panel__heading">Ecommerce experience</h3>
-							<p class="panel__desc">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design & front-end, iOS, and Android</p>
+							<p class="panel__desc panel__desc--middle">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design & front-end, iOS, and Android</p>
 							<img class="s-outcome__image m-t-3" src="assets/images/outcome/anw/outcome-ecommerce@2x.png" alt="Ecommerce experience" />
 						</div>
 					</div>
@@ -318,7 +332,7 @@
 					<div class="s-outcome__items text-xs-center">
 						<div class="s-outcome__item">
 							<h3 class="panel__title panel__heading">Optimised for all sites</h3>
-							<p class="panel__desc">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design & front-end, iOS, and Android</p>
+							<p class="panel__desc panel__desc--middle">In January 2015 I joined Audio Network as a front-end designer– since then I’m responsible for the web application design & front-end, iOS, and Android</p>
 							<img class="s-outcome__image m-t-2" src="assets/images/outcome/anw/outcome-responsive@2x.png" alt="Completely responsive app" />
 						</div>
 					</div>

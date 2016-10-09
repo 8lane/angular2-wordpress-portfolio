@@ -4,9 +4,9 @@
 /*  Variables
 /*--------------------------------------------------------------*/
 
-$xs-pagination-img-size:              35px;
+$xs-pagination-img-size:              30px;
 
-$sm-pagination-img-size:              25px;
+$lg-pagination-img-size:              30px;
 
 
 /*  Styles
@@ -40,9 +40,9 @@ $sm-pagination-img-size:              25px;
   }
 
   &__img {
+		max-width: $xs-pagination-img-size;
+		min-width: $xs-pagination-img-size;
     max-height: $xs-pagination-img-size;
-    max-width: $xs-pagination-img-size;
-    min-width: $xs-pagination-img-size;
     min-height: $xs-pagination-img-size;
   }
 }
@@ -50,7 +50,7 @@ $sm-pagination-img-size:              25px;
 /*  Media Queries
 /*--------------------------------------------------------------*/
 
-@include media-breakpoint-up(sm) {
+@include media-breakpoint-up(lg) {
   :host {
     float: right;
   }
@@ -60,10 +60,10 @@ $sm-pagination-img-size:              25px;
     pointer-events: initial;
 
     &__img {
-      max-height: $sm-pagination-img-size;
-      max-width: $sm-pagination-img-size;
-      min-width: $sm-pagination-img-size;
-      min-height: $sm-pagination-img-size;
+			max-width: $lg-pagination-img-size;
+			min-width: $lg-pagination-img-size;
+      max-height: $lg-pagination-img-size;
+      min-height: $lg-pagination-img-size;
     }
 
     &__title {

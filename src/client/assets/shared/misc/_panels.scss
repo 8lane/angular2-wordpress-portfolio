@@ -31,6 +31,13 @@ $xs-panel-title-margin-bottom:                $spacer * 3;
 
   &__desc {
     .panel--dark & { color: rgba(white, 0.6); }
+
+		&--middle {
+			max-width: 35rem;
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
   }
 }
 
