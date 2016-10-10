@@ -24,6 +24,14 @@ $header-logo-max-width:				200px;
 .app-header {
 	background: $header-bg-gradient;
 
+	&__inner {
+		position: relative;
+
+		.app-header--scrolled & {
+			padding: 0;
+		}
+	}
+
 	/* Giant homepage header */
 	&--epic {
 		box-sizing: content-box;
@@ -56,6 +64,7 @@ $header-logo-max-width:				200px;
 	/* Minimal header when scrolled */
 	&--scrolled:not(.app-header--epic) {
 		max-height: $xs-header-scrolled-height;
+		padding: 0 $spacer * 3;
 		background: $header-scrolled-bg-color;
 		border-bottom: 1px solid white;
 		text-align: left;
@@ -83,13 +92,14 @@ $header-logo-max-width:				200px;
 		.app-header:not(.app-header--epic) & {
 			display: inline-block;
 			margin-right: $spacer-x;
-			font-size: $font-size-h1;
+			font-size: 2.3rem;
 			font-weight: 300;
 			transition: font-size 120ms ease-in;
 		}
 
 		.app-header--scrolled:not(.app-header--epic) & {
-			padding: .4rem 0;
+			height: 70px;
+			line-height: 70px;
 			font-size: 2.1rem;
 		}
 
@@ -117,8 +127,8 @@ $header-logo-max-width:				200px;
 		.app-header:not(.app-header--epic) & {
 			display: inline-block;
 			vertical-align: middle;
-	    padding-bottom: 0.7rem;
-	    font-size: 1.2rem;
+	    padding-bottom: 0.5rem;
+	    font-size: 1rem;
 		}
 	}
 

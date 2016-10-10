@@ -14,16 +14,17 @@ $lg-pagination-img-size:              30px;
 
 :host {
   display: inline-block;
+	height: 70px;
+	line-height: 70px;
   position: absolute;
-  top: 18px;
-  right: $spacer * 2;
+  top: 0;
+  right: 0;
 }
 
 .pagination {
   opacity: 0;
   pointer-events: none;
-  transition: 120ms ease-in;
-  transition-delay: 100ms;
+  transition: 90ms ease-in;
 
   :host-context(.app-header--scrolled) & {
     opacity: 1;
@@ -53,21 +54,31 @@ $lg-pagination-img-size:              30px;
 @include media-breakpoint-up(lg) {
   :host {
     float: right;
+		position: static;
   }
 
   .pagination {
     opacity: 1;
     pointer-events: initial;
+		padding: 1.2rem 0;
+
+		:host-context(.app-header--scrolled) & {
+			padding: 0;
+		}
 
     &__img {
 			max-width: $lg-pagination-img-size;
 			min-width: $lg-pagination-img-size;
       max-height: $lg-pagination-img-size;
       min-height: $lg-pagination-img-size;
+			vertical-align: middle;
+			margin-bottom: 3px;
     }
 
     &__title {
-      color: rgba(white, 0.7);
+      color: white;
+			font-family: $font-family-serif;
+			font-size: 1.1rem;
 
       .pagination__close:hover &,
       .pagination__next:hover & {
@@ -75,11 +86,11 @@ $lg-pagination-img-size:              30px;
       }
 
       &--close {
-        margin-left: $spacer-x * 1.5;
+        margin-left: $spacer-x;
       }
 
       &--next {
-        margin-right: $spacer-x * 1.5;
+        margin-right: $spacer-x;
       }
     }
   }
