@@ -128,6 +128,14 @@ $post-slope-angle:								3deg;
 	}
 }
 
+@include media-breakpoint-up(md) {
+	.post {
+		&__content {
+			padding-top: $grid-gutter-width;
+		}
+	}
+}
+
 @include media-breakpoint-up(lg) {
 	.post__pagination {
 		margin-top: -7px;
