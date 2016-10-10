@@ -24,7 +24,7 @@ $xs-sass-logo-width:                    150px;
   }
 
   &__sass {
-    background: #181c21 url(/assets/images/bg-sass.svg) repeat;
+    background: $brand-dark url(/assets/images/bg-sass.svg) repeat;
     background-position: -13rem -8rem;
     background-size: 70rem;
   }
