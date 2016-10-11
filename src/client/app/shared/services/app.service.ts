@@ -13,6 +13,7 @@ export class AppService {
   sidebarActive: boolean = true;
   epicHeader: boolean = true;
   isPageScrolled: boolean;
+  isPostPage: boolean;
 
   constructor(private _http: Http) {
     this.appInfo = [];

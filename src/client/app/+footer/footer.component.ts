@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { AppService } from '../shared/services';
+
 @Component({
   moduleId: module.id,
   selector: 'tc-footer',
@@ -7,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['footer.component.css']
 })
 export class FooterComponent {
-  constructor() {}
+	constructor(private _appService: AppService) {}
+
+  get isPostPage() {
+    return this._appService.isPostPage;
+  }
 }

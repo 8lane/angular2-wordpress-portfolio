@@ -8,6 +8,8 @@ $xs-sass-logo-width:                    150px;
 /*--------------------------------------------------------------*/
 
 .s-development {
+	padding-bottom: 0;
+
   &__tech {
     margin-top: $spacer * 7;
   }

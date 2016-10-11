@@ -6,7 +6,6 @@ $footer-bg-color:             #191b1f;
 :host {
   display: block;
   position: relative;
-  margin-top: $spacer * 8;
   background: linear-gradient(to bottom, darken($footer-bg-color, 20%) 0%, $footer-bg-color 100%);
 }
 
@@ -15,6 +14,10 @@ $footer-bg-color:             #191b1f;
   padding-bottom: 7rem;
   font-size: 1.2rem;
   font-weight: 300;
+
+	&:not(&--with-posts) {
+		margin-top: $spacer * 8;
+	}
 
   /* Footer list items */
   &__item {
@@ -30,7 +33,21 @@ $footer-bg-color:             #191b1f;
     }
 
     .app-footer__credits & {
+			font-size: 1rem;
       color: rgba(white, 0.5);
+			transition: 120ms ease-in;
+
+			&:hover {
+				color: white;
+			}
     }
   }
+
+	&__icon {
+		display: inline-block;
+		vertical-align: middle;
+		margin-bottom: 4px;
+    margin-left: 5px;
+    font-size: 1.1rem;
+	}
 }

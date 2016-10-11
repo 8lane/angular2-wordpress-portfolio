@@ -18,12 +18,15 @@ import { PostService } from './shared/services';
 })
 
 export class AppComponent {
-  isPostPage: boolean;
 
   constructor(private _appService: AppService, private _postService: PostService, private _router: Router) {
     console.log('ROUTER: ', this._router);
 		console.log('Environment config', Config);
 	}
+
+	get isPostPage() {
+    return this._appService.isPostPage;
+  }
 
   get hasSidebar() {
     return this._appService.sidebarActive;
@@ -53,10 +56,10 @@ export class AppComponent {
       window.scrollTo(0,0);
 
       if(this._router.url.indexOf('/portfolio') > -1) {
-        this.isPostPage = true;
+        this._appService.isPostPage = true;
         this._appService.sidebarActive = false;
       } else {
-        this.isPostPage = false;
+        this._appService.isPostPage = false;
         this._appService.sidebarActive = true;
       }
     });
