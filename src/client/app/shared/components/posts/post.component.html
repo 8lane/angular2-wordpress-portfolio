@@ -153,7 +153,10 @@
 				</div>
 
 				<div class="s-development__tech container-fluid text-xs-center">
-				  <div class="s-development__items s-development__items--tech row">
+					<div class="hidden-md-down col-lg-6 col-lg-push-6">
+						<figure class="s-development__editor-img"></figure>
+					</div>
+				  <div class="s-development__items s-development__items--tech row col-lg-5 col-lg-pull-5 col-xl-5 col-xl-pull-5">
 				    <div class="s-development__item col-xs-12 col-sm-4">
 				      <img class="s-development__logo" src="assets/images/logo-angular.svg" alt="Angular 2" />
 							<h4 class="s-development__title m-t-2 m-b-1">Angular 2</h4>
@@ -170,8 +173,6 @@
 							<p class="s-development__desc m-b-0">Assist with initial research including paper prototyping, wireframing & A/B testing</p>
 				    </div>
 				  </div>
-
-					<img class="s-development__editor-img hidden-md-down" src="assets/images/code@2x.png" alt="BEM Sass &amp; ES6 Javascript" />
 				</div>
 			</div>
 
@@ -215,47 +216,47 @@
 				<div class="s-examples__items container-fluid text-xs-center text-sm-left">
 					<div class="row">
 						<div class="col-xs-12 col-xl-6">
-							<div class="s-examples__item s-examples__item--tint">
+							<a href="#" class="s-examples__item s-examples__item--tint">
 								<div class="s-examples__preview"></div>
 								<h4 class="s-examples__title panel__heading m-t-2 m-b-1">Color tint function</h4>
 								<p class="s-examples__desc panel__desc m-b-0">A small but immensly useful SASS function to select tints of brand colors now adopted throughout all front-end projects</p>
 								<button class="s-examples__cta btn-link btn-block">
 									<img class="s-examples__codepen" src="assets/images/logo-codepen.svg" alt="See live on Codepen" />
 								</button>
-							</div>
+							</a>
 						</div>
 
 						<div class="col-xs-12 col-xl-6">
-							<div class="s-examples__item s-examples__item--media-query">
+							<a href="#" class="s-examples__item s-examples__item--media-query">
 								<div class="s-examples__preview"></div>
 								<h4 class="s-examples__title panel__heading m-t-2 m-b-1">Media query mixin</h4>
 								<p class="s-examples__desc panel__desc m-b-0">A small but immensly useful SASS function to select tints of brand colors now adopted throughout all front-end projects</p>
 								<button class="s-examples__cta btn-link btn-block">
 									<img class="s-examples__codepen" src="assets/images/logo-codepen.svg" alt="See live on Codepen" />
 								</button>
-							</div>
+							</a>
 						</div>
 
 						<div class="col-xs-12 col-xl-6">
-							<div class="s-examples__item s-examples__item--loading-anim">
+							<a href="#" class="s-examples__item s-examples__item--loading-anim">
 								<div class="s-examples__preview"></div>
 								<h4 class="s-examples__title panel__heading m-t-2 m-b-1">Button loading animation</h4>
 								<p class="s-examples__desc panel__desc m-b-0">A small but immensly useful SASS function to select tints of brand colors now adopted throughout all front-end projects</p>
 								<button class="s-examples__cta btn-link btn-block">
 									<img class="s-examples__codepen" src="assets/images/logo-codepen.svg" alt="See live on Codepen" />
 								</button>
-							</div>
+							</a>
 						</div>
 
 						<div class="col-xs-12 col-xl-6">
-							<div class="s-examples__item s-examples__item--undo-pattern">
+							<a href="#" class="s-examples__item s-examples__item--undo-pattern">
 								<div class="s-examples__preview"></div>
 								<h4 class="s-examples__title panel__heading m-t-2 m-b-1">Undo delete pattern</h4>
 								<p class="s-examples__desc panel__desc m-b-0">A small but immensly useful SASS function to select tints of brand colors now adopted throughout all front-end projects</p>
 								<button class="s-examples__cta btn-link btn-block">
 									<img class="s-examples__codepen" src="assets/images/logo-codepen.svg" alt="See live on Codepen" />
 								</button>
-							</div>
+							</a>
 						</div>
 
 					</div>
@@ -301,22 +302,26 @@
 					<div class="s-outcome__items s-outcome__items--projects text-xs-center">
 						<h3 class="panel__title panel__heading m-b-0">Projects</h3>
 						<div class="s-outcome__item">
-							<img class="s-outcome__image s-outcome__image--projects p-l-3" src="assets/images/outcome/anw/outcome-projects@2x.png" alt="Projects section" />
-							<div class="container">
-								<ol class="s-outcome__highlights text-xs-center text-md-left list-unstyled">
-									<li class="s-outcome__highlight">
-										<h4 class="s-outcome__highlight-title s-outcome__highlight-title--success">Create projects</h4>
-										<p class="s-outcome__highlight-desc panel__desc">Create new projects from directly within the search results</p>
-									</li>
-									<li class="s-outcome__highlight">
-										<h4 class="s-outcome__highlight-title s-outcome__highlight-title--info">Save tracks</h4>
-										<p class="s-outcome__highlight-desc panel__desc">Quickly assign a favourite track to multipe projects</p>
-									</li>
-									<li class="s-outcome__highlight">
-										<h4 class="s-outcome__highlight-title s-outcome__highlight-title--warning">View tracks</h4>
-										<p class="s-outcome__highlight-desc panel__desc">Access saved tracks from a dedicated projects section</p>
-									</li>
-								</ol>
+							<div class="container-fluid">
+								<div class="col-md-5 col-md-push-4 col-lg-7 col-lg-push-4">
+									<figure class="s-outcome__projects-img"></figure>
+								</div>
+								<div class="col-md-4 col-md-pull-5 col-lg-4 col-lg-pull-7 col-xl-4 col-xl-pull-7">
+									<ol class="s-outcome__highlights text-xs-center text-md-left list-unstyled">
+										<li class="s-outcome__highlight">
+											<h4 class="s-outcome__highlight-title s-outcome__highlight-title--success">Create projects</h4>
+											<p class="s-outcome__highlight-desc panel__desc">Create new projects from directly within the search results</p>
+										</li>
+										<li class="s-outcome__highlight">
+											<h4 class="s-outcome__highlight-title s-outcome__highlight-title--info">Save tracks</h4>
+											<p class="s-outcome__highlight-desc panel__desc">Quickly assign a favourite track to multipe projects</p>
+										</li>
+										<li class="s-outcome__highlight">
+											<h4 class="s-outcome__highlight-title s-outcome__highlight-title--warning">View tracks</h4>
+											<p class="s-outcome__highlight-desc panel__desc">Access saved tracks from a dedicated projects section</p>
+										</li>
+									</ol>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -31,20 +31,19 @@
 		}
   }
 
+	&__projects-img {
+		width: 500px;
+		height: 310px;
+		background: url(/assets/images/outcome/anw/outcome-projects@2x.png) no-repeat;
+		background-size: 100%;
+	}
+
 	&__highlights {
-		margin-top: $spacer * 9;
+		margin-top: $spacer * 5;
 	}
 
 	&__highlight {
 		position: relative;
-
-		.s-outcome__items--projects & {
-			margin-bottom: $spacer * 4;
-
-			&:first-child {
-				padding-top: $grid-gutter-width;
-			}
-		}
 	}
 
 	&__highlight-title {
@@ -74,11 +73,20 @@
 /*  Media Queries
 /*--------------------------------------------------------------*/
 
+@include media-breakpoint-up(sm) {
+	.s-outcome {
+		&__projects-img {
+			width: 800px;
+			height: 530px;
+		}
+	}
+}
+
 @include media-breakpoint-up(md) {
 	.s-outcome {
 		&__section {
 			&:not(:first-child) {
-	    	margin-top: $grid-gutter-width * 2;
+	    	margin-top: $grid-gutter-width;
 			}
 		}
 
@@ -88,7 +96,11 @@
 
 		&__highlight {
 			.s-outcome__items--projects & {
-				width: 300px;
+				margin-bottom: $spacer * 4;
+
+				&:first-child {
+					padding-top: $grid-gutter-width / 2;
+				}
 			}
 		}
 
@@ -97,6 +109,10 @@
 				max-width: 560px;
 				float: right;
 			}
+		}
+
+		&__projects-img {
+			height: 670px;
 		}
 	}
 }
@@ -108,6 +124,10 @@
 				max-width: 60%;
 			}
 		}
+
+		&__projects-img {
+			width: 900px;
+		}
 	}
 }
 
@@ -117,6 +137,10 @@
 			&--projects {
 				max-width: 900px;
 			}
+		}
+
+		&__projects-img {
+			width: 1100px;
 		}
 	}
 }

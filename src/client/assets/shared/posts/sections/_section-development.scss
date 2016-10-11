@@ -53,12 +53,6 @@ $xs-sass-logo-width:                    150px;
 		}
 
 		&__items {
-			&--tech {
-				width: 370px;
-				float: right;
-				margin-right: 60%;
-			}
-
 			&--sass {
 				max-width: 79%;
 				float: left;
@@ -90,34 +84,15 @@ $xs-sass-logo-width:                    150px;
 		}
 
 		&__editor-img {
-			min-width: auto;
-			max-width: 55%;
-			position: absolute;
-			top: 0;
-			right: 0;
+			width: 800px;
+			height: 670px;
+			background: url(/assets/images/code@2x.png) no-repeat;
+			background-size: 100%;
 		}
 
 		&__sass-logo {
 			float: left;
 	    max-width: 20%;
 	  }
-	}
-}
-
-@include media-breakpoint-up(xl) {
-	.s-development {
-		&__tech {
-    	min-height: 600px;
-		}
-
-		&__items {
-			&--tech {
-				margin-right: 720px + 30px;
-			}
-		}
-
-		&__editor-img {
-			max-width: 720px;
-		}
 	}
 }
