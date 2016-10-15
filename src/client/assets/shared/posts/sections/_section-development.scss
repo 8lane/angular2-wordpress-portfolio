@@ -45,6 +45,15 @@ $xs-sass-logo-width:                    150px;
 /*  Media Queries
 /*--------------------------------------------------------------*/
 
+@include media-breakpoint-up(sm) {
+	.s-development {
+		&__tech,
+		&__slide {
+    	padding-right: 0;
+		}
+	}
+}
+
 @include media-breakpoint-up(lg) {
 	.s-development {
 		&__tech {
@@ -84,8 +93,10 @@ $xs-sass-logo-width:                    150px;
 		}
 
 		&__editor-img {
-			width: 800px;
-			height: 670px;
+			width: 100%;
+			min-width: 660px;
+			height: 730px;
+			position: relative;
 			background: url(/assets/images/code@2x.png) no-repeat;
 			background-size: 100%;
 		}
