@@ -33,7 +33,7 @@ export class AgileStoriesCanvas {
 		let boxData:any = {};
 		let boxes:any = canvasContainer.querySelectorAll('.s-research__stories');
 
-		boxes.forEach((boxElem:HTMLElement, index:any) => {
+		Array.from(boxes).forEach((boxElem:HTMLElement, index:any) => {
 		  boxData['box'+parseInt(index+1)] = {
 		    x: this.getCoords(boxElem, boxElem.getAttribute('data-path-point')).x,
 		    y: this.getCoords(boxElem, boxElem.getAttribute('data-path-point')).y,
