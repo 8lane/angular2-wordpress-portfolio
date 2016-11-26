@@ -1,49 +1,20 @@
-<div *ngIf="isProcessing" class="spinner spinner--inline">
-	<!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->
-	<!-- Todo: add easing -->
-	<svg class="spinner__svg" viewBox="0 0 57 57" xmlns="http://www.w3.org/2000/svg">
-	    <g fill="none" fill-rule="evenodd">
-	        <g transform="translate(1 1)" stroke-width="2">
-	            <circle cx="5" cy="50" r="5">
-	                <animate attributeName="cy"
-	                     begin="0s" dur="2.2s"
-	                     values="50;5;50;50"
-	                     calcMode="linear"
-	                     repeatCount="indefinite" />
-	                <animate attributeName="cx"
-	                     begin="0s" dur="2.2s"
-	                     values="5;27;49;5"
-	                     calcMode="linear"
-	                     repeatCount="indefinite" />
-	            </circle>
-	            <circle cx="27" cy="5" r="5">
-	                <animate attributeName="cy"
-	                     begin="0s" dur="2.2s"
-	                     from="5" to="5"
-	                     values="5;50;50;5"
-	                     calcMode="linear"
-	                     repeatCount="indefinite" />
-	                <animate attributeName="cx"
-	                     begin="0s" dur="2.2s"
-	                     from="27" to="27"
-	                     values="27;49;5;27"
-	                     calcMode="linear"
-	                     repeatCount="indefinite" />
-	            </circle>
-	            <circle cx="49" cy="50" r="5">
-	                <animate attributeName="cy"
-	                     begin="0s" dur="2.2s"
-	                     values="50;50;5;50"
-	                     calcMode="linear"
-	                     repeatCount="indefinite" />
-	                <animate attributeName="cx"
-	                     from="49" to="49"
-	                     begin="0s" dur="2.2s"
-	                     values="49;5;27;49"
-	                     calcMode="linear"
-	                     repeatCount="indefinite" />
-	            </circle>
-	        </g>
-	    </g>
-	</svg>
+<div *ngIf="isProcessing">
+	<div class="spinner spinner--inline">
+		<svg class="spinner__svg" version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	   width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+	  <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+	    s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+	    c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+	  <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+	    C22.32,8.481,24.301,9.057,26.013,10.047z">
+	    <animateTransform attributeType="xml"
+	      attributeName="transform"
+	      type="rotate"
+	      from="0 20 20"
+	      to="360 20 20"
+	      dur="0.5s"
+	      repeatCount="indefinite"/>
+	    </path>
+	  </svg>
+	</div>
 </div>

@@ -22,8 +22,8 @@ body {
 
 .app-content {
 	position: relative;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 
 	&:not(.app-content--with-post) {
 		max-width: $xs-app-width;

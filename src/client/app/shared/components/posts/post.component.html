@@ -1,3 +1,5 @@
+<tc-spinner [isProcessing]="isProcessing"></tc-spinner>
+
 <div class="post text-xs-center text-lg-left">
 	<header class="post__header" *ngIf="post && !isProcessing">
 		<div class="post__header-inner container text-xs-center">
@@ -212,7 +214,7 @@
 		<div class="s-examples panel panel--dark panel--purple">
 			<div class="panel panel__container container p-b-0">
 				<h2 class="panel__title panel__heading text-xs-center">Live examples</h2>
-				<p class="panel__desc panel__desc--middle">The project presented me many opportunities to create new and exciting code not only for user facing features but also every day development tasks. Screenshots &amp; text won’t do that justice so here’s some Codepen's of my favourite contributions</p>
+				<p class="panel__desc panel__desc--middle">The project presented me with many opportunities to create new and exciting code not only for user facing features but also every day development tasks. Screenshots &amp; text won’t do that justice so here’s some Codepen's of my favourite contributions</p>
 
 				<div class="s-examples__items container-fluid text-xs-center text-sm-left">
 					<div class="row">
@@ -231,7 +233,7 @@
 							<a href="#" class="s-examples__item s-examples__item--loading-anim">
 								<div class="s-examples__preview"></div>
 								<h4 class="s-examples__title panel__heading m-t-2 m-b-1">Button loading animation</h4>
-								<p class="s-examples__desc panel__desc m-b-0">Smooth button loading animation combining scaling &amp; opacity for an obvious visual cues</p>
+								<p class="s-examples__desc panel__desc m-b-0">Smooth button loading animation combining scaling &amp; opacity for obvious visual cues</p>
 								<button class="s-examples__cta btn-link btn-block">
 									<img class="s-examples__codepen" src="assets/images/logo-codepen.svg" alt="See live on Codepen" />
 								</button>
@@ -253,7 +255,7 @@
 							<a href="#" class="s-examples__item s-examples__item--undo-pattern">
 								<div class="s-examples__preview"></div>
 								<h4 class="s-examples__title panel__heading m-t-2 m-b-1">Undo delete pattern</h4>
-								<p class="s-examples__desc panel__desc m-b-0">A tricky design pattern to get right, scaling animations when undoing a delete in my mind provide excellent context</p>
+								<p class="s-examples__desc panel__desc m-b-0">A tricky design pattern to get right; scaling animations when undoing a delete in my mind provide excellent context</p>
 								<button class="s-examples__cta btn-link btn-block">
 									<img class="s-examples__codepen" src="assets/images/logo-codepen.svg" alt="See live on Codepen" />
 								</button>
@@ -266,15 +268,13 @@
 	</div>
 
 
-
-
 			<!-- Outcome -->
 			<div class="s-outcome panel panel--dark">
 
 				<!-- Home -->
 				<div class="s-outcome__section panel__container container">
 					<h2 class="panel__title panel__heading text-xs-center">Outcome</h2>
-					<p class="panel__desc panel__desc--middle">After finishing beta testing in early September 2016, the app was officially launched at Adobe’s IBC conference in Amsterdam. Along with Audio Network’s own marketing, <a href="https://twitter.com/AdobePremiere/status/783727435770568704" target="_blank">Adobe’s Twitter shout out</a>, and Youtube reviews <a href="https://www.youtube.com/watch?v=8G8K_sUfazI" target="_blank">here</a> & <a href="https://www.youtube.com/watch?v=rtDW0dGYVkk" target="_blank">here</a>, we immediately saw large influx of users engaging and generating revenue within the app</p>
+					<p class="panel__desc panel__desc--middle">After finishing beta testing in early September 2016, the app was officially launched at Adobe’s IBC conference in Amsterdam. Along with Audio Network’s own marketing, <a href="https://twitter.com/AdobePremiere/status/783727435770568704" target="_blank">Adobe’s Twitter shout out</a>, and Youtube reviews <a href="https://www.youtube.com/watch?v=8G8K_sUfazI" target="_blank">here</a> & <a href="https://www.youtube.com/watch?v=rtDW0dGYVkk" target="_blank">here</a>, we immediately saw a large influx of users engaging and generating revenue within the app</p>
 
 					<div class="s-outcome__items text-xs-center">
 						<div class="s-outcome__item">
@@ -297,7 +297,6 @@
 					</div>
 				</div>
 
-
 				<!-- Projects -->
 				<div class="s-outcome__section panel-container">
 					<div class="s-outcome__items s-outcome__items--projects text-xs-center">
@@ -311,7 +310,7 @@
 									<ol class="s-outcome__highlights text-xs-center text-md-left list-unstyled">
 										<li class="s-outcome__highlight">
 											<h4 class="s-outcome__highlight-title s-outcome__highlight-title--success">Create projects</h4>
-											<p class="s-outcome__highlight-desc panel__desc">Create new projects from directly within the search results</p>
+											<p class="s-outcome__highlight-desc panel__desc">Create new projects directly within the search results</p>
 										</li>
 										<li class="s-outcome__highlight">
 											<h4 class="s-outcome__highlight-title s-outcome__highlight-title--info">Save tracks</h4>
@@ -328,20 +327,16 @@
 					</div>
 				</div>
 
-
-
 				<!-- Ecommerce -->
 				<div class="s-outcome__section panel__container container">
 					<div class="s-outcome__items text-xs-center">
 						<h3 class="panel__title panel__heading">Ecommerce experience</h3>
-						<p class="panel__desc panel__desc--middle">Auditioning music within Premiere Pro for free is a video editor’s dream. Selecting &amp; paying for a license is not which is why this necessary task should be quick and painless. Angular 2’s two-way data binding make creating intuitive forms a breeze. The form validation should also serve as an aid, not a distraction. Payment is handled real-time, in app using Braintree's API</p>
+						<p class="panel__desc panel__desc--middle">Auditioning music within Premiere Pro for free is a video editor’s dream. Selecting &amp; paying for a license is not, which is why this necessary task should be quick and painless. Angular 2’s two-way data binding make creating intuitive forms a breeze. The form validation should also serve as an aid, not a distraction. Payment is handled real-time, in app using Braintree's API</p>
 						<div class="s-outcome__item">
 							<img class="s-outcome__image s-outcome__image--ecommerce" src="assets/images/outcome/anw/outcome-ecommerce@2x.png" alt="Ecommerce experience" />
 						</div>
 					</div>
 				</div>
-
-
 
 				<!-- Responsive -->
 				<div class="s-outcome__section panel__container container">
@@ -354,11 +349,6 @@
 					</div>
 				</div>
 
-
 		</div>
 
-
-
 </div>
-
-<tc-spinner [isProcessing]="isProcessing"></tc-spinner>
