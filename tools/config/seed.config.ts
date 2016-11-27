@@ -143,7 +143,7 @@ export class SeedConfig {
    * `index.html`.
    * @type {string}
    */
-  APP_TITLE = 'Tom\'s Portfolio!';
+  APP_TITLE = 'Tom Christian &ndash; UI Designer &amp; Developer';
 
   /**
    * The base folder of the applications source files.
