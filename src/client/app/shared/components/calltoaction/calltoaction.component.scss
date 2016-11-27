@@ -22,7 +22,7 @@
   /* Separator line */
   &__sep {
     color: rgba(white, 0.3);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 100;
     text-transform: uppercase;
 
@@ -31,7 +31,7 @@
       display: block;
       position: absolute;
       left: 50%;
-      margin-left: -1px;
+      margin-left: 2px;
       width: 1px;
       height: 3rem;
       background: rgba(white, 0.2);
@@ -45,4 +45,30 @@
       bottom: -2.2rem;
     }
   }
+}
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-down(xs) {
+	.app-ctas {
+		&__btn {
+			display: block;
+			margin-bottom: $spacer * 2;
+		}
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.app-ctas {
+		&__btn {
+			&--folio {
+				margin-right: $spacer * 3;
+			}
+
+			&--cv {
+				margin-left: $spacer * 3;
+			}
+		}
+	}
 }
