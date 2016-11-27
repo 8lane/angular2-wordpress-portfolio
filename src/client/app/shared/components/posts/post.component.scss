@@ -5,7 +5,7 @@
 /*  Variables
 /*--------------------------------------------------------------*/
 
-$post-bg-color: 									white;
+$post-bg-color: 									#f3f5f6;
 $post-slope-height:								100px;
 $post-slope-angle:								3deg;
 
@@ -61,7 +61,6 @@ $post-slope-angle:								3deg;
 		position: relative;
 		z-index: 2;
     margin-top: -#{$post-slope-height / 2};
-		padding-top: $spacer * 5;
 		background: $post-bg-color;
 	}
 }
@@ -126,14 +125,6 @@ $post-slope-angle:								3deg;
 		&__title {
 			padding-top: 5rem;
 			padding-bottom: 5rem;
-		}
-	}
-}
-
-@include media-breakpoint-up(md) {
-	.post {
-		&__content {
-			padding-top: $grid-gutter-width;
 		}
 	}
 }

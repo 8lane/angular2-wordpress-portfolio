@@ -1,6 +1,7 @@
 /*  Variables
 /*--------------------------------------------------------------*/
 
+$xs-panel-max-width:													1400px;
 $xs-panel-padding:                            $spacer * 9;
 $xs-panel-title-margin-bottom:                $spacer * 3;
 
@@ -11,6 +12,10 @@ $lg-panel-padding:                            $spacer * 14;
 /*--------------------------------------------------------------*/
 
 .panel {
+	max-width: $xs-panel-max-width;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
 	padding-bottom: $xs-panel-padding;
 
   &:not(:first-child) {
