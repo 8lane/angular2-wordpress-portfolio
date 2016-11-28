@@ -4,7 +4,7 @@
 $posts-bg:											white;
 $xs-posts-inner-padding:				$spacer * 3;
 $sm-posts-inner-padding:				$spacer $spacer $spacer 0;
-$md-posts-inner-padding:				$spacer * 2;
+$md-posts-inner-padding:				$spacer * 2 $spacer * 3;
 
 $media-max-width:								16rem;
 
@@ -23,6 +23,7 @@ $media-max-width:								16rem;
 
 	&__title {
 		color: $gray-dark;
+		font-size: $font-size-lg;
 		font-weight: normal;
 		white-space: nowrap;
 	}
@@ -44,7 +45,7 @@ $media-max-width:								16rem;
 		&__details {
 	    position: absolute;
 	    top: 50%;
-	    right: 0;
+	    left: 40%;
 	    transform: translateY(-50%);
 			max-width: 60%;
 			padding: $sm-posts-inner-padding;
@@ -56,6 +57,7 @@ $media-max-width:								16rem;
 	.posts {
 		&__details {
 			max-width: 50%;
+			left: 50%;
 			padding: $md-posts-inner-padding;
 		}
 
