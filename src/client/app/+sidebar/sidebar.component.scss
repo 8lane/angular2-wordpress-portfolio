@@ -9,10 +9,10 @@ $sidebar-bg: 										#131518;
 $sidebar-border:								#2c3036;
 
 :host {
-  display: block;
-  background: $sidebar-bg;
-  min-height: 300px; /* temp */
-  max-width: $xs-sidebar-max-width;
+	display: block;
+	max-width: $xs-sidebar-max-width;
+	min-height: 300px;
+	background: $sidebar-bg;
 
   @include media-breakpoint-up(lg) {
     max-width: $lg-sidebar-max-width;
@@ -32,19 +32,20 @@ $sidebar-border:								#2c3036;
     color: white;
   }
 
-  &__recent, &__external-work {
+	&__recent,
+	&__external-work {
     padding: 0;
     list-style-type: none;
   }
 
   &__item {
+		@include truncate(100%);
     display: inline-block;
     margin-bottom: $spacer;
     color: white;
     font-weight: 300;
     font-size: $font-size-root + 2;
     text-decoration: none;
-    @include truncate(100%);
 
     &:hover {
       #{$root}__icon {
@@ -53,15 +54,15 @@ $sidebar-border:								#2c3036;
     }
   }
 
-  &__icon {
-    display: inline-block;
-    vertical-align: middle;
-    width: 30px;
-    font-size: 21px;
-    text-align: center;
-    text-decoration: none;
-    color: $gray-dark;
-    @include base-transition();
+	&__icon {
+		display: inline-block;
+		vertical-align: middle;
+		width: 30px;
+		font-size: 21px;
+		color: rgba(white, 0.15);
+		text-align: center;
+		text-decoration: none;
+		@include base-transition();
 
     &--large {
       font-size: 26px;
