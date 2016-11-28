@@ -8,7 +8,7 @@ import {MyRequestOptions} from '../misc/myRequestOptions';
 
 @Injectable()
 export class AppService {
-  appInfo: any[];
+  appInfo: any;
   skipToPosts: boolean;
   sidebarActive: boolean = true;
   epicHeader: boolean = true;
@@ -16,7 +16,10 @@ export class AppService {
   isPostPage: boolean;
 
   constructor(private _http: Http) {
-    this.appInfo = [];
+    this.appInfo = {
+			name: '&nbsp;',
+			description: '&nbsp;'
+		};
   }
 
   fetchAppData(): Observable<void> {

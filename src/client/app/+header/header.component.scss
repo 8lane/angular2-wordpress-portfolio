@@ -84,6 +84,9 @@ $header-logo-max-width:				200px;
 	&__logo {
 		min-width: $header-logo-min-width;
 		max-width: $header-logo-max-width;
+		min-height: $header-logo-min-width;
+		background: rgba(black, 0.5);
+		border-radius: 100%;
 	}
 
 	&__title {
