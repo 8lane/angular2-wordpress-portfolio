@@ -54,7 +54,6 @@ $lg-pagination-img-size:              30px;
 @include media-breakpoint-up(lg) {
   :host {
     float: right;
-		position: static;
   }
 
   .pagination {
