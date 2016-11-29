@@ -57,6 +57,7 @@ $post-slope-angle:								3deg;
 	}
 
 	&__content {
+    min-height: 250px;
 		overflow: hidden;
 		position: relative;
 		z-index: 2;
