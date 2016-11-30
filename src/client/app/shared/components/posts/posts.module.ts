@@ -8,11 +8,9 @@ import { TagComponent } from '../../components';
 import { PostService } from '../../services';
 import { TagService } from '../../services';
 
-import { AgileStoriesCanvas } from '../../directives';
-
 @NgModule({
     imports: [CommonModule],
-    declarations: [PostComponent, SpinnerComponent, TagComponent, AgileStoriesCanvas],
+    declarations: [PostComponent, SpinnerComponent, TagComponent],
     exports: [PostComponent],
     providers: [TagService, PostService]
 })

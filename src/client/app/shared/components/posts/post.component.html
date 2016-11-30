@@ -7,7 +7,8 @@
 			<img class="post__hero" src="assets/images/hero-banner@2x.png" />
 		</div>
 	</header>
-	<div class="post__content" *ngIf="post && !isProcessing" [innerHtml]="post.content.rendered"></div>
-	<!-- <div class="post__content" *ngIf="post && !isProcessing"> -->
 
+	<div class="post__content">
+		<div #renderedPost></div>
+	</div>
 </div>

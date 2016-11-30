@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, Compiler, NgModule, ViewChild, ViewContainerRef, ComponentRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { PostService } from '../../services';
 import { TagService } from '../../services';
 import { EventStore } from '../../misc';
+
+import { SharedModule } from '../../shared.module';
+
+import { AgileStoriesCanvas } from '../../directives';
 
 declare var moment: any;
 
@@ -14,6 +18,9 @@ declare var moment: any;
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent {
+	@ViewChild('renderedPost', { read: ViewContainerRef }) renderedPost: ViewContainerRef;
+	component: any;
+	protected componentRef: ComponentRef<any>;
 	nav: any;
 	slug: string;
 	post: any;
@@ -22,6 +29,7 @@ export class PostComponent {
 	goNext: any;
 
 	constructor(
+		private compiler: Compiler,
 		private _route: ActivatedRoute,
 		private _router: Router,
 		private _postService: PostService,
@@ -39,6 +47,8 @@ export class PostComponent {
 
         this._postService.currentPost = this.slug;
 
+				this.addComponent(this.post.content.rendered);
+
 				this._tagService.fetchTagsCollection(this.post.tags).subscribe((tags) => {
 					this.post.tags = tags;
 					this._postService.isProcessing = false;
@@ -47,6 +57,14 @@ export class PostComponent {
 		});
 	}
 
+  ngOnDestroy() {
+		if (this.component) {
+			console.log('destroy comp');
+			this.component.destroy();
+			this.component = null;
+		}
+  }
+
   get isProcessing(): boolean {
     return this._postService.isProcessing;
 	}
@@ -54,4 +72,24 @@ export class PostComponent {
 	loadTag(slug: string) {
 		this._router.navigate(['/tags', slug]);
 	}
+
+	/* http://stackoverflow.com/questions/38888008/how-can-i-use-create-dynamic-template-to-compile-dynamic-component-with-angular */
+	private addComponent(template: string) {
+		if (this.component) {
+			this.component.destroy();
+		}
+		
+    @Component({template: template})
+    class TemplateComponent {}
+
+    @NgModule({imports: [SharedModule], declarations: [TemplateComponent]})
+    class TemplateModule {}
+
+    const mod = this.compiler.compileModuleAndAllComponentsSync(TemplateModule);
+    const factory = mod.componentFactories.find((comp) =>
+      comp.componentType === TemplateComponent
+    );
+
+    this.component = this.renderedPost.createComponent(factory);
+  }
 }
