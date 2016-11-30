@@ -90,6 +90,7 @@ $timeline-peak-pip-size:			10px;
 			width: 2px;
 			margin-left: -1px;
 			background: $timeline-peak-bg;
+			border-radius: 0;
 		}
 
 		&:after {
