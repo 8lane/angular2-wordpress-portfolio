@@ -4,7 +4,7 @@
 	<header class="post__header" *ngIf="post && !isProcessing">
 		<div class="post__header-inner container text-xs-center">
 			<h2 class="post__title m-b-0" [innerHTML]="post.excerpt.rendered"></h2>
-			<img class="post__hero" src="assets/images/hero-banner@2x.png" />
+			<img class="post__hero" src="assets/images/projects/{{post.slug}}/hero-banner@2x.png" />
 		</div>
 	</header>
 
