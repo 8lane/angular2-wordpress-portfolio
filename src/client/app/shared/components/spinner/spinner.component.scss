@@ -1,9 +1,19 @@
 .spinner {
-  position: absolute;
-  top: 220px;
-  left: 50%;
-	z-index: 1;
-	margin-left: -23px;
+	background: rgb(255, 255, 255);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999999;
+
+	&__icon {
+		position: absolute;
+		top: 220px;
+		left: 50%;
+		z-index: 1;
+		margin-left: -23px;
+	}
 
   &__svg {
     width: 57px;
