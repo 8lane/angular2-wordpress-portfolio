@@ -3,11 +3,11 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class SidebarPosts {
   static list = [
-    {Name: 'angular2-spinners', Url: 'http://google.com', Source: 'github'},
-    {Name: 'ng2 dynamic content loader', Url: 'http://google.com', Source: 'codepen'},
-    {Name: 'sass color palettes', Url: 'http://google.com', Source: 'medium'},
-    {Name: 'angular2-wordpress-portfolio', Url: 'http://google.com', Source: 'github'},
-    {Name: '@extending %placeholders', Url: 'http://google.com', Source: 'codepen'},
-    {Name: 'edd statistics app', Url: 'http://google.com', Source: 'github'}
+    {Name: 'angular2-wordpress-portfolio', Url: 'https://github.com/tctc91/angular2-wordpress-portfolio', Source: 'github'},
+    {Name: 'Color palettes in SASS', Url: 'https://medium.com/p/dc0b13d9ae74/', Source: 'medium'},
+    {Name: 'Undo delete design pattern', Url: 'https://codepen.io/tctc91/pen/mOBoEp', Source: 'codepen'},
+    {Name: 'Media query mixin in SASS', Url: 'https://codepen.io/tctc91/pen/ZBXPOz', Source: 'codepen'},
+    {Name: 'angular-holiday-chooser', Url: 'https://github.com/tctc91/angular-holiday-chooser', Source: 'github'},
+    {Name: 'Form loading button animation', Url: 'https://codepen.io/tctc91/pen/pNWYgm', Source: 'codepen'}
   ];
 }
