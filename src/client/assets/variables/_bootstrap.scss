@@ -85,7 +85,7 @@ $border-width:               1px !default;
 //
 // Settings for the `<body>` element.
 
-$body-bg:                    #eff0f1 !default;
+$body-bg:                    #f3f5f6 !default;
 $body-color:                 $gray-light !default;
 
 
@@ -93,7 +93,7 @@ $body-color:                 $gray-light !default;
 //
 // Style anchor elements.
 
-$link-color:                 $brand-danger !default;
+$link-color:                 $brand-primary !default;
 $link-decoration:            none !default;
 $link-hover-color:           darken($link-color, 15%) !default;
 $link-hover-decoration:      none !default;

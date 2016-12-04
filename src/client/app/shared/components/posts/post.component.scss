@@ -22,12 +22,14 @@ $post-slope-angle:								3deg;
 .post {
 	&__header {
 		width: 100%;
-		min-height: 800px;
 		position: relative;
 	}
 
 	&__header-inner {
-		margin-bottom: -5%; /* Half cover the hero image with the slope */
+		[data-post-slug="music-library-webapp"] & {
+			@include make-container();
+			max-width: 1140px;
+		}
 	}
 
 	&__title {
@@ -44,16 +46,6 @@ $post-slope-angle:								3deg;
 
 	&__hero {
 		width: 100%;
-		box-shadow: 0 0 65px rgba(0, 0, 0, 0.3);
-	}
-
-	&__slope {
-		width: 100%;
-		height: $post-slope-height;
-		margin-bottom: -60px;
-		padding-bottom: 20px;
-		background: $post-bg-color;
-		transform: skewY($post-slope-angle);
 	}
 
 	&__content {
@@ -61,18 +53,11 @@ $post-slope-angle:								3deg;
 		overflow: hidden;
 		position: relative;
 		z-index: 2;
-    margin-top: -#{$post-slope-height / 2};
 		background: $post-bg-color;
 	}
 }
 
-@include media-breakpoint-up(md) {
-	.post {
-		&__header-inner {
-			margin-bottom: -10%; /* Half cover the hero image with the slope */
-		}
-	}
-}
+
 
 
 

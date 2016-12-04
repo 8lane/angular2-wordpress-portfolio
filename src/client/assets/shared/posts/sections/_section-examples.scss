@@ -119,6 +119,7 @@ $sm-item-preview-width:									10rem;
 @include media-breakpoint-up(sm) {
 	.s-examples {
 		&__item {
+			display: block;
 			max-width: 100%;
 			height: $xs-item-preview-size;
 			margin-bottom: $grid-gutter-width / 2;
@@ -138,6 +139,7 @@ $sm-item-preview-width:									10rem;
 		}
 
 		&__desc {
+			max-width: 24rem;
   		font-size: .85rem;
 		}
 

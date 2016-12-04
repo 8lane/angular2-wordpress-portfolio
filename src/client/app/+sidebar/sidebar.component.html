@@ -5,7 +5,7 @@
 				<h3 class="app-sidebar__title text-xs-center m-t-2 m-b-3">Recent</h3>
 				<ul class="app-sidebar__recent">
 					<li *ngFor="let post of sidebarPosts;">
-						<a href="{{post.Url}}" class="app-sidebar__item">
+						<a href="{{post.Url}}" class="app-sidebar__item" [class.app-sidebar__item--featured]="post.Featured">
 							<i class="app-sidebar__icon icon-{{post.Source}}"></i> {{post.Name}}
 						</a>
 					</li>
