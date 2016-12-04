@@ -6,12 +6,13 @@
 
   /* Button styles */
   &__btn {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 		font-weight: 100;
 		transition: all 150ms ease-in;
 
 		&:hover {
 			transform: scale(1.05);
+			border-color: $brand-primary;
 		}
 
 		&:active {
