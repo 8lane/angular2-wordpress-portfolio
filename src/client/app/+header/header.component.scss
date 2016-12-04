@@ -66,7 +66,6 @@ $header-logo-max-width:				200px;
 		max-height: $xs-header-scrolled-height;
 		padding: 0 $spacer * 3;
 		background: $header-scrolled-bg-color;
-		border-bottom: 1px solid white;
 		text-align: left;
 		transition: background 120ms ease-in;
 	}
@@ -130,7 +129,7 @@ $header-logo-max-width:				200px;
 		.app-header:not(.app-header--epic) & {
 			display: inline-block;
 			vertical-align: middle;
-	    padding-bottom: 0.5rem;
+	    padding-bottom: 3px;
 	    font-size: 1rem;
 		}
 	}
