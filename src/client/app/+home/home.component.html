@@ -4,11 +4,9 @@
 		<div class="row">
 			<div class="home__category" *ngFor="let category of categories; let idx = index;">
 				<div class="home__item" *ngFor="let year of category | mapToIterable">
-			  		<h4 class="timeline__year text-xs-center" [attr.id]="'timeline-year-'+idx" [attr.data-pos]="idx">{{year.key}}</h4>
-			  		<div class="row">
-						<div class="col-xs-12" *ngFor="let post of year.val">
-							<app-posts [post]="post"></app-posts>
-						</div>
+		  		<h4 class="timeline__year text-xs-center" [attr.id]="'timeline-year-'+idx" [attr.data-pos]="idx">{{year.key}}</h4>
+					<div *ngFor="let post of year.val">
+						<app-posts [post]="post"></app-posts>
 					</div>
 				</div>
 			</div>
