@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AgileStoriesCanvas } from './directives';
+import { ContainerOffsetDirective } from './directives';
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -11,8 +12,8 @@ import { AgileStoriesCanvas } from './directives';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
-  declarations: [AgileStoriesCanvas],
-  exports: [CommonModule, FormsModule, RouterModule, AgileStoriesCanvas]
+  declarations: [AgileStoriesCanvas, ContainerOffsetDirective],
+  exports: [CommonModule, FormsModule, RouterModule, AgileStoriesCanvas, ContainerOffsetDirective]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

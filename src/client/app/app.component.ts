@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Config } from './shared/index';
 
 import { AppService } from './shared/services';
 import { PostService } from './shared/services';
+
+import { ContainerOffsetDirective } from './shared/directives';
 
 /**
  * This class represents the main application component. Within the @Routes annotation is the configuration of the
@@ -18,6 +20,7 @@ import { PostService } from './shared/services';
 })
 
 export class AppComponent {
+	@ViewChild(ContainerOffsetDirective) containerOffset: ContainerOffsetDirective;
 
   constructor(private _appService: AppService, private _postService: PostService, private _router: Router) {
     console.log('ROUTER: ', this._router);
@@ -39,6 +42,10 @@ export class AppComponent {
   get posts() {
     return this._postService.postCollection;
   }
+
+	// ngAfterContentInit() {
+	// 	this.containerOffset.setPosition();
+	// }
 
   ngOnInit() {
     /* Fetch and set core app data */
