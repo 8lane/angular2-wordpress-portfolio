@@ -109,8 +109,8 @@ $post-slope-angle:								3deg;
 @include media-breakpoint-up(sm) {
 	.post {
 		&__title {
-			padding-top: 5rem;
-			padding-bottom: 5rem;
+			padding-top: 6rem;
+			padding-bottom: 6rem;
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*--------------------------------------------------------------*/
 
 $xs-header-scrolled-height:		70px;
-$xs-header-minimal-height:		125px;
+$xs-header-minimal-height:		7rem;
 $header-bg-color:							#1f4295;
 $header-scrolled-bg-color:		rgba(5, 12, 28, 0.97);
 $header-bg-gradient:					linear-gradient(to bottom, darken($header-bg-color, 35%) 0%, $header-bg-color 100%);
@@ -26,10 +26,6 @@ $header-logo-max-width:				200px;
 
 	&__inner {
 		position: relative;
-
-		.app-header--scrolled & {
-			padding: 0;
-		}
 	}
 
 	/* Giant homepage header */
@@ -48,7 +44,7 @@ $header-logo-max-width:				200px;
 		position: fixed;
 		top: 0;
 		z-index: 10;
-		padding: .5rem 1rem;
+		padding: .5rem 0;
 		text-align: center;
 
 		&:not(.app-header--scrolled) {
@@ -64,7 +60,7 @@ $header-logo-max-width:				200px;
 	/* Minimal header when scrolled */
 	&--scrolled:not(.app-header--epic) {
 		max-height: $xs-header-scrolled-height;
-		padding: 0 $spacer * 3;
+		padding: 0 !important;
 		background: $header-scrolled-bg-color;
 		text-align: left;
 		transition: background 120ms ease-in;

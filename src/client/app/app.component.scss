@@ -8,7 +8,6 @@ $sm-app-width:								95%;
 $xl-app-width:								80%;
 
 $xs-app-content-width:				960px;
-$xs-app-content-offset-top:		-7rem;
 
 $sidebar-width:								18rem;
 
@@ -39,11 +38,6 @@ body {
 }
 
 .app-content {
-	&--offset {
-		/* Pull the main content up into the epic header */
-		margin-top: $xs-app-content-offset-top;
-	}
-
 	/* Smaller container widths on content pages except posts as we control widths via the post styles */
 	&:not(&--with-sidebar):not(&--with-post) {
 		max-width: $xs-app-content-width;

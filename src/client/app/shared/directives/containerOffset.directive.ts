@@ -12,12 +12,18 @@ export class ContainerOffsetDirective {
 		});
 	}
 
+	ngDoCheck() {
+		this.setPosition();
+	}
+
 	setPosition() {
 		let $container = this.el.nativeElement;
 		let $firstPost: any = $container.querySelector('.home__category:first-child .posts');
 		let $header:any  = document.querySelector('.app-header');
 
-		if(!$firstPost || !$header) return;
+		$container.style.marginTop = null;
+
+		if(!$firstPost || !$header || $container.classList.contains('app-content--with-post')) return;
 
 		let offsetHeight = $firstPost.clientHeight / 2;
 		let headerPadding = 100;
@@ -25,10 +31,5 @@ export class ContainerOffsetDirective {
 		$container.style.marginTop = `-${offsetHeight}px`;
 		$header.style.paddingBottom = `${headerPadding + offsetHeight}px`;
 	}
-
-
-		ngDoCheck() {
-			this.setPosition();
-		}
 
 }
