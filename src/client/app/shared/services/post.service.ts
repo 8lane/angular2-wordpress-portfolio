@@ -3,13 +3,14 @@ import {Http, Request} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
-import {Settings} from '../../../settings';
+import {Config} from '../../shared/config/env.config';
 import {MyRequestOptions} from '../misc';
 
 declare var moment: any;
 
 @Injectable()
 export class PostService {
+	API: string;
   postSingle: any[];
   postCollection: any[];
   postCategories: any[];
@@ -20,13 +21,14 @@ export class PostService {
     this.postCategories = []; /* list of posts by year */
     this.postSingle = []; /* stores individual posts */
     this.postCollection = []; /* stores the core set of posts for lifetime of app */
+		this.API = Config.apiEndPoint + Config.apiNamespace;
   }
 
   fetchPost(slug: string): Observable<void> {
     var requestOptions = new MyRequestOptions();
     var options = requestOptions.merge({
       // @todo requestOptions() has better param handling. Refactor!
-      url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/?slug=' + slug + '',
+      url: this.API + '/posts/?slug=' + slug + '',
     });
 
     return this._http.request(new Request(options))
@@ -50,7 +52,7 @@ export class PostService {
 		let requestOptions = new MyRequestOptions();
 
     let options = requestOptions.merge({
-      url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/',
+      url: this.API + '/posts/',
     });
 
     return this._http.request(new Request(options)).map((responseData) => {
@@ -78,7 +80,7 @@ export class PostService {
 		let filterQuery = filter ? `?filter[${filter[0]}]=${filter[1]}` : '';
 
     let options = requestOptions.merge({
-			url: Settings.apiEndPoint + Settings.apiNamespace + '/posts/' + filterQuery,
+			url: this.API + '/posts/' + filterQuery,
     });
 
     return this._http.request(new Request(options)).map((responseData) => {

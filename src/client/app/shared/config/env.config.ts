@@ -3,7 +3,8 @@
 export interface EnvConfig {
   API?: string;
   ENV?: string;
+	apiEndPoint: string;
+	apiNamespace: string;
 }
 
 export const Config: EnvConfig = JSON.parse('<%= ENV_CONFIG %>');
-

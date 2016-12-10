@@ -3,7 +3,7 @@ import {Http, Request, Response, RequestMethod} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
-import {Settings} from '../../../settings';
+import {Config} from '../../shared/config/env.config';
 import {MyRequestOptions} from '../misc/myRequestOptions';
 
 @Injectable()
@@ -25,7 +25,7 @@ export class AppService {
   fetchAppData(): Observable<void> {
     var requestOptions = new MyRequestOptions();
     var options = requestOptions.merge({
-      url: Settings.apiEndPoint + '/',
+      url: Config.apiEndPoint + '/',
     });
 
     return this._http.request(new Request(options))
