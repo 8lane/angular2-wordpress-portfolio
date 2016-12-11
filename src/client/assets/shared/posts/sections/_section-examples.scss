@@ -4,6 +4,7 @@
 $xs-logo-width:                         50px;
 $xs-example-width:                      18rem;
 $xs-codepen-logo-size:                  100px;
+$xs-plunker-logo-size:                  25px;
 $xs-item-preview-size:									12rem;
 
 $sm-item-preview-width:									10rem;
@@ -48,6 +49,10 @@ $sm-item-preview-width:									10rem;
     margin-top: $spacer * 5;
   }
 
+  &__info {
+    display: table;
+  }
+
   &__preview {
     display: inline-block;
     width: 100%;
@@ -90,6 +95,14 @@ $sm-item-preview-width:									10rem;
 
   &__cta {
     margin-top: $spacer * 2;
+    color: white;
+    font-weight: 500;
+    font-family: $font-family-serif;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: white;
+    }
   }
 
   &__live-text {
@@ -110,6 +123,14 @@ $sm-item-preview-width:									10rem;
     display: inline-block;
     width: $xs-codepen-logo-size;
     min-width: $xs-codepen-logo-size;
+  }
+
+  &__plunker {
+    max-width: $xs-plunker-logo-size;
+    min-width: $xs-plunker-logo-size;
+    vertical-align: middle;
+    margin-right: 3px;
+    margin-bottom: 4px;
   }
 }
 
