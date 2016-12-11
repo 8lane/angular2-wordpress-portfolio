@@ -97,8 +97,13 @@ $xs-sass-logo-width:                    150px;
 			min-width: 660px;
 			height: 730px;
 			position: relative;
-			background: url(/assets/images/code@2x.png) no-repeat;
+			background: url(/assets/images/code.png) no-repeat;
 			background-size: 100%;
+
+			@include retina() {
+				background: url(/assets/images/code@2x.png) no-repeat;
+				background-size: 100%;
+			}
 		}
 
 		&__sass-logo {

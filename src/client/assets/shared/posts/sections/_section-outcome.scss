@@ -36,8 +36,13 @@
 		min-width: 500px;
 		height: 310px;
 		position: relative;
-		background: url(/assets/images/outcome/anw/outcome-projects@2x.png) no-repeat;
+		background: url(/assets/images/outcome/anw/outcome-projects.png) no-repeat;
 		background-size: 100%;
+
+		@include retina() {
+			background: url(/assets/images/outcome/anw/outcome-projects@2x.png) no-repeat;
+			background-size: 100%;
+		}
 	}
 
 	&__highlights {
