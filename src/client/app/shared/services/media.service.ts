@@ -3,7 +3,7 @@ import { Http, Request } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
-import { Settings } from '../../../settings';
+import { Config } from '../../shared/config/env.config';
 import { MyRequestOptions } from '../misc';
 
 @Injectable()
@@ -34,7 +34,7 @@ export class MediaService {
   fetchMedia(id: number): Observable<void> {
     var requestOptions = new MyRequestOptions();
     var options = requestOptions.merge({
-      url: Settings.apiEndPoint + Settings.apiNamespace + '/media/?include='+ id +'',
+      url: Config.apiEndPoint + Config.apiNamespace + '/media/?include='+ id +'',
     });
 
     return this._http.request(new Request(options))
