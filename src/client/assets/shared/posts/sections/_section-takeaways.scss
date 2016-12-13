@@ -23,15 +23,24 @@
 .s-takeaways {
   &__wrapper {
     max-width: 900px;
-    margin: $spacer * 10 auto 0;
+    margin: $spacer * 3 auto 0;
+
+    @include media-breakpoint-up(sm) {
+      margin: $spacer * 8 auto 0;
+    }
   }
 
   &__item {
-    padding-top: $spacer * 3;
-    padding-bottom: $spacer * 3;
+    padding-top: $spacer * 1.5;
+    padding-bottom: $spacer * 1.5;
     font-family: $font-family-serif;
     font-size: $font-size-h5;
     color: $gray-dark;
+
+    @include media-breakpoint-up(sm) {
+      padding-top: $spacer * 3;
+      padding-bottom: $spacer * 3;
+    }
 
     &:before {
       content: "";
@@ -69,8 +78,6 @@
 /*  Media Queries
 /*--------------------------------------------------------------*/
 
-@include media-breakpoint-up(md) {
-  .s-takeaways {
+@include media-breakpoint-up(sm) {
 
-  }
 }
