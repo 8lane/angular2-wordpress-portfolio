@@ -31,6 +31,10 @@ $quote-icon-size:     50px;
     padding: 4rem 3rem;
     background: rgba($brand-dark, 0.9);
     color: white;
+
+    .s-reviews__quote-box--square & {
+      min-height: 309px;
+    }
   }
 
   &__desc {
