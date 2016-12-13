@@ -1,0 +1,77 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+$quote-icon-size:     50px;
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.s-reviews {
+  background-image: url(/assets/images/bg-feedback.svg);
+  background-position: top 30% left 40%;
+  background-size: 240%;
+
+  &__wrapper {
+    max-width: 800px;
+    margin: 3rem auto 2rem;
+  }
+
+  &__icon {
+    min-width: $quote-icon-size;
+    max-width: $quote-icon-size;
+    padding-bottom: 2rem;
+  }
+
+  &__quote-box {
+    margin-bottom: 0;
+  }
+
+  &__quote {
+    margin-bottom: 1.5rem;
+    padding: 4rem 3rem;
+    background: rgba($brand-dark, 0.9);
+    color: white;
+  }
+
+  &__desc {
+    font-family: $font-family-serif;
+    font-size: $font-size-h5;
+  }
+}
+
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(sm) {
+  .s-reviews {
+    &__wrapper {
+      margin: 5rem auto 2rem;
+    }
+
+    &__quote-box {
+      &--rectangle {
+        margin-top: 3.5rem;
+      }
+    }
+
+    &__quote {
+      position: relative;
+      margin-bottom: 0;
+
+      .s-reviews__quote-box--rectangle & {
+        padding-left: 9rem;
+      }
+    }
+
+    &__icon {
+      .s-reviews__quote-box--rectangle & {
+        position: absolute;
+        top: 50%;
+        left: 3rem;
+        margin-top: -19px;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

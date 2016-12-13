@@ -26,6 +26,7 @@ $lg-panel-padding:                            $spacer * 14;
   &--dark { background: $brand-dark; }
   &--gray { background: #f1f1f1; }
   &--purple { background: $brand-warning; }
+	&--blue { background: $brand-primary; }
 
   &__heading {
     .panel--dark & { color: white; }
