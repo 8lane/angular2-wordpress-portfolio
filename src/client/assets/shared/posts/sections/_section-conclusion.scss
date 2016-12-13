@@ -1,0 +1,94 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+$logo-size:     130px;
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.s-conclusion {
+  /* The famous ANW dolphin easter egg */
+  &:after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -35px;
+    background: url(/assets/images/dolphin.svg) no-repeat;
+  }
+
+  &__download-wrapper {
+    max-width: 900px;
+    margin: $spacer * 10 auto;
+
+    [class*="col-"] {
+      &:first-child {
+        padding-right: $spacer * 2;
+      }
+
+      &:last-child {
+        padding-left: $spacer * 2;
+      }
+    }
+  }
+
+  &__download {
+    display: block;
+    padding: 3rem;
+    transition: all 100ms ease-in;
+
+    &--adobe {
+      background: linear-gradient(to right, rgba(white, 0) 0%, rgba(black, 0.04) 100%);
+
+      &:hover {
+        background: linear-gradient(to right, rgba(white, 0) 0%, rgba(black, 0.07) 100%);
+      }
+    }
+
+    &--anw {
+      background: linear-gradient(to left, rgba(white, 0) 0%, rgba(black, 0.04) 100%);
+
+      &:hover {
+        background: linear-gradient(to left, rgba(white, 0) 0%, rgba(black, 0.07) 100%);
+      }
+    }
+  }
+
+  &__logo {
+    min-width: $logo-size;
+    max-width: $logo-size;
+    max-height: $logo-size;
+    transition: all 140ms ease-in;
+
+    .s-conclusion__download:hover & {
+      transform: scale(0.9);
+    }
+  }
+
+  &__cta {
+    margin-top: $spacer * 2;
+    padding: $spacer 0;
+    border: 0;
+    font-family: $font-family-serif;
+    font-size: $font-size-h5;
+    color: $brand-dark;
+    transition: all 140ms ease-in;
+
+    .s-conclusion__download:hover & {
+      color: $brand-primary;
+    }
+  }
+}
+
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(md) {
+  .s-conclusion {
+
+  }
+}

@@ -1,0 +1,76 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+@keyframes bullet-pulse {
+  0% {
+    opacity: .5;
+    transform: scale(1);
+  }
+  25% {
+    opacity: .4;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.s-takeaways {
+  &__wrapper {
+    max-width: 900px;
+    margin: $spacer * 10 auto 0;
+  }
+
+  &__item {
+    padding-top: $spacer * 3;
+    padding-bottom: $spacer * 3;
+    font-family: $font-family-serif;
+    font-size: $font-size-h5;
+    color: $gray-dark;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: white;
+      border: 2px solid $brand-primary;
+      position: absolute;
+      left: 4px;
+      top: 50%;
+      margin-top: -6px;
+      border-radius: 10px;
+      z-index: 1;
+    }
+
+    &:after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      position: absolute;
+      left: 4px;
+      top: 50%;
+      margin-top: -6px;
+      background: $brand-primary;
+      border-radius: 11px;
+      animation: bullet-pulse 2s infinite;
+      transform-origin: center center;
+    }
+  }
+}
+
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(md) {
+  .s-takeaways {
+
+  }
+}
