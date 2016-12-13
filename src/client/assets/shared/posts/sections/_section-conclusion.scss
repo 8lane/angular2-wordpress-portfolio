@@ -30,6 +30,13 @@ $logo-size:     130px;
       }
     }
 
+    @include media-breakpoint-down(sm) {
+      [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
     @include media-breakpoint-up(sm) {
       margin: $spacer * 10 auto;
 
@@ -51,6 +58,7 @@ $logo-size:     130px;
     position: relative;
     padding: 3rem;
     z-index: 0;
+    white-space: normal;
 
     &:hover:after {
       opacity: 1;
