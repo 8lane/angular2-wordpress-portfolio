@@ -58,31 +58,46 @@ $sm-item-preview-width:									10rem;
     width: 100%;
     max-width: $xs-example-width;
     height: $xs-item-preview-size;
-    background: url(/assets/images/demo-tint@2x.png) no-repeat;
     border-radius: 7px 7px 0 0;
 
     .s-examples__item--tint & {
-      background: url(/assets/images/demo-tint@2x.png) no-repeat;
-      background-position: -14rem -16rem;
-      background-size: 47rem;
+      background: url(/assets/images/demo-tint.png) no-repeat;
+      background-size: 100%;
+
+      @include retina() {
+        background: url(/assets/images/demo-tint@2x.png) no-repeat;
+        background-size: 100%;
+      }
     }
 
     .s-examples__item--media-query & {
-      background: url(/assets/images/demo-media@2x.png) no-repeat;
-      background-position: -1rem -1rem;
-      background-size: 39rem;
+      background: url(/assets/images/demo-media.png) no-repeat;
+      background-size: 100%;
+
+      @include retina() {
+        background: url(/assets/images/demo-media@2x.png) no-repeat;
+        background-size: 100%;
+      }
     }
 
     .s-examples__item--loading-anim & {
-      background: url(/assets/images/demo-loader@2x.png) no-repeat;
-      background-position: -8rem -6.7rem;
-      background-size: 36rem;
+      background: url(/assets/images/demo-loader.png) no-repeat;
+      background-size: 100%;
+
+      @include retina() {
+        background: url(/assets/images/demo-loader@2x.png) no-repeat;
+        background-size: 100%;
+      }
     }
 
     .s-examples__item--undo-pattern & {
-      background: url(/assets/images/demo-undo@2x.png) no-repeat;
-      background-position: -14rem -9rem;
-      background-size: 50rem;
+      background: url(/assets/images/demo-undo.png) no-repeat;
+      background-size: 100%;
+
+      @include retina() {
+        background: url(/assets/images/demo-undo@2x.png) no-repeat;
+        background-size: 100%;
+      }
     }
   }
 
