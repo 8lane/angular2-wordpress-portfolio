@@ -37,6 +37,13 @@ $quote-icon-size:     50px;
     }
   }
 
+  &__author {
+    display: inline-block;
+    padding-top: $spacer * 2;
+    color: rgba(white, 0.4);
+    font-size: 0.9rem;
+  }
+
   &__desc {
     font-family: $font-family-serif;
     font-size: $font-size-h5;
