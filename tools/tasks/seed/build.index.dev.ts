@@ -4,7 +4,7 @@ import { join } from 'path';
 import * as slash from 'slash';
 
 import Config from '../../config';
-import { templateLocals } from '../../utils';
+import { TemplateLocalsBuilder } from '../../utils';
 
 const plugins = <any>gulpLoadPlugins();
 
@@ -17,7 +17,7 @@ export = () => {
     .pipe(inject('shims'))
     .pipe(inject('libs'))
     .pipe(inject())
-    .pipe(plugins.template(templateLocals()))
+    .pipe(plugins.template(new TemplateLocalsBuilder().wihtoutStringifiedEnvConfig().build()))
     .pipe(gulp.dest(Config.APP_DEST));
 };
 
@@ -62,6 +62,9 @@ function mapPath(dep: any) {
  */
 function transformPath() {
   return function (filepath: string) {
+    if (filepath.startsWith(`/${Config.APP_DEST}`)) {
+      filepath = filepath.replace(`/${Config.APP_DEST}`, '');
+    }
     arguments[0] = join(Config.APP_BASE, filepath) + `?${Date.now()}`;
     return slash(plugins.inject.transform.apply(plugins.inject.transform, arguments));
   };

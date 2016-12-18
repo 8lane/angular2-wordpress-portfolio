@@ -14,6 +14,7 @@ import { ContainerOffsetDirective } from './directives';
   imports: [CommonModule, RouterModule],
   declarations: [AgileStoriesCanvas, ContainerOffsetDirective],
   exports: [CommonModule, FormsModule, RouterModule, AgileStoriesCanvas, ContainerOffsetDirective]
+    CommonModule, FormsModule, RouterModule]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {
