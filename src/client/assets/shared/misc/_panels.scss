@@ -28,6 +28,11 @@ $lg-panel-padding:                            $spacer * 14;
   &--purple { background: $brand-warning; }
 	&--blue { background: $brand-primary; }
 
+	&__container {
+		position: relative;
+		z-index: 1;
+	}
+
   &__heading {
     .panel--dark & { color: white; }
   }
@@ -45,7 +50,12 @@ $lg-panel-padding:                            $spacer * 14;
 			margin-left: auto;
 			text-align: center;
 		}
+
+		&--lead {
+			max-width: 45rem;
+		}
   }
+
 }
 
 

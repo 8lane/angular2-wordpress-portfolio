@@ -5,15 +5,15 @@
 /*--------------------------------------------------------------*/
 
 .s-intro {
-	padding-top: 4rem;
+	padding-top: 2.5rem;
 }
 
 
 /*  Media Queries
 /*--------------------------------------------------------------*/
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(sm) {
 	.s-intro {
-		padding-top: $grid-gutter-width;
+		padding-top: 5.5rem;
 	}
 }
