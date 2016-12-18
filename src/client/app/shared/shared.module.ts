@@ -13,8 +13,7 @@ import { ContainerOffsetDirective } from './directives';
 @NgModule({
   imports: [CommonModule, RouterModule],
   declarations: [AgileStoriesCanvas, ContainerOffsetDirective],
-  exports: [CommonModule, FormsModule, RouterModule, AgileStoriesCanvas, ContainerOffsetDirective]
-    CommonModule, FormsModule, RouterModule]
+  exports: [CommonModule, RouterModule, AgileStoriesCanvas, ContainerOffsetDirective]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

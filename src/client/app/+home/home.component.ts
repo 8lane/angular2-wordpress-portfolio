@@ -15,12 +15,6 @@ import { PostService } from '../shared/services';
 export class HomeComponent {
   constructor(private _postService: PostService, private _appService: AppService) {}
 
-  ngAfterViewInit() {
-    if(this._appService.skipToPosts) {
-      document.getElementById('timeline-year-0').scrollIntoView();
-    }
-  }
-
   get posts() {
     return this._postService.postCollection;
   }
@@ -35,9 +29,5 @@ export class HomeComponent {
 
  gotCategories() {
    return this.categories.length;
- }
-
- ngOnDestroy() {
-   this._appService.skipToPosts = true;
  }
 }

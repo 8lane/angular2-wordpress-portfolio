@@ -13,7 +13,8 @@ export class ProjectConfig extends SeedConfig {
 
   constructor() {
     super();
-    // this.APP_TITLE = 'Put name of your app here';
+    this.APP_TITLE = 'Tom Christian &ndash; UI Designer &amp; Developer';
+    this.ENABLE_SCSS = true;
 
     /* Enable typeless compiler runs (faster) between typed compiler runs. */
     // this.TYPED_COMPILE_INTERVAL = 5;
@@ -22,7 +23,7 @@ export class ProjectConfig extends SeedConfig {
     this.NPM_DEPENDENCIES = [
       ...this.NPM_DEPENDENCIES,
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
-      // {src: 'lodash/lodash.min.js', inject: 'libs'},
+      { src: 'lodash/lodash.min.js', inject: 'libs' },
       { src: 'smooth-scroll/dist/js/smooth-scroll.js', inject: 'libs' },
       { src: 'moment/moment.js', inject: 'libs' },
     ];
