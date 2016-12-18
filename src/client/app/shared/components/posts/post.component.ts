@@ -59,7 +59,6 @@ export class PostComponent {
 
   ngOnDestroy() {
 		if (this.component) {
-			console.log('destroy comp');
 			this.component.destroy();
 			this.component = null;
 		}
@@ -78,7 +77,7 @@ export class PostComponent {
 		if (this.component) {
 			this.component.destroy();
 		}
-		
+
     @Component({template: template})
     class TemplateComponent {}
 

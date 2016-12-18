@@ -9,7 +9,6 @@ import {MyRequestOptions} from '../misc/myRequestOptions';
 @Injectable()
 export class AppService {
   appInfo: any;
-  skipToPosts: boolean;
   sidebarActive: boolean = true;
   epicHeader: boolean = true;
   isPageScrolled: boolean;
@@ -35,7 +34,6 @@ export class AppService {
 
         if (data) {
           this.appInfo = data;
-          console.log('APP DATA: ', data);
         }
       });
   }

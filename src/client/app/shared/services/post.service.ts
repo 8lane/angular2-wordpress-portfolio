@@ -40,10 +40,8 @@ export class PostService {
         if (data) {
           data.forEach((d: any) => post.push(Object.assign(d)));
           this.postSingle = post[0];
-          console.log('POST SINGLE: ', this.postSingle);
         }
       }, (error: any) => {
-        // @todo handle error
         console.warn('ERROR IN GET SINGLE POST HTTP REQUEST ', error);
       });
   }

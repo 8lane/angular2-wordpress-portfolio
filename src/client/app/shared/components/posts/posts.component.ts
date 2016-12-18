@@ -12,9 +12,7 @@ export class PostsComponent {
 
   constructor(private _router: Router) {}
 
-  ngOnInit() {
-        console.log(this.post);
-  }
+  ngOnInit() {}
 
   loadPost(slug: string) {
     this._router.navigate(['/portfolio', slug ]);

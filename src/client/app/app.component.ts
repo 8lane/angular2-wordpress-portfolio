@@ -22,10 +22,7 @@ import { ContainerOffsetDirective } from './shared/directives';
 export class AppComponent {
 	@ViewChild(ContainerOffsetDirective) containerOffset: ContainerOffsetDirective;
 
-  constructor(private _appService: AppService, private _postService: PostService, private _router: Router) {
-    console.log('ROUTER: ', this._router);
-		console.log('Environment config', Config);
-	}
+  constructor(private _appService: AppService, private _postService: PostService, private _router: Router) {}
 
 	get isPostPage() {
     return this._appService.isPostPage;
