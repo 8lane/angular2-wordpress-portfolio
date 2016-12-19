@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { SidebarPosts } from './sidebarPosts';
 import { AppService } from '../shared/services';
 
-import * as _ from 'lodash/lodash';
+import * as _ from 'lodash/index';
 
 @Component({
   moduleId: module.id,
