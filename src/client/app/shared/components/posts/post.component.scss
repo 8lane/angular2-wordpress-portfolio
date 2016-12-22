@@ -26,7 +26,8 @@ $post-slope-angle:								3deg;
 	}
 
 	&__header-inner {
-		[data-post-slug="music-library-webapp"] & {
+		[data-post-slug="music-library-webapp"] &,
+		[data-post-slug="music-library-webapp-lite"] & {
 			@include make-container();
 			max-width: 1140px;
 		}
