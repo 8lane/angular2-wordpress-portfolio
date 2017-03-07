@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { SidebarPosts } from './sidebarPosts';
 import { AppService } from '../shared/services';
 
-import * as _ from 'lodash/index';
+const shuffle = require('lodash/shuffle');
 
 @Component({
   moduleId: module.id,
@@ -17,6 +17,6 @@ export class SidebarComponent {
   constructor(private _appService: AppService) {}
 
   ngOnInit() {
-    this.sidebarPosts = _.shuffle(SidebarPosts.list);
+    this.sidebarPosts = shuffle(SidebarPosts.list);
   }
 }
