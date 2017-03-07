@@ -77,6 +77,13 @@ $post-slope-angle:								3deg;
 		margin-top: 2rem;
 		padding: 0.9rem 0.3rem;
 		font-size: 1.2rem;
+		border-color: white;
+		color: white;
+
+		&:hover {
+			border-color: $brand-primary;
+			color: $brand-primary;
+		}
 
 		@include media-breakpoint-up(sm) {
 			width: 120px;
