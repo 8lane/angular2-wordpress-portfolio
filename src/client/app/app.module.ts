@@ -4,7 +4,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { routes } from './app.routes';
+import { AppRoutingModule } from './app-routing.module';
 
 import { HomeModule } from './+home/home.module';
 import { PostsModule } from './shared/components/posts/posts.module';
@@ -24,7 +24,7 @@ import { AppService } from './shared/services';
 import { EventStore } from './shared/misc';
 
 @NgModule({
-  imports: [BrowserModule, HttpModule, RouterModule.forRoot(routes), HomeModule, PostsModule, SharedModule.forRoot()],
+  imports: [BrowserModule, HttpModule, AppRoutingModule, PostsModule, HomeModule, SharedModule.forRoot()],
   declarations: [AppComponent,
                  HeaderComponent,
                  FooterComponent,

@@ -10,7 +10,7 @@ import { PostService } from '../shared/services';
   moduleId: module.id,
   selector: 'tc-home',
   templateUrl: 'home.component.html',
-  styleUrls: ['home.component.css'],
+  styleUrls: ['home.component.css']
 })
 export class HomeComponent {
   constructor(private _postService: PostService, private _appService: AppService) {}
