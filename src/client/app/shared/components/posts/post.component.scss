@@ -2,7 +2,7 @@
 @import "node_modules/bootstrap/scss/mixins";
 
 
-/*  Variables
+/*  Variables */
 /*--------------------------------------------------------------*/
 
 $post-bg-color: 									#f3f5f6;
@@ -10,7 +10,7 @@ $post-slope-height:								100px;
 $post-slope-angle:								3deg;
 
 
-/*  Styles
+/*  Styles */
 /*--------------------------------------------------------------*/
 
 :host {
@@ -104,7 +104,7 @@ $post-slope-angle:								3deg;
 }
 
 
-/*  Media Queries
+/*  Media Queries */
 /*--------------------------------------------------------------*/
 
 @include media-breakpoint-up(sm) {

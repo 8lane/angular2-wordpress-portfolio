@@ -1,7 +1,7 @@
 @import "../../../../assets/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
-/*  Variables
+/*  Variables */
 /*--------------------------------------------------------------*/
 
 $xs-pagination-img-size:              30px;
@@ -9,7 +9,7 @@ $xs-pagination-img-size:              30px;
 $lg-pagination-img-size:              30px;
 
 
-/*  Styles
+/*  Styles */
 /*--------------------------------------------------------------*/
 
 :host {
@@ -48,7 +48,7 @@ $lg-pagination-img-size:              30px;
   }
 }
 
-/*  Media Queries
+/*  Media Queries */
 /*--------------------------------------------------------------*/
 
 @include media-breakpoint-up(lg) {
