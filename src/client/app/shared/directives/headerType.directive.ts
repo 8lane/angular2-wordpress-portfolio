@@ -1,11 +1,9 @@
-import {Directive, ElementRef} from '@angular/core';
-import {Router} from '@angular/router';
+import { Directive, ElementRef, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppService } from '../services';
 
-import {AppService} from '../services';
+@Directive({ selector: '[headerType]' })
 
-@Directive({
-    selector: '[headerType]'
-})
 export class HeaderTypeDirective {
 	htmlClassName: string = 'app-header--epic';
 

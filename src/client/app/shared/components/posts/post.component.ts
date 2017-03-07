@@ -2,7 +2,6 @@ import { Component, AfterViewInit, Compiler, NgModule, ViewChild, ViewContainerR
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { PostService } from '../../services';
-import { TagService } from '../../services';
 import { EventStore } from '../../misc';
 
 import { SharedModule } from '../../shared.module';
@@ -33,7 +32,6 @@ export class PostComponent {
 		private _route: ActivatedRoute,
 		private _router: Router,
 		private _postService: PostService,
-		private _tagService: TagService,
 		private _eventStore: EventStore) {
 	}
 
@@ -44,15 +42,9 @@ export class PostComponent {
 			this._postService.fetchPost(this.slug).subscribe((e) => {
 				this.post = this._postService.postSingle;
 				this.post.date = moment(this.post.date).format('MMMM Do YYYY');
-
         this._postService.currentPost = this.slug;
-
 				this.addComponent(this.post.content.rendered);
-
-				this._tagService.fetchTagsCollection(this.post.tags).subscribe((tags) => {
-					this.post.tags = tags;
-					this._postService.isProcessing = false;
-				});
+        this._postService.isProcessing = false;
 			});
 		});
 	}
@@ -66,10 +58,6 @@ export class PostComponent {
 
   get isProcessing(): boolean {
     return this._postService.isProcessing;
-	}
-
-	loadTag(slug: string) {
-		this._router.navigate(['/tags', slug]);
 	}
 
 	/* http://stackoverflow.com/questions/38888008/how-can-i-use-create-dynamic-template-to-compile-dynamic-component-with-angular */
