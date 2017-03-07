@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http, Request} from '@angular/http';
+import {Http, Request, URLSearchParams} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
@@ -24,52 +24,26 @@ export class PostService {
 		this.API = Config.apiEndPoint + Config.apiNamespace;
   }
 
-  fetchPost(slug: string): Observable<void> {
-    var requestOptions = new MyRequestOptions();
-    var options = requestOptions.merge({
-      // @todo requestOptions() has better param handling. Refactor!
-      url: this.API + '/posts/?slug=' + slug + '',
-    });
+  fetchPost(slug: string, password: string = null): Observable<void> {
+		let params: URLSearchParams = new URLSearchParams();
+		params.set('slug', slug);
 
-    return this._http.request(new Request(options))
-      .map((responseData) => {
-        let data = responseData.json();
-        let post: any[] = [];
-        this.postSingle = [];
+		if(password) {
+			params.set('password', password);
+		}
 
-        if (data) {
-          data.forEach((d: any) => post.push(Object.assign(d)));
-          this.postSingle = post[0];
-        }
-      }, (error: any) => {
-        console.warn('ERROR IN GET SINGLE POST HTTP REQUEST ', error);
-      });
+    return this._http.request(this.API + '/posts', { search: params }).map(
+			(response) => this.postSingle = response.json()[0],
+			(error: any) => console.warn(error.json())
+		);
   }
 
   fetchPosts(): Observable<void> {
-		let requestOptions = new MyRequestOptions();
-
-    let options = requestOptions.merge({
-      url: this.API + '/posts/',
-    });
-
-    return this._http.request(new Request(options)).map((responseData) => {
-      let data = responseData.json();
-
-      if (data) {
-				let posts: any = [];
-        data.forEach((d: any) => posts.push(Object.assign(d)));
-        this.postCollection = posts; /* store our returned posts from the API in a postCollection array */
-        this.setupCategoriesByYear(posts); /* create a new restructured collection of posts organised by year */
-        return posts;
-      } else {
-        // @todo handle error
-        console.warn('ERROR IN GET POSTS HTTP REQUEST');
-      }
-    }, (error: any) => {
-      // @todo handle error
-      console.warn('ERROR IN GET POSTS HTTP REQUEST ', error);
-    });
+    return this._http.request(this.API + '/posts/').map((response) => {
+      let data = response.json();
+      data.forEach((d: any) => this.postCollection.push(Object.assign(d)));
+      this.setupCategoriesByYear(data);
+    }, (error: any) => console.warn(error.json()));
 	}
 
   fetchPostsWithFilter(filter: any = null): Observable<void> {

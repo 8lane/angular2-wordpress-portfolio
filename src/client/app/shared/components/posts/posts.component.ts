@@ -14,7 +14,7 @@ export class PostsComponent {
 
   ngOnInit() {}
 
-  loadPost(slug: string) {
-    this._router.navigate(['/portfolio', slug ]);
+  loadPost(slug: string, password: boolean = false) {
+    this._router.navigate(['portfolio', slug, password ? true : false]);
   }
 }

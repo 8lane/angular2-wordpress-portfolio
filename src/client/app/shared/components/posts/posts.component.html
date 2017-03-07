@@ -1,4 +1,4 @@
-<div class="posts" [attr.id]="'post-'+post.id" *ngIf="post" (click)="loadPost(post.slug)">
+<div class="posts" [attr.id]="'post-'+post.id" *ngIf="post" (click)="loadPost(post.slug, post.content.protected)">
 
 	<div class="posts__overlay">
 		<span class="posts__overlay-title"></span>

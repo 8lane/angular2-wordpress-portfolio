@@ -8,6 +8,14 @@
 		</div>
 	</header>
 
+	<form class="post__password form-inline" #f="ngForm" (ngSubmit)="setPassword()" *ngIf="hasPassword" novalidate>
+		<div class="post__password-inner">
+			<h3 class="post__password-title">Sorry, this isn't public. Request access <a href="#">here <i class="icon-twitter"></i></a></h3>
+			<input class="post__password-input form-control" type="password" name="password" [(ngModel)]="password" placeholder="Enter a password..." required />
+			<button class="post__password-submit btn btn-lg btn-primary btn-primary-outline" type="submit">Submit</button>
+		</div>
+	</form>
+
 	<div class="post__content">
 		<div #renderedPost></div>
 	</div>

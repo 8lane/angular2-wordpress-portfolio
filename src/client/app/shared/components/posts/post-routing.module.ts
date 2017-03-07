@@ -5,7 +5,7 @@ import { PostComponent } from './index';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'portfolio/:slug', component: PostComponent }
+      { path: 'portfolio/:slug/:pw', component: PostComponent }
     ])
   ],
   exports: [RouterModule]

@@ -22,8 +22,12 @@ export class PostComponent {
 	protected componentRef: ComponentRef<any>;
 	nav: any;
 	slug: string;
+
+  hasPassword: boolean;
+  password: string = null;
+
 	post: any;
-	gotPost: boolean = false;
+	gotPost: boolean;
 	goPrev: any;
 	goNext: any;
 
@@ -37,17 +41,29 @@ export class PostComponent {
 
 	ngOnInit() {
 		this.nav = this._route.params.subscribe(params => {
-			this.slug = params['slug'];
+      this.slug = params['slug'];
+      this.hasPassword = (params['pw'] == 'true') ? true : false;
 
-			this._postService.fetchPost(this.slug).subscribe((e) => {
-				this.post = this._postService.postSingle;
-				this.post.date = moment(this.post.date).format('MMMM Do YYYY');
-        this._postService.currentPost = this.slug;
-				this.addComponent(this.post.content.rendered);
-        this._postService.isProcessing = false;
-			});
+      if(!this.hasPassword) {
+        this.loadPost();
+      } else {
+        this.showPasswordForm();
+      }
 		});
 	}
+
+  loadPost() {
+    this._postService.fetchPost(this.slug, this.password).subscribe((e) => this.displayPost());
+  }
+
+  showPasswordForm() {
+    this._postService.isProcessing = false;
+  }
+
+  setPassword() {
+    this._postService.isProcessing = true;
+    this.loadPost();
+  }
 
   ngOnDestroy() {
 		if (this.component) {
@@ -59,6 +75,20 @@ export class PostComponent {
   get isProcessing(): boolean {
     return this._postService.isProcessing;
 	}
+
+  private displayPost() {
+    this.post = this._postService.postSingle;
+
+    if(this.post.content.rendered != "") {
+      this.hasPassword = false;
+    }
+
+    this.post.date = moment(this.post.date).format('MMMM Do YYYY'); // move to service
+    this._postService.currentPost = this.slug; // move to service
+    this._postService.isProcessing = false; // move to service
+
+    this.addComponent(this.post.content.rendered);
+  }
 
 	/* http://stackoverflow.com/questions/38888008/how-can-i-use-create-dynamic-template-to-compile-dynamic-component-with-angular */
 	private addComponent(template: string) {
