@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Config } from './shared/index';
+import { Config } from './shared/config/env.config';
+import './operators';
 
 import { AppService } from './shared/services';
 import { PostService } from './shared/services';
@@ -9,8 +10,7 @@ import { PostService } from './shared/services';
 import { ContainerOffsetDirective } from './shared/directives';
 
 /**
- * This class represents the main application component. Within the @Routes annotation is the configuration of the
- * applications routes, configuring the paths for the lazy loaded components (HomeComponent, AboutComponent).
+ * This class represents the main application component.
  */
 @Component({
   moduleId: module.id,

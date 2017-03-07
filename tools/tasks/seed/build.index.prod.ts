@@ -16,7 +16,7 @@ export = () => {
   return gulp.src(join(Config.APP_SRC, 'index.html'))
     .pipe(injectJs())
     .pipe(injectCss())
-    .pipe(plugins.template(new TemplateLocalsBuilder().wihtoutStringifiedEnvConfig().build()))
+    .pipe(plugins.template(new TemplateLocalsBuilder().withoutStringifiedEnvConfig().build()))
     .pipe(gulp.dest(Config.APP_DEST));
 };
 
@@ -42,7 +42,7 @@ function injectJs() {
  * Injects the bundled CSS files for the production environment.
  */
 function injectCss() {
-  return inject(join(Config.CSS_DEST, Config.CSS_PROD_BUNDLE));
+  return inject(join(Config.CSS_DEST, `${Config.CSS_BUNDLE_NAME}.css`));
 }
 
 /**
